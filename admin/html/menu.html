@@ -1,0 +1,42 @@
+<div id="menu_container">
+	<ul class="sf-menu" id="nav">
+		<li><a href="#">Tarifs</a></li>
+		<li><a href="#">Liaisons</a>
+			<ul>
+				<li><a href="#">Création </a></li>
+				<li><a href="#">Consult/Modif </a></li>
+            </ul>
+		</li>
+		<li><a href="#">Traversées</a>
+			<ul>
+				<li><a href="#">Création </a></li>
+				<li><a href="#">Consult/Modif </a></li>
+            </ul>
+		</li>
+		<li><a href="#">Bateaux</a>
+			<ul>
+				<li><a href="index.php?action=creabat">Création </a></li>
+				<li><a href="#">Consult/Modif </a></li>
+            </ul>
+		</li>
+		<li><a href="#">Référentiel</a>
+			<ul>
+				<li><a href="#">Types </a></li>
+				<li><a href="#">Catégories </a></li>
+				<li><a href="#">Ports </a></li>
+            </ul>
+		</li> 
+		<li><a href="index.php?action=disconnect">Déconnexion</a></li>
+	</ul>
+</div>
+
+<!-- javascript at the bottom for fast page loading -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+<script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	  $('ul.sf-menu').sooperfish();
+	  $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+	});
+</script>
