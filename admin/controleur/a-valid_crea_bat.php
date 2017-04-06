@@ -1,9 +1,9 @@
 <?php
-include "modele/Bateau.php";
+require "modele/Bateau.php";
 
-//*** Calcul catégorie bateau
+//*** Calcul catï¿½gorie bateau
 $baisse = $_POST["tirantCharge"] - $_POST["tirantVide"];
-$coeff = ($baisse / $_POST["hauteurCoque"]) * 100; 
+$coeff = ($baisse / $_POST["hauteurCoque"]) * 100;
 switch ($coeff)
 {
   case ($coeff > 25) :
@@ -17,7 +17,7 @@ switch ($coeff)
 	break;
 }
 
-//*** Détermination bassin de parcage du bateau en fonction de sa catégorie
+//*** Dï¿½termination bassin de parcage du bateau en fonction de sa catï¿½gorie
 if ($categ == 'A') {
   $bassin = 1;
 }

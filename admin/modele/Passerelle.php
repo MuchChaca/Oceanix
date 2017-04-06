@@ -16,7 +16,7 @@ class Passerelle
 		//{
 		//	return 0;
 		//}
-		
+
 		//Version with verify()
 		include "connexionBD.php";
 		$login = htmlspecialchars($login);
@@ -30,7 +30,7 @@ class Passerelle
 			return 0;
 		}
 	}
-	
+
 	/**
 	 * @static function logged()
 	 * @param none
@@ -42,6 +42,27 @@ class Passerelle
 		}else{
 			return false;
 		}
+	}
+
+
+
+
+	public static function gest_error(){
+		set_error_handler(function($type, $msg, $file, $line){
+			// ************************************************
+			// * Generation du message d'erreur que à mettre *
+			// * Dans un fichier de log grâce à la fct° error_log *
+			// ************************************************
+			$msgError =  "[ERREUR - " .$type." -]: Une erreur s'est produite: ".$msg." dans ".$file." à la ligne ".$line."\n";
+			error_log($msgError, 3,  "erreur_log.log");
+
+			// Gen un msg pour l'utilisateur
+			$msgErrorUser = "Une erreur s'est produite. Nous vous prions de nous excuser pour ce dysfonctionnement<br>Réessayez plus tard.";
+
+			// On emploie "exit" pour arrêter lm'execution
+			exit($msgErrorUser);
+		});
+
 	}
 }
 ?>

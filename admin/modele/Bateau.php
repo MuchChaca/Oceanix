@@ -11,12 +11,12 @@ class bateau
 		$this->_nomBat = $nom;
 		$this->_bassinBat = $bassin;
 	}
-	
+
 	function create( )
 	{
 		include "connexionBD.php";
-		$req="INSERT INTO bateau (nom) VALUES ('". $this->_nomBat ."')";
-		$pdo->exec($req);
+		$req="INSERT INTO Bateau (nom) VALUES ('". $this->_nomBat ."')";
+		$db->exec($req);
 	}
 }
 ?>

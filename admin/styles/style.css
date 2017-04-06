@@ -1,35 +1,35 @@
-@font-face { 
-  font-family: Yanone Kaffeesatz; 
-    src: url('fonts/YanoneKaffeesatz-Regular.eot'); 
-    src: local("Yanone Kaffeesatz"), url('fonts/YanoneKaffeesatz-Regular.ttf'); 
-} 
+@font-face {
+  font-family: Yanone Kaffeesatz;
+    src: url('fonts/YanoneKaffeesatz-Regular.eot');
+    src: local("Yanone Kaffeesatz"), url('fonts/YanoneKaffeesatz-Regular.ttf');
+}
 
-html { 
+html {
   height: 100%;
 }
 
-* { 
+* {
   margin: 0;
   padding: 0;
 }
 
-body { 
+body {
   font: normal .80em arial, sans-serif;
   background: #F8F7EE url(../images/pattern.png);
   color: #7A7A68;
 }
 
-footer, header, nav, section { 
+footer, header, nav, section {
   display:block;
 }
 
-p { 
+p {
   padding: 0 0 20px 0;
   line-height: 1.7em;
 }
 
-#main, #logo, section, footer { 
-  margin-left: auto; 
+#main, #logo, section, footer {
+  margin-left: auto;
   margin-right: auto;
 }
 
@@ -38,22 +38,22 @@ p {
 }
 
 /* -----  ----- */
-/* -----  Styles de l'en-tête  ----- */ 
-header { 
+/* -----  Styles de l'en-tête  ----- */
+header {
   background: #404040;
   height: 200px;
   border-bottom: 1px solid #FFF;
 }
 
 header img {
-	float: right; 
-	vertical-align: middle; 
+	float: right;
+	vertical-align: middle;
 	width : 12%;
 	height: auto;
 	margin: 15px 10px 0 0;
 }
 
-#logo { 
+#logo {
   width: 1000px;
   height: 200px;
   background: transparent url(../images/logo.png) no-repeat right;
@@ -61,33 +61,33 @@ header img {
   padding: 0;
 }
 
-#logo #logo_text { 
+#logo #logo_text {
   top: 5px;
   left: 0;
 }
 
-#logo h1, #logo h2 { 
+#logo h1, #logo h2 {
   font: normal 420% 'Yanone Kaffeesatz', arial, sans-serif;
   border-bottom: 0;
   text-transform: none;
   margin: 0;
 }
 
-#logo_text h1, #logo_text h1 a, #logo_text h1 a:hover { 
+#logo_text h1, #logo_text h1 a, #logo_text h1 a:hover {
   padding: 10px 0 0 0;
   color: #FFF;
   text-decoration: none;
 }
 
-#logo_text h1 a .logo_colour { 
+#logo_text h1 a .logo_colour {
   color: #0096D7;
 }
 
-#logo_text a:hover .logo_colour { 
+#logo_text a:hover .logo_colour {
   color: #FFF;
 }
 
-#logo_text h2 { 
+#logo_text h2 {
   font-size: 150%;
   padding: 0 0 0 0;
   color: #A8AA94;
@@ -95,20 +95,20 @@ header img {
 
 
 /* -----  ----- */
-/* -----  Styles du menu  ----- */ 
-nav { 
+/* -----  Styles du menu  ----- */
+nav {
   height: 44px;
   width: 100%;
   margin: -44px auto 0 auto;
   background: transparent url(../images/menubar.png) repeat;
-} 
+}
 
-#menu_container { 
+#menu_container {
   width: 1000px;
   margin: 0 auto 0 auto;
 }
 
-a, a:hover { 
+a, a:hover {
   outline: none;
   text-decoration: underline;
   color: #0096D7;
@@ -116,39 +116,39 @@ a, a:hover {
 
 
 
-a:hover { 
+a:hover {
   text-decoration: none;
 }
 
-ul { 
+ul {
   margin: 2px 0 22px 17px;
 }
 
-ul li { 
+ul li {
   list-style-type: circle;
-  margin: 0 0 6px 0; 
+  margin: 0 0 6px 0;
   padding: 0 0 4px 5px;
   line-height: 1.5em;
 }
 
-ol { 
+ol {
   margin: 8px 0 22px 20px;
 }
 
-ol li { 
+ol li {
   margin: 0 0 11px 0;
 }
 
 
 /* -----  ----- */
-/* -----  Styles de l'en-tête  ----- */ 
-section { 
+/* -----  Styles de l'en-tête  ----- */
+section {
   width: 1000px;
   overflow: hidden;
   margin: 0px auto 0 auto;
   padding: 15px 0 40px 0;
   min-height: 600px;
-} 
+}
 
 .content {
 	text-align: justify;
@@ -162,7 +162,7 @@ section {
 section h1 {
 	padding: 5px 15px 20px 15px;
 	font: 250% 'Yanone Kaffeesatz';
-	text-shadow:  #ffffff 1px 1px;	
+	text-shadow:  #ffffff 1px 1px;
 	margin: 0 1px;
 	color: #777;
 }
@@ -172,7 +172,7 @@ section h2 {
 	padding : 10px;
 }
 
-section img {	
+section img {
 	display : block;
 	margin : auto;
 }
@@ -182,19 +182,19 @@ section img {
 	height: auto;
 }
 
-table { 
+table {
   margin: 10px 0 30px 0;
   width:auto;
 }
 
-table tr th, table tr td { 
+table tr th, table tr td {
   background: #3B3B3B;
   color: #FFF;
   padding: 8px 8px;
   text-align: left;
 }
-  
-table tr td { 
+
+table tr td {
   background: #E5E5DB;
   color: #47433F;
   border-top: 1px solid #FFF;
@@ -206,20 +206,20 @@ table tr td {
 
 
 /* -----  ----- */
-/* -----  Styles du pied de page  ----- */ 
-footer { 
+/* -----  Styles du pied de page  ----- */
+footer {
   width: 100%;
   font-family: 'lucida sans', sans-serif;
   font-size: 90%;
   height: 60px;
   padding: 20px 0 5px 0;
-  text-align: center; 
+  text-align: center;
   background: #404040 ;
   color: #A8AA94;
   margin: 0 0 0 0;
 }
 
-footer p { 
+footer p {
   line-height: 1.7em;
   padding: 0 0 10px 0;
 }
@@ -231,79 +231,79 @@ Author: Jurriaan Roelofs
 **/
 
 /* Configuration of menu width */
-html body ul.sf-menu ul,html body ul.sf-menu ul li { 
+html body ul.sf-menu ul,html body ul.sf-menu ul li {
   width: 200px;
 }
 
-html body ul.sf-menu ul ul { 
+html body ul.sf-menu ul ul {
   margin: 0 0 0 200px;
 }
 
 /* Framework for proper showing/hiding/positioning */
-ul.sf-menu,ul.sf-menu * { 
+ul.sf-menu,ul.sf-menu * {
   margin: 0;
   padding: 0;
 }
 
-ul.sf-menu { 
+ul.sf-menu {
   display: block;
   position: relative;
 }
-  
-ul.sf-menu li { 
+
+ul.sf-menu li {
   display: block;
   list-style: none;
   float: left;
   position: relative;
 }
-  
-ul.sf-menu li:hover { 
-  visibility: inherit; /* fixes IE7 'sticky bug' */ 
+
+ul.sf-menu li:hover {
+  visibility: inherit; /* fixes IE7 'sticky bug' */
 }
 
-ul.sf-menu a { 
+ul.sf-menu a {
   display: block;
   position: relative;
 }
-  
-ul.sf-menu ul { 
+
+ul.sf-menu ul {
   position: absolute;
   left: 0;
-  width: 150px; 
+  width: 150px;
   top: auto;
   left: -999999px;
 }
-  
-ul.sf-menu ul a { 
-  zoom: 1; /* IE6/7 fix */ 
+
+ul.sf-menu ul a {
+  zoom: 1; /* IE6/7 fix */
 }
 
-ul.sf-menu ul li { 
+ul.sf-menu ul li {
   float: left; /* Must always be floated otherwise there will be a rogue 1px margin-bottom in IE6/7 */
   width: 150px;
 }
-  
-ul.sf-menu ul ul { 
+
+ul.sf-menu ul ul {
   top: 0;
   margin: 0 0 0 150px;
 }
 
-ul.sf-menu li:hover ul,ul.sf-menu li:focus ul,ul.sf-menu li.sf-hover ul, 
+ul.sf-menu li:hover ul,ul.sf-menu li:focus ul,ul.sf-menu li.sf-hover ul,
 ul.sf-menu ul li:hover ul,ul.sf-menu ul li:focus ul,ul.sf-menu ul li.sf-hover ul,
 ul.sf-menu ul ul li:hover ul,ul.sf-menu ul ul li:focus ul,ul.sf-menu ul ul li.sf-hover ul,
-ul.sf-menu ul ul ul li:hover ul,ul.sf-menu ul ul ul li:focus ul,ul.sf-menu ul ul ul li.sf-hover ul { 
+ul.sf-menu ul ul ul li:hover ul,ul.sf-menu ul ul ul li:focus ul,ul.sf-menu ul ul ul li.sf-hover ul {
   left: auto;
 }
-  
+
 ul.sf-menu li:hover ul ul,ul.sf-menu li:focus ul ul,ul.sf-menu li.sf-hover ul ul,
 ul.sf-menu ul li:hover ul ul,ul.sf-menu ul li:focus ul ul,ul.sf-menu ul li.sf-hover ul ul,
 ul.sf-menu ul ul li:hover ul ul,ul.sf-menu ul ul li:focus ul ul,ul.sf-menu ul ul li.sf-hover ul ul,
-ul.sf-menu ul ul ul li:hover ul ul,ul.sf-menu ul ul ul li:focus ul ul,ul.sf-menu ul ul ul li.sf-hover ul ul { 
+ul.sf-menu ul ul ul li:hover ul ul,ul.sf-menu ul ul ul li:focus ul ul,ul.sf-menu ul ul ul li.sf-hover ul ul {
   left: -999999px;
 }
 
 /* autoArrows CSS */
-span.sf-arrow { 
+span.sf-arrow {
   width: 7px;
   height: 7px;
   position: absolute;
@@ -315,24 +315,24 @@ span.sf-arrow {
   font-size: 1px;
 }
 
-ul ul span.sf-arrow { 
+ul ul span.sf-arrow {
   right: 10;
   top: 20px;
   background-position: 0 100%;
 }
 
 /* Theming the menu */
-ul#nav { 
+ul#nav {
   float: right;
 }
 
-ul#nav ul { 
+ul#nav ul {
   background: url(../images/menu_hover.png) repeat;
   margin-top: 5px;
   padding-bottom: 15px;
 }
 
-ul#nav li a { 
+ul#nav li a {
   padding:7px 20px 6px 20px;
   font: 170% 'Yanone Kaffeesatz',helvetica,arial,verdana,sans;
   text-shadow: 1px 1px #000;
@@ -341,7 +341,7 @@ ul#nav li a {
   margin-right: 2px;
 }
 
-ul#nav li a:hover,ul#nav li a:focus { 
+ul#nav li a:hover,ul#nav li a:focus {
   color:#09D4FF;
 }
 
@@ -437,14 +437,11 @@ table {
  * Licensed under the MIT License:
  * http://www.opensource.org/licenses/mit-license.php
  */
-body, .login-submit, .login-submit:before, .login-submit:after {
+.login-submit, .login-submit:before, .login-submit:after {
   background: #373737 url("../img/bg.png") 0 0 repeat;
 }
 
-body {
-  font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #404040;
-}
+
 
 a {
   color: #00a1d2;

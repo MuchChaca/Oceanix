@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Compagnie Maritime Océanix</title>
+		<title>Compagnie Maritime OcÃ©anix</title>
 		<meta charset="UTF-8" />
-		<link rel="stylesheet" type="text/css" href="styles/style.css" />  
+		<link rel="stylesheet" type="text/css" href="styles/style.css" />
 		<script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
 	</head>
 	<body>
@@ -14,16 +14,16 @@
 					<?php include "html/menu.html" ?>
 				</nav>
 			</header>
-			
+
 			<section>
 				<div class="content">
-					<h1> Création effectuée </h1>
+					<h1> CrÃ©ation effectuÃ©e </h1>
 				</div>
 			</section>
-					
+
 			<footer>
 				<?php include "html/footer.html" ?>
 			</footer>
-		</div>	  
+		</div>
 	</body>
 </html>
