@@ -14,22 +14,22 @@ class Bateau
 
 	function create( )
 	{
-		include "connexionBD.php";
+		include "connexionDB.php";
 		$req="INSERT INTO Bateau (nom) VALUES ('". $this->_nomBat ."')";
 		$db->exec($req);
 	}
 
 	/**
 	  * Retrieve of CRUD
-	  * @return array with the info from the database about the boat
 	  */
-	function retrieve(){
-		include "connexionBD.php";
+	public function retrieve(){
+		include "connexionDB.php";
 		$req=$db->prepare("SELECT *
-				 FROM Bateau
-				 WHERE id=:id;");
-		$req->execute([':id' => $this->_idBat]);
-		return $req->fetch();
+								FROM Bateau
+								WHERE id=:id;");
+		$req->execute([":id" => $this->_id]);
+		$result=$req->fetch();
+		$this->_nom=$result['nom'];
 	}
 
 	/**
@@ -44,9 +44,19 @@ class Bateau
 		$req->exec([":nom" => $this->_nomBat,
 							":id" => $this->_idBat]);
 	}
+	/**
+	  * DELETE of CRUD
+	  * Delete this object from database.
+	  */
+	function delete(){
+		include "connexionDB.php";
+		$req=$db->prepare("DELETE Bateau
+										WHERE id=':id' ;");
+		$req->execute([":id" => $this->_idBat]);
+	}
 
 	/**
-	*
+	* Get the information of the wanted boat.
 	* @param Bateau A boat in order to get alll his intel from the database
 	* @return array Array of all the data of the boat submitted
 	*/
@@ -59,6 +69,21 @@ class Bateau
 		return $req->fetch();
 	}
 
+	 /**
+		* A static function to get all the data from the Bateau table.
+		* @return ArrayBateau An array with all the boat of the Bateau table.
+		*/
+	static function findAll(){
+		include "connexionDB.php";
+		$listBat = array();
+		$req=$db->query("SELECT *
+									FROM Bateau;");
+		while($bateau=$req->fetch()){
+			$objBat = new Bateau($bateau["id"], $bateau["nom"], null);
+			$listBat[] = $objBat;
+		}
+		return $listBat;
+	}
 
 	/**
 	* @return ID Id of the boat
@@ -72,6 +97,13 @@ class Bateau
 	*/
 	function nomBat(){
 		return $this->_nomBat;
+	}
+
+	/**
+	* @return BASSIN Bassin of the boat
+	*/
+	function bassinBat(){
+		return $this->_bassinBat;
 	}
 }
 ?>
