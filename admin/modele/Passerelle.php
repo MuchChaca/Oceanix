@@ -55,7 +55,7 @@ class Passerelle
 			// ************************************************
 			date_default_timezone_set('UTC');
 			$date = date('d/m/Y H:i:s', $_SERVER['REQUEST_TIME']);
-			$msgError =  "[ERREUR - " .$type." -]: Une erreur s'est produite: ".$msg." dans ".$file." à la ligne ".$line." à ".$date."\n";
+			$msgError =  "[ERREUR " .$type." - ".$date."]: ".$msg." dans ".$file." ligne: ".$line."\n";
 			error_log($msgError, 3,  "erreur_log.log");
 
 			// Gen un msg pour l'utilisateur

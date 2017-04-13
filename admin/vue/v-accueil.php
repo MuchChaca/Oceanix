@@ -7,7 +7,7 @@ if (Passerelle::logged()){
 	<head>
 		<title>Compagnie Maritime Océanix</title>
 		<meta charset="UTF-8" />
-		<link rel="stylesheet" type="text/css" href="styles/style.css" />  
+		<link rel="stylesheet" type="text/css" href="styles/style.css" />
 		<script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
 	</head>
 	<body>
@@ -18,19 +18,19 @@ if (Passerelle::logged()){
 					<?php include "html/menu.html" ?>
 				</nav>
 			</header>
-			
+
 			<section>
 				<div class="content">
 					<h1> ADMINISTRATION du site de la Compagnie Maritime Océanix </h1>
 				</div>
 			</section>
-					
+
 			<footer>
 				<?php include "html/footer.html" ?>
 			</footer>
-		</div>	  
+		</div>
 	</body>
 </html>
 <?php
-}else{ echo "<h1>PAS BON</h1>";}
+}else{ Header('Locate: /index.php?action=404');}
 ?>

@@ -19,15 +19,11 @@
 				<div class="content">
 					<h1> Création effectuée </h1>
 					<?php
-					if(!empty($idBat)){
+					if(!empty($bat)){
 						echo "<table>
 									<tr>
-										<th>ID</th>
-										<th>Nom</th>
-									</tr>
-									<tr>
-										<tr>".$bat->_idBat()."</tr>
-										<tr>".$bat->_nomBat()."</tr>
+										<th>Nom : </th>
+										<td>".$bat->nomBat()."</td>
 									</tr>
 								</table>";
 					}

@@ -1,3 +1,7 @@
+<?php
+require_once "modele/Passerelle.php";
+if (Passerelle::logged()){
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -46,3 +50,6 @@
 		</div>
 	</body>
 </html>
+<?php
+}else{ Header('Locate: /index.php?action=404');}
+?>

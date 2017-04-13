@@ -27,7 +27,7 @@ else {
 
 $bat = new bateau('', $_POST["nomBat"], $bassin);
 $bat->create( );
-
+$bat->retrieve();
 $etat = "creation_ok";
 
 ?>
