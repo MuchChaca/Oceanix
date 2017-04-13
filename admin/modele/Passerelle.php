@@ -53,13 +53,15 @@ class Passerelle
 			// * Generation du message d'erreur que à mettre *
 			// * Dans un fichier de log grâce à la fct° error_log *
 			// ************************************************
-			$msgError =  "[ERREUR - " .$type." -]: Une erreur s'est produite: ".$msg." dans ".$file." à la ligne ".$line."\n";
+			date_default_timezone_set('UTC');
+			$date = date('d/m/Y H:i:s', $_SERVER['REQUEST_TIME']);
+			$msgError =  "[ERREUR - " .$type." -]: Une erreur s'est produite: ".$msg." dans ".$file." à la ligne ".$line." à ".$date."\n";
 			error_log($msgError, 3,  "erreur_log.log");
 
 			// Gen un msg pour l'utilisateur
 			$msgErrorUser = "Une erreur s'est produite. Nous vous prions de nous excuser pour ce dysfonctionnement<br>Réessayez plus tard.";
 
-			// On emploie "exit" pour arrêter lm'execution
+			// On emploie "exit" pour arrêter l'execution
 			exit($msgErrorUser);
 		});
 

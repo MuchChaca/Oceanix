@@ -1,2 +1,8 @@
 [ERREUR - 8 -]: Une erreur s'est produite: Undefined variable: categ dans /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/controleur/a-valid_crea_bat.php à la ligne 21
 [ERREUR - 8 -]: Une erreur s'est produite: Undefined variable: categ dans /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/controleur/a-valid_crea_bat.php à la ligne 21
+[ERREUR - 2 -]: Une erreur s'est produite: session_destroy(): Trying to destroy uninitialized session dans /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/controleur/a-disconnect.php à la ligne 2
+[ERREUR - 2 -]: Une erreur s'est produite: session_destroy(): Trying to destroy uninitialized session dans /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/controleur/a-disconnect.php à la ligne 2
+[ERREUR - 2 -]: Une erreur s'est produite: session_destroy(): Trying to destroy uninitialized session dans /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/controleur/a-disconnect.php à la ligne 2
+[ERREUR - 2 -]: Une erreur s'est produite: session_destroy(): Trying to destroy uninitialized session dans /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/controleur/a-disconnect.php à la ligne 2 à 13/04/2017 04:23:15
+[ERREUR - 8 -]: Une erreur s'est produite: Undefined index: login dans /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/controleur/a-valid_connexion.php à la ligne 3 à 13/04/2017 04:26:07
+[ERREUR - 8 -]: Une erreur s'est produite: Undefined index: login dans /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/controleur/a-valid_connexion.php à la ligne 3 à 13/04/2017 04:26:20

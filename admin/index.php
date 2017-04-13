@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "modele/Passerelle.php";
 Passerelle::gest_error();
 // *** on récupère l'action à entreprendre ***

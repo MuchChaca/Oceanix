@@ -17,7 +17,7 @@ switch ($coeff)
 	break;
 }
 
-//*** D�termination bassin de parcage du bateau en fonction de sa cat�gorie
+//*** Détermination bassin de parcage du bateau en fonction de sa catégorie
 if ($categ == 'A') {
   $bassin = 1;
 }
@@ -27,5 +27,7 @@ else {
 
 $bat = new bateau('', $_POST["nomBat"], $bassin);
 $bat->create( );
+
 $etat = "creation_ok";
+
 ?>
