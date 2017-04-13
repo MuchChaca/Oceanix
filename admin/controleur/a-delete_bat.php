@@ -3,9 +3,11 @@
 if(!empty($_GET["id"])){
 	$id=htmlspecialchars($_GET["id"]);
 	$bat= new Bateau($id, null, null);
+	$bat->retrieve();
 	$bat->delete();
-	$etat = "delete_bat_ok";
+	$resultat = true;
 }else{
-	$etat = "404";
+	$resultat = false;
 }
+$etat = "delete_ok";
  ?>

@@ -27,9 +27,9 @@ class Bateau
 		$req=$db->prepare("SELECT *
 								FROM Bateau
 								WHERE id=:id;");
-		$req->execute([":id" => $this->_id]);
+		$req->execute([":id" => $this->_idBat]);
 		$result=$req->fetch();
-		$this->_nom=$result['nom'];
+		$this->_nomBat=$result['nom'];
 	}
 
 	/**
@@ -50,8 +50,8 @@ class Bateau
 	  */
 	function delete(){
 		include "connexionDB.php";
-		$req=$db->prepare("DELETE Bateau
-										WHERE id=':id' ;");
+		$req=$db->prepare("DELETE FROM Bateau
+										WHERE id=:id ;");
 		$req->execute([":id" => $this->_idBat]);
 	}
 
