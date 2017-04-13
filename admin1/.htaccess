@@ -1,4 +1,0 @@
-AuthName "Protected Administration Page"
-AuthType Basic
-AuthUserFile "/opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/.htpasswd"
-Require valid-user
