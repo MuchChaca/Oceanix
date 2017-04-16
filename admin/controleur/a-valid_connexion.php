@@ -1,5 +1,4 @@
 <?php
-	require_once "modele/Passerelle.php";
 	$resultat=Passerelle::verif($_POST["login"], $_POST["mdp"]);
 	//$resultat = $pass->verif($_POST["login"], $_POST["mdp"]); //old
 	if ($resultat == 1) {

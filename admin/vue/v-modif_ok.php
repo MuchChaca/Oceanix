@@ -20,16 +20,18 @@ if (Passerelle::logged()){
 
 			<section>
 				<div class="content">
+					<h1> Modification effectuée </h1>
 					<?php
 					if(!empty($bat)){
-						if($result = true)
-						echo "<h1> Le bateau: \"".$bat->nomBat()."\" a été supprimé avec succès !</h1>";
-						else {
-							echo "<h1>ERREUR: Le Bateau n'a pas put être supprimé. Veuillez réessayer.</h1>";
-						}
+						echo "<table>
+									<tr>
+										<th>Nom : </th>
+										<td>".$bat->nomBat()."</td>
+									</tr>
+								</table>";
+						echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
 					}
 					?>
-					<p><a href="index.php?action=consult_bat">Retour à la liste des bateaux</a></p>
 				</div>
 			</section>
 

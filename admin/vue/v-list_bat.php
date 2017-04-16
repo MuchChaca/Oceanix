@@ -5,8 +5,8 @@ if (Passerelle::logged()){
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8" />
 		<title>Compagnie Maritime Océanix</title>
-		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="styles/style.css" />
 		<link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
 		<script type="text/javascript" src="js/modernizr-1.5.min.js"></script>

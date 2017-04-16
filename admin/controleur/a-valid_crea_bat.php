@@ -1,7 +1,6 @@
 <?php
-require "modele/Bateau.php";
 
-//*** Calcul cat�gorie bateau
+//*** Calcul catégorie bateau
 $baisse = $_POST["tirantCharge"] - $_POST["tirantVide"];
 $coeff = ($baisse / $_POST["hauteurCoque"]) * 100;
 switch ($coeff)

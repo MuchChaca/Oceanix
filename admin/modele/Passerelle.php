@@ -18,7 +18,7 @@ class Passerelle
 		//}
 
 		//Version with verify()
-		include "connexionBD.php";
+		include "connexionDB.php";
 		$login = htmlspecialchars($login);
 		$mdp = htmlspecialchars($mdp);
 		$req="SELECT * from Administrateur where login='". $login . "'";
@@ -50,8 +50,8 @@ class Passerelle
 	public static function gest_error(){
 		set_error_handler(function($type, $msg, $file, $line){
 			// ************************************************
-			// * Generation du message d'erreur que à mettre *
-			// * Dans un fichier de log grâce à la fct° error_log *
+			// * Generation du message d'erreur à mettre dans *
+			// * un fichier de log avec la fonction error_log *
 			// ************************************************
 			date_default_timezone_set('UTC');
 			$date = date('d/m/Y H:i:s', $_SERVER['REQUEST_TIME']);

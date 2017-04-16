@@ -1,5 +1,4 @@
 <?php
-require_once "modele/Passerelle.php";
 if (Passerelle::logged()){
 ?>
 <!DOCTYPE HTML>

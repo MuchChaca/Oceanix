@@ -1,12 +1,11 @@
 <?php
 
-class Bateau
-{
+class Bateau{
 	private $_idBat;
 	private $_nomBat;
 	private $_bassinBat;
-	function __construct($id, $nom, $bassin)
-	{
+
+	function __construct($id, $nom, $bassin){
 		$this->_idBat = $id;
 		$this->_nomBat = $nom;
 		$this->_bassinBat = $bassin;
@@ -41,7 +40,7 @@ class Bateau
 		$req=$db->prepare("UPDATE Bateau
 										SET nom=:nom
 										WHERE id=:id;");
-		$req->exec([":nom" => $this->_nomBat,
+		$req->execute([":nom" => $this->_nomBat,
 							":id" => $this->_idBat]);
 	}
 	/**
@@ -104,6 +103,22 @@ class Bateau
 	*/
 	function bassinBat(){
 		return $this->_bassinBat;
+	}
+
+	/**
+		* Définit le nom du bateau sur l'objet.
+		* @param String Le nouveau nom de bateau
+	*/
+	function setNom($name){
+		$this->_nomBat=$name;
+	}
+
+	/**
+		* Définit le bassin du bateau sur l'objet.
+		* @param Int Le nouveau bassin du bateau
+	*/
+	function setBassinBat($bassin){
+		$this->_bassinBat=$bassin;
 	}
 }
 ?>
