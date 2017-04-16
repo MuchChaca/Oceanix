@@ -1,5 +1,4 @@
 <?php
-require_once "modele/Passerelle.php";
 if (Passerelle::logged()){
 ?>
 <!DOCTYPE HTML>
@@ -28,7 +27,7 @@ if (Passerelle::logged()){
 							<table>
 								<tr>
 									<td>Nom bateau </td><td><input type="text" size=30 name="nomBat" required value="<?= $bat->nomBat(); ?>"/>
-									<input type="hidden" name="id" value="<?= $bat->idBat(); ?>"</td>
+									<input type="hidden" name="id" value="<?= $bat->idBat(); ?>" /></td>
 								</tr>
 								<tr>
 									<td colspan="2"><input type="submit" value="Valider"></input></td>

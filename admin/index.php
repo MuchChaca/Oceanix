@@ -12,25 +12,21 @@ spl_autoload_register('classLoader');
 Passerelle::gest_error();
 
 // *** on récupère l'action à entreprendre ***
-if (isset ($_GET['action'])) {
-	$action = strtolower($_GET['action']);
-}
-else {
+if (!empty($_GET['action'])){
+	$action = $_GET['action'];
+}else{
 	$action = 'init';
 }
 
 // *** traitement de l'action ***
-$scriptAction = 'a-' .$action. '.php';
-include "controleur/".$scriptAction;
+include "controleur/a-".$action.'.php';
 
 
 // *** génération de la vue ***
+include "vue/v-".$etat.'.php';
 
-	$scriptVue = 'v-' .$etat. '.php';
-	include "vue/".$scriptVue;
-
-
-
-
-
+/**
+	* @TODO Make a way to go back to the regualr website from the admin part
+	* @TODO Animation de tutoriel comment faire une réservation. (jQuery)
+*/
 ?>

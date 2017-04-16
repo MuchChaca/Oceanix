@@ -24,12 +24,20 @@ if (Passerelle::logged()){
 					if(!empty($bat)){
 						if($result = true)
 						echo "<h1> Le bateau: \"".$bat->nomBat()."\" a été supprimé avec succès !</h1>";
+						echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
 						else {
 							echo "<h1>ERREUR: Le Bateau n'a pas put être supprimé. Veuillez réessayer.</h1>";
 						}
+					}else if(!empty($typCateg)){
+						if($result = true)
+						echo "<h1> Le type / catégorie: \"".$typCateg->libelle()."\" a été supprimé avec succès !</h1>"
+						echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
+						else {
+							echo "<h1>ERREUR: Le type / catégorie n'a pas put être supprimé. Veuillez réessayer.</h1>";
+						}
 					}
 					?>
-					<p><a href="index.php?action=consult_bat">Retour à la liste des bateaux</a></p>
+
 				</div>
 			</section>
 

@@ -68,7 +68,7 @@ class Bateau{
 		return $req->fetch();
 	}
 
-	 /**
+	/**
 		* A static function to get all the data from the Bateau table.
 		* @return ArrayBateau An array with all the boat of the Bateau table.
 		*/
