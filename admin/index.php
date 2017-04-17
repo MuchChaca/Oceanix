@@ -26,7 +26,9 @@ include "controleur/a-".$action.'.php';
 include "vue/v-".$etat.'.php';
 
 /**
-	* @TODO Make a way to go back to the regualr website from the admin part
-	* @TODO Animation de tutoriel comment faire une réservation. (jQuery)
+	* @TODO +Make a way to go back to the regualr website from the admin part (jQuery)
+	* @TODO +Animation de tutoriel comment faire une réservation. (jQuery)
+	* @TODO +Possibilité de choisir parmit les lettre et numéros existant ou d'entrer un nouveau pour les modif de TypeCateg
+	* @TODO
 */
 ?>

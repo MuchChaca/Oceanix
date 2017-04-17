@@ -24,7 +24,7 @@ if (Passerelle::logged()){
 					if(!empty($obj) && $obj=="typeCateg"){
 						if(!empty($typCateg)){?>
 							<h1> Modification d'un type / catégorie </h1>
-							<form action="index.php?action=modif&obj=tycat" method="POST">
+							<form action="index.php?action=mod&obj=tycat" method="POST">
 								<table>
 									<tr>
 										<td>Libellé </td>
@@ -39,7 +39,7 @@ if (Passerelle::logged()){
 							</form><?php
 						}else{ ?>
 							<h1> Saisie d'un bateau </h1>
-							<form action="index.php?action=modif&obj=tycat" method="POST">
+							<form action="index.php?action=mod&obj=tycat" method="POST">
 								<table>
 									<tr>
 										<td>Libellé </td>

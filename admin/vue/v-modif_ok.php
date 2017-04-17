@@ -20,9 +20,10 @@ if (Passerelle::logged()){
 
 			<section>
 				<div class="content">
-					<h1> Modification effectuée </h1>
+
 					<?php
 					if(!empty($bat)){
+						echo "<h1> Modification effectuée </h1>";
 						echo "<table>
 									<tr>
 										<th>Nom : </th>
@@ -30,6 +31,23 @@ if (Passerelle::logged()){
 									</tr>
 								</table>";
 						echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
+					}else if(!empty($typCateg)){
+						echo "<h1> Modification effectuée </h1>";
+						echo "<table>
+									<tr>
+										<th>Lettre Catégorie : </th>
+										<td>".$typCateg->lettreCateg()."</td>
+									</tr>
+									<tr>
+										<th>Numéro d'ordre : </th>
+										<td>".$typCateg->numOrdre()."</td>
+									</tr>
+									<tr>
+										<th>Libelle : </th>
+										<td>".$typCateg->libelle()."</td>
+									</tr>
+								</table>";
+						echo "<p><a href=\"index.php?action=list&obj=tycat\">Retour à la liste des types / catégoies</a></p>";
 					}
 					?>
 				</div>
