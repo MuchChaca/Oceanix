@@ -82,9 +82,9 @@ class TypeCateg{
 
 	/**** GETTERS & SETTERS *****/
 	//GETTERS
-	function lettreCateg(){ return $this->_lettreCateg; }
-	function numOrdre(){ return $this->_numOrdre; }
-	function libelle(){ return $this->_libelle; }
+	function lettreCateg(){ return htmlspecialchars($this->_lettreCateg); }
+	function numOrdre(){ return htmlspecialchars($this->_numOrdre); }
+	function libelle(){ return htmlspecialchars($this->_libelle); }
 	//SETTERS
 	function setLettreCateg($lettre){ $this->_lettreCateg=$lettre; }
 	function setNumOrdre($num){ $this->_numOrdre=$num; }

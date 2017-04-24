@@ -16,9 +16,15 @@
 			</header>
 -->
 			<!--<section>
-				<div class="content">-->
-					<h1> Bienvenue sur le site de la Compagnie Maritime Océanix </h1>
-					<img src="images/carte.png" class="logo"/>
+				<div class="content">--><br>
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2>Bienvenue sur le site de la Compagnie Maritime Océanix</h2>
+					</div>
+				</div>
+				<div class="row">
+						<img src="images/carte.png" class="carte"/>
+				</div>
 				<!--</div>
 			</section>-->
 <!--

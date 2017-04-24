@@ -1,6 +1,10 @@
-
+<div class="row">
+	<div class="col-lg-12 text-center">
 		<h1>Liste de nos liaisons</h1>
-
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-4 portfolio-item">
 		<table>
 			<tr>
 				<th>Port de départ</th>
@@ -18,4 +22,5 @@
 			}
 			?>
 		</table>
-
+	</div>
+</div>

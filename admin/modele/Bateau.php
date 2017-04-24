@@ -69,9 +69,9 @@ class Bateau{
 	}
 
 	/**
-		* A static function to get all the data from the Bateau table.
-		* @return ArrayBateau An array with all the boat of the Bateau table.
-		*/
+	* A static function to get all the data from the Bateau table.
+	* @return ArrayBateau An array with all the boat of the Bateau table.
+	*/
 	static function findAll(){
 		include "connexionDB.php";
 		$listBat = array();
@@ -84,41 +84,14 @@ class Bateau{
 		return $listBat;
 	}
 
-	/**
-	* @return ID Id of the boat
-	*/
-	function idBat(){
-		return $this->_idBat;
-	}
-
-	/**
-	* @return NAME Name of the boat
-	*/
-	function nomBat(){
-		return $this->_nomBat;
-	}
-
-	/**
-	* @return BASSIN Bassin of the boat
-	*/
-	function bassinBat(){
-		return $this->_bassinBat;
-	}
-
-	/**
-		* Définit le nom du bateau sur l'objet.
-		* @param String Le nouveau nom de bateau
-	*/
-	function setNom($name){
-		$this->_nomBat=$name;
-	}
-
-	/**
-		* Définit le bassin du bateau sur l'objet.
-		* @param Int Le nouveau bassin du bateau
-	*/
-	function setBassinBat($bassin){
-		$this->_bassinBat=$bassin;
-	}
+/*********   SETTERS & GETTERS  *********/
+// GETTERS
+	function idBat(){ return htmlspecialchars($this->_idBat); }
+	function nomBat(){ return htmlspecialchars($this->_nomBat); }
+	function bassinBat(){ return htmlspecialchars($this->_bassinBat); }
+// SETTERS
+	function setId($id){ $this->_idBat=$id; }
+	function setNom($name){ $this->_nomBat=$name; }
+	function setBassinBat($bassin){ $this->_bassinBat=$bassin; }
 }
 ?>

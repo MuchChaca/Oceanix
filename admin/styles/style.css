@@ -15,7 +15,7 @@ html {
 
 body {
   font: normal .80em arial, sans-serif;
-  background: #F8F7EE url(../images/pattern.png);
+  background: #F8F7EE /*url(../images/pattern.png)*/;
   color: #7A7A68;
 }
 

@@ -1,7 +1,7 @@
 <?php
 if(!empty($_GET['obj'])){
 	switch ($_GET['obj']){
-		case 'tycat':
+		case 'tycat':	// If it's for TypeCateg ('tycat')
 			if(!empty($_POST['lettre']) && !empty($_POST['num']) && !empty($_POST['libelle'])){
 				$typCateg= new TypeCateg($_POST['lettre'], $_POST['num'], $_POST['libelle']);
 				$typCateg->update();
