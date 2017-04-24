@@ -43,3 +43,6 @@
 [ERREUR 8 - 24/04/2017 12:37:48]: 
 	Undefined variable: status
 	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
+[ERREUR 8 - 24/04/2017 15:18:29]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83

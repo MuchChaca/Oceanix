@@ -249,10 +249,11 @@ section.success {
 }
 @media (min-width: 767px) {
   #portfolio .portfolio-item {
-    margin: 0 0 30px;
+    margin: 0px 0 30px;
   }
 		#portfolio{
-			min-height: 680px;
+			min-height: 500px;
+			margin-top: 2.5%;
 		}
 }
 .floating-label-form-group {
@@ -607,4 +608,73 @@ div#maincontent {
 	height: 500px;
 	width: auto;
 	margin-top: 20px;
+}
+/*************  TABLE   *******************/
+.display-table{
+	margin-left: 90%;
+}
+.display-table table {
+  text-align: left;
+  line-height: 40px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid #384e63;
+  width: 500px;
+  margin: 50px auto;
+  border-radius: .25rem;
+}
+
+.display-table thead tr:first-child {
+  background: #384e63;
+  color: #fff;
+  border: none;
+}
+.display-table .admin{
+	color: #18BC9C;
+	/*text-align: center;*/
+}
+
+.display-table th:first-child,
+.display-table td:first-child {
+  padding: 0 15px 0 20px;
+}
+
+.display-table thead tr:last-child th {
+  border-bottom: 3px solid #ddd;
+}
+
+.display-table tbody tr:hover {
+  background-color: rgba(105, 130, 217, 0.1);
+  cursor: default;
+}
+.display-table tbody td i:hover{
+	color: rgba(31, 56, 144, 0.86);
+	cursor: hand;
+}
+
+.display-table tbody tr:last-child td {
+  border: none;
+}
+
+.display-table tbody td {
+  border-bottom: 1px solid #ddd;
+}
+
+.display-table td:last-child {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.display-table .button {
+  color: #aaa;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.display-table .edit:hover {
+  color: #0a79df;
+}
+
+.display-table .delete:hover {
+  color: #dc2a2a;
 }

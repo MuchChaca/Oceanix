@@ -13,21 +13,25 @@
 
 		echo "<div=\"\">";
 		echo "<table>
-		<tr>
-		<th>Numéro</th>
-		<th>Heure</th>
-		<th>Bateau</th>
-		<th></th>
-		</tr>";
-		foreach($traversees as $laTraversee){
-			echo "<tr>
-			<td>".$laTraversee->num()."</td>
-			<td>".$laTraversee->heure()."</td>
-			<td>".$laTraversee->bateau()->id()."</td>
-			<td><a href=?action=choixtraversees&numTrav=".$laTraversee->num().">Réserver</a></td>
-			</tr>";
-		}
-		echo"</table>";
+		<thead>
+			<tr>
+				<th>Numéro</th>
+				<th>Heure</th>
+				<th colspan=\"1\">Bateau</th>
+				<th></th>
+			</tr>
+		</thead>";
+		echo "<tbody>";
+			foreach($traversees as $laTraversee){
+				echo "<tr>
+				<td>".$laTraversee->num()."</td>
+				<td>".$laTraversee->heure()."</td>
+				<td>".$laTraversee->bateau()->id()."</td>
+				<td><a href=?action=choixtraversees&numTrav=".$laTraversee->num().">Réserver</a></td>
+				</tr>";
+			}
+			echo"</tbody>
+		</table>";
 		echo "</div>";
 		?>
 	</div>
