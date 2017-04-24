@@ -49,7 +49,7 @@ session_start();
 
 				<?php include "view/html/header.html" ?>
 
-				
+				<?php include "admin/tools/admin-bar.php" ?>
 
 		<section id="portfolio">
 			<div class="container">

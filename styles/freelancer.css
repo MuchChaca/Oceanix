@@ -96,8 +96,8 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   header .container {
-    padding-top: 200px;
-    padding-bottom: 100px;
+    padding-top: 100px;
+    padding-bottom: 0px;
   }
   header .intro-text .name {
     font-size: 4.75em;
@@ -528,6 +528,73 @@ fieldset[disabled] .btn-success.active {
 }
 div#maincontent {
   outline: none;
+}
+/**************************/
+
+/******  - MyAdds -  ******/
+/*********** my adds *******************/
+.second-menu{
+	width: 100%;
+	/*margin-top: -50px;*/
+	/*height: 50px;*/
+}
+.second-menu ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	/*overflow: hidden;*/
+	/*background-color: #333;*/
+}
+.second-menu li{
+	float: left;
+	height: 60px;
+}
+.second-menu li button{
+	display: block;
+	float: left;
+}
+.dropbtn {
+    background-color: #2C3E50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+		height: 60px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	margin-top: 60px;
+	position: absolute;
+	background-color: #d2d9d4;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 9999999;
+}
+
+.dropdown-content a {
+	position: relative;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	z-index: 9999999;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }
 
 .carte{
