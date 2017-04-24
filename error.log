@@ -55,3 +55,9 @@
 [ERREUR 8 - 24/04/2017 16:04:44]: 
 	Undefined variable: status
 	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 84
+[ERREUR 8 - 24/04/2017 16:34:24]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 86
+[ERREUR 8 - 24/04/2017 16:37:27]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 85
