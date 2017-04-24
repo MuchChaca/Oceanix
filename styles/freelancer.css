@@ -761,3 +761,27 @@ div#maincontent {
 .co-main-container a:hover {
   color: #c0392b;
 }
+/***********  SIMPLE FORM *************/
+.form-area{
+	width: 100%;
+	margin-top: 5%;
+}
+.simple-form{
+	width: 100%;
+	margin-top: 25px;
+}
+.simple-form-legend {
+    display: inline-block;
+    width: 250px;
+}
+.simple-form-field {
+    display: inline-block;
+    width: 200px;
+}
+.simple-form-submit {
+	display: inline-block;
+	width: 450px;
+}
+.simple-form-submit input[type='submit']{
+	width: 100%;
+}

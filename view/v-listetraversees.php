@@ -1,3 +1,6 @@
+<div class="container">
+	<div class="col-lg-12 text-center">
+
 <div class="row">
 	<div class="col-lg-12 text-center">
 		<?php
@@ -34,5 +37,8 @@
 		</table>";
 		echo "</div>";
 		?>
+	</div>
+</div>
+
 	</div>
 </div>
