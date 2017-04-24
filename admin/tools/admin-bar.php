@@ -1,7 +1,10 @@
+<?php
+
+?>
 <header>
 	<div class="container" id="maincontent">
 		<div class="row">
-
+			<?php if(Passerelle::logged()): ?>
 				<div class="second-menu">
 					<ul>
 						<li><div class="dropdown">
@@ -34,6 +37,13 @@
 					</ul>
 
 				</div>
+
+				<div class="third-menu">
+						<ul>
+							<li>ADMINISTRATEUR</li>
+						</ul>
+				</div>
+			<?php endif; ?>
 
 		</div>
 	</div>

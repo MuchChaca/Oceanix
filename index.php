@@ -1,4 +1,5 @@
 <?php
+ob_start();
 /**
  * @param Class $class -> une le nom d'une classe
  * @category Autoload class - Charge automatiquement les classes nécessaires.
@@ -9,9 +10,11 @@ function loadClass($class){
 spl_autoload_register("loadClass");
 
 session_start();
+
+Passerelle::gest_error();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -45,9 +48,9 @@ session_start();
 	<body id="page-top" class="index">
 
 
-				<?php include "view/html/menu.html" ?>
+				<?php include "view/parts/menu.php" ?>
 
-				<?php include "view/html/header.html" ?>
+				<?php include "view/parts/header.html" ?>
 
 				<?php include "admin/tools/admin-bar.php" ?>
 
@@ -55,19 +58,30 @@ session_start();
 			<div class="container">
 					<div class="col-lg-12 text-center">
 						<?php
-							//the action
-							if(!empty($_GET['action'])){
-								$action=$_GET['action'];
-								$action=strtolower($action);
-							}else{
-								$action="init";
-							}
-							//controler
-								include "controler/a-".$action.".php";
-							//view
-							if(!empty($status)){
-								include "view/v-".$status.".php";
-							}
+						//the action
+						if(!empty($_GET['action'])){
+							$action=$_GET['action'];
+							$action=strtolower($action);
+						}else{
+							$action="init";
+						}
+
+						//Setting the path
+						if(!empty($adminMode) && $adminMode){
+							$controlerPath="admin/controller/a-".$action;
+							$viewPath="admin/view/v-";
+						}else{
+							$controlerPath="controller/a-".$action;
+							$viewPath="view/v-";
+						}
+						//controler
+						// if(!empty($viewPath)){
+							include $controlerPath.".php";
+						// }
+						//view
+						// if(!empty($status) && !empty($viewPath)){
+							include $viewPath.$status.".php";
+						// }
 						?>
 					</div>
 				</div>
@@ -75,7 +89,7 @@ session_start();
 		</section>
 		</div>
 			<footer>
-				<?php include "view/html/footer.html" ?>
+				<?php include "view/parts/footer.html" ?>
 			</footer>
 
 			<!-- jQuery -->

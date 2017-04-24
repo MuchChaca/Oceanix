@@ -35,6 +35,9 @@ abstract class Passerelle{
 		}
 	}
 
+	/**
+		* Fonction de gestion des erreurs
+		*/
 	public static function gest_error(){
 		set_error_handler(function($type, $msg, $file, $line){
 			// ************************************************
@@ -43,7 +46,7 @@ abstract class Passerelle{
 			// ************************************************
 			date_default_timezone_set('UTC');
 			$date = date('d/m/Y H:i:s', $_SERVER['REQUEST_TIME']);
-			$msgError =  "[ERREUR " .$type." - ".$date."]: "."\n\t".$msg." dans ".$file." ligne: ".$line."\n";
+			$msgError =  "[ERREUR " .$type." - ".$date."]: "."\n\t".$msg."\n\tIN ".$file." ligne: ".$line."\n";
 			error_log($msgError, 3,  "error.log");
 
 			// Gen un msg pour l'utilisateur

@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // require_once "modele/Passerelle.php";
 function classLoader($class){
@@ -8,6 +7,8 @@ function classLoader($class){
 }
 //On enregistre la fonction en autoload pour qu'elle soit appelée dès qu'on instanciera une classe non déclarée.
 spl_autoload_register('classLoader');
+
+session_start();
 
 Passerelle::gest_error();
 

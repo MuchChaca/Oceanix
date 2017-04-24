@@ -33,7 +33,10 @@
 																				<a href="index.php?action=liaisons">Réserver</a>
 																</li>
 																<li class="page-scroll">
-																				<a href="admin/index.php">Connexion</a>
+																	<?php echo (Passerelle::logged()) ?
+																	"<a href=\"index.php?action=connection\">Déconnexion</a>" :
+																	"<a href=\"index.php?action=connection\">Connexion</a>";
+																	?></a>
 																</li>
 												</ul>
 								</div>

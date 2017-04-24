@@ -1,0 +1,45 @@
+[ERREUR 2 - 24/04/2017 12:33:41]: 
+	Cannot modify header information - headers already sent by (output started at /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/tools/admin-bar.php:46)
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/controller/a-connection.php ligne: 4
+[ERREUR 8 - 24/04/2017 12:33:47]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 82
+[ERREUR 2 - 24/04/2017 12:33:53]: 
+	Cannot modify header information - headers already sent by (output started at /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/tools/admin-bar.php:46)
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/controller/a-connection.php ligne: 4
+[ERREUR 8 - 24/04/2017 12:34:25]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 82
+[ERREUR 2 - 24/04/2017 12:34:27]: 
+	Cannot modify header information - headers already sent by (output started at /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/tools/admin-bar.php:46)
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/controller/a-connection.php ligne: 4
+[ERREUR 8 - 24/04/2017 12:36:06]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
+[ERREUR 8 - 24/04/2017 12:36:08]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
+[ERREUR 8 - 24/04/2017 12:36:18]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
+[ERREUR 8 - 24/04/2017 12:36:22]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
+[ERREUR 8 - 24/04/2017 12:37:14]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
+[ERREUR 8 - 24/04/2017 12:37:14]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
+[ERREUR 8 - 24/04/2017 12:37:18]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
+[ERREUR 8 - 24/04/2017 12:37:18]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
+[ERREUR 8 - 24/04/2017 12:37:42]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
+[ERREUR 8 - 24/04/2017 12:37:48]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
