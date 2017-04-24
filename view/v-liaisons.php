@@ -1,3 +1,6 @@
+<div class="container">
+		<div class="col-lg-12 text-center">
+
 <div class="row">
 	<div class="col-lg-12 text-center">
 		<h1>Liste de nos liaisons</h1>
@@ -44,4 +47,7 @@
 			</table>
 		</div>
 	</div>
+</div>
+
+</div>
 </div>

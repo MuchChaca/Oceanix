@@ -1,11 +1,7 @@
-<div class="row">
-	<div class="col-lg-12 text-center">
-		<h1>Se connecter</h1>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-4 portfolio-item">
+<div class="co-main-container">
 		<!-- <div class="connectForm"> -->
+		<section class="connection-container">
+			<span></span>
 			<form action="index.php?action=valid_connexion" method="POST">
 				<table>
 					<tr>
@@ -17,10 +13,12 @@
 						<td><input type="password" name="mdp" required ></td>
 					</tr>
 					<tr>
-						<td colsrow	="2"><input type="submit" value="Connexion"></td>
+						<td colsrow	="2" style="width: 217px; position: absolute; margin-top: 30px;">
+							<input type="submit" value="Connexion">
+						</td>
 					</tr>
 				</table>
 			</form>
+		</section>
 		<!-- </div> -->
-	</div>
 </div>

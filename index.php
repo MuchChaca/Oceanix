@@ -29,8 +29,10 @@ Passerelle::gest_error();
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+
     <!-- Theme CSS -->
-    <link href="styles/freelancer.css" rel="stylesheet">
+	<link href="styles/freelancer.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -43,7 +45,8 @@ Passerelle::gest_error();
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+				<!-- jQuery -->
+				<script src="vendor/jquery/jquery.min.js"></script>
 </head>
 	<body id="page-top" class="index">
 
@@ -55,8 +58,8 @@ Passerelle::gest_error();
 				<?php include "admin/tools/admin-bar.php" ?>
 
 		<section id="portfolio">
-			<div class="container">
-					<div class="col-lg-12 text-center">
+			<!-- <div class="container">
+					<div class="col-lg-12 text-center"> -->
 						<?php
 						//the action
 						if(!empty($_GET['action'])){
@@ -92,8 +95,7 @@ Passerelle::gest_error();
 				<?php include "view/parts/footer.html" ?>
 			</footer>
 
-			<!-- jQuery -->
-			<script src="vendor/jquery/jquery.min.js"></script>
+
 
 			<!-- Bootstrap Core JavaScript -->
 			<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
