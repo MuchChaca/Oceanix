@@ -2,13 +2,13 @@
 
 #Nature: Project for school.
 
-#Main language: French (obligation for school)
+#Main language: French
 
 #Type: Website (PHP and some JQuery)
 
 #Purpose: Make the website of Oceanix, put in application what we've learnt;
 
-#Note: I didn't use github from the begining for this project.
+#Note: Github haven't been used for this project from the begining.
 
 
 [==> Development Status :::: ACTIVE ::::

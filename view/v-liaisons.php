@@ -34,8 +34,8 @@
 								"<td><a href=\"index.php?action=\">
 									<i class=\"fa fa-eye\" aria-hidden=\"true\" alt=\"Voir\" title=\"Voir\"></i>
 								</a></td>
-								<td><a href=\"index.php?action=\">
-									<i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\" alt=\"Modifier\" title=\"Modifier\"></i>
+								<td>&ensp;<a href=\"index.php?action=\">
+									<i class=\"fa fa fa-pencil\" aria-hidden=\"true\" alt=\"Modifier\" title=\"Modifier\"></i>
 								</a></td>
 								<td><a href=\"index.php?action=\">
 									<i class=\"fa fa-trash\" aria-hidden=\"true\" alt=\"Supprimer\" title=\"Supprimer\"></i>

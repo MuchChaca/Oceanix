@@ -33,15 +33,15 @@
 				echo "<tr>
 				<td>".$laTraversee->num()."</td>
 				<td>".$laTraversee->heure()."</td>
-				<td>".$laTraversee->bateau()->nom()."</td>
+				<td >".$laTraversee->bateau()->nom()."</td><td></td>
 				<td><a href=?action=choixtraversees&numTrav=".$laTraversee->num().">Réserver</a></td>";
 				if(Passerelle::logged()):
 					echo
 					"<td><a href=\"index.php?action=\">
 						<i class=\"fa fa-eye\" aria-hidden=\"true\" alt=\"Voir\" title=\"Voir\"></i>
 					</a></td>
-					<td><a href=\"index.php?action=\">
-						<i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\" alt=\"Modifier\" title=\"Modifier\"></i>
+					<td>&ensp;<a href=\"index.php?action=\">
+						<i class=\"fa fa-pencil\" aria-hidden=\"true\" alt=\"Modifier\" title=\"Modifier\"></i>
 					</a></td>
 					<td>
 					<a href=\"index.php?action=\"><i class=\"fa fa-trash\" aria-hidden=\"true\" alt=\"Supprimer\" title=\"Supprimer\"></i>
