@@ -56,7 +56,7 @@ Passerelle::gest_error();
 
 				<?php include "admin/tools/admin-bar.php" ?>
 
-		<section id="portfolio">
+		<!-- <section id="portfolio"> -->
 			<!-- <div class="container">
 					<div class="col-lg-12 text-center"> -->
 						<?php
@@ -88,11 +88,9 @@ Passerelle::gest_error();
 					<!-- </div>
 				</div> -->
 
-		</section>
+		<!-- </section> -->
 		</div>
-			<footer>
 				<?php include "view/parts/footer.html" ?>
-			</footer>
 
 
 

@@ -1,69 +1,48 @@
-[ERREUR 2 - 24/04/2017 12:33:41]: 
-	Cannot modify header information - headers already sent by (output started at /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/tools/admin-bar.php:46)
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/controller/a-connection.php ligne: 4
-[ERREUR 8 - 24/04/2017 12:33:47]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 82
-[ERREUR 2 - 24/04/2017 12:33:53]: 
-	Cannot modify header information - headers already sent by (output started at /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/tools/admin-bar.php:46)
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/controller/a-connection.php ligne: 4
-[ERREUR 8 - 24/04/2017 12:34:25]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 82
-[ERREUR 2 - 24/04/2017 12:34:27]: 
-	Cannot modify header information - headers already sent by (output started at /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/tools/admin-bar.php:46)
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/controller/a-connection.php ligne: 4
-[ERREUR 8 - 24/04/2017 12:36:06]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 12:36:08]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 12:36:18]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 12:36:22]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 12:37:14]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 12:37:14]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 12:37:18]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 12:37:18]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 12:37:42]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 12:37:48]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 15:18:29]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 83
-[ERREUR 8 - 24/04/2017 15:59:33]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 84
-[ERREUR 8 - 24/04/2017 16:01:30]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 84
-[ERREUR 8 - 24/04/2017 16:04:44]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 84
-[ERREUR 8 - 24/04/2017 16:34:24]: 
-	Undefined variable: status
-	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 86
-[ERREUR 8 - 24/04/2017 16:37:27]: 
+[ERREUR 8 - 26/04/2017 12:28:54]: 
+	Undefined variable: leBateau
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/view/v-listetraversees.php ligne: 35
+[ERREUR 8 - 26/04/2017 13:42:24]: 
 	Undefined variable: status
 	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 85
-[ERREUR 8 - 24/04/2017 17:39:29]: 
+[ERREUR 8 - 26/04/2017 13:48:52]: 
 	Undefined variable: status
 	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 85
-[ERREUR 8 - 24/04/2017 17:39:52]: 
+[ERREUR 8 - 26/04/2017 13:49:01]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 85
+[ERREUR 8 - 26/04/2017 14:03:26]: 
+	Undefined index: name
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/controller/a-traiterreservation.php ligne: 23
+[ERREUR 8 - 26/04/2017 14:04:37]: 
+	Undefined index: name
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/controller/a-traiterreservation.php ligne: 23
+[ERREUR 8 - 26/04/2017 14:06:10]: 
+	Undefined index: name
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/controller/a-traiterreservation.php ligne: 23
+[ERREUR 8 - 26/04/2017 14:07:34]: 
+	Undefined index: name
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/controller/a-traiterreservation.php ligne: 23
+[ERREUR 2 - 26/04/2017 14:09:43]: 
+	include(html/header.html): failed to open stream: No such file or directory
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/view/v-erreur_connexion.php ligne: 12
+[ERREUR 8 - 26/04/2017 14:10:00]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 85
+[ERREUR 8 - 26/04/2017 14:10:03]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 85
+[ERREUR 2 - 26/04/2017 14:10:06]: 
+	include(html/header.html): failed to open stream: No such file or directory
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/view/v-erreur_connexion.php ligne: 12
+[ERREUR 8 - 26/04/2017 14:18:23]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 85
+[ERREUR 8 - 26/04/2017 14:28:50]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 85
+[ERREUR 8 - 26/04/2017 14:28:53]: 
+	Undefined variable: status
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 85
+[ERREUR 8 - 26/04/2017 14:29:50]: 
 	Undefined variable: status
 	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/index.php ligne: 85

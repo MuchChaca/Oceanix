@@ -1,3 +1,4 @@
+
 <div class="co-main-container">
 		<!-- <div class="connectForm"> -->
 		<section class="connection-container">
@@ -6,7 +7,7 @@
 				<table>
 					<tr>
 						<th>Nom</th>
-						<td><input type="text" name="login" required /></td>
+						<td><input type="text" name="login" autofocus required /></td>
 					</tr>
 					<tr>
 						<th>Mot de passe</th>

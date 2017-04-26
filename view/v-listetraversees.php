@@ -1,3 +1,4 @@
+<section id="porfolio">
 <div class="container">
 	<div class="col-lg-12 text-center">
 
@@ -11,7 +12,7 @@
 	</div>
 </div><br>
 <div class="row">
-	<div class="col-sm-4 portfolio-item">
+	<!-- <div class="col-sm-4 portfolio-item"> -->
 		<?php
 
 		echo "<div class=\"display-table\">";
@@ -20,7 +21,8 @@
 			<tr>
 				<th>Numéro</th>
 				<th>Heure</th>
-				<th colspan=\"2\">Bateau</th>";
+				<th colspan=\"2\">Bateau</th>
+				<th></th>";
 				if(Passerelle::logged()){
 					echo "<th class=\"admin\" colspan=\"3\">Action</th>";
 				}
@@ -31,7 +33,7 @@
 				echo "<tr>
 				<td>".$laTraversee->num()."</td>
 				<td>".$laTraversee->heure()."</td>
-				<td>".$laTraversee->bateau()->id()."</td>
+				<td>".$laTraversee->bateau()->nom()."</td>
 				<td><a href=?action=choixtraversees&numTrav=".$laTraversee->num().">Réserver</a></td>";
 				if(Passerelle::logged()):
 					echo
@@ -41,8 +43,8 @@
 					<td><a href=\"index.php?action=\">
 						<i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\" alt=\"Modifier\" title=\"Modifier\"></i>
 					</a></td>
-					<td><a href=\"index.php?action=\">
-						<i class=\"fa fa-trash\" aria-hidden=\"true\" alt=\"Supprimer\" title=\"Supprimer\"></i>
+					<td>
+					<a href=\"index.php?action=\"><i class=\"fa fa-trash\" aria-hidden=\"true\" alt=\"Supprimer\" title=\"Supprimer\"></i>
 					</a></td>";
 				endif;
 				echo "</tr>";
@@ -51,8 +53,9 @@
 		</table>";
 		echo "</div>";
 		?>
-	</div>
+	<!-- </div> -->
 </div>
 
 	</div>
 </div>
+</section>

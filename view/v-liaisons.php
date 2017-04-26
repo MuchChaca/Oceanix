@@ -1,3 +1,4 @@
+<section id="porfolio">
 <div class="container">
 		<div class="col-lg-12 text-center">
 
@@ -7,7 +8,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col-sm-4 portfolio-item">
+	<!-- <div class="col-sm-4 portfolio-item"> -->
 		<div class="display-table">
 			<table>
 				<thead>
@@ -46,8 +47,9 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
+	<!-- </div> -->
 </div>
 
 </div>
 </div>
+</section>

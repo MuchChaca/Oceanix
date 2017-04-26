@@ -1,3 +1,4 @@
+<section id="porfolio" class="main-page">
 <div class="container">
 	<div class="col-lg-12 text-center">
 
@@ -12,3 +13,4 @@
 
 	</div>
 </div>
+</section>
