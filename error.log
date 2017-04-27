@@ -1,0 +1,3 @@
+[ERREUR 8192 - 27/04/2017 09:01:08]: 
+	Non-static method Port::findAll() should not be called statically
+	IN /opt/lampp/htdocs/SIO2/SLAM5/Oceanix/admin/controller/a-mod.php ligne: 23

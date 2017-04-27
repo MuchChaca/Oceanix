@@ -2,7 +2,7 @@
 <div class="co-main-container">
 		<!-- <div class="connectForm"> -->
 		<section class="connection-container">
-			<span></span>
+			<span><img src="images/logo_oceanix.png" width="80px"></span>
 			<form action="index.php?action=valid_connexion" method="POST">
 				<table>
 					<tr>

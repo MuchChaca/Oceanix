@@ -23,7 +23,7 @@ class Port{
 	}
 
 	//correct
-	public function findAll(){
+	static public function findAll(){
 		include "connexionDB.php";
 		$req="SELECT *
 				FROM Port;";

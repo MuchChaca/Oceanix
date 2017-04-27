@@ -733,14 +733,14 @@ div#maincontent {
   border-radius: 5px;
 	height: 260px;
 }
-.co-main-container span {
+.co-main-container img { /*** put span instead of img if you have a background url) **/
   display: block;
   position: relative;
   margin: 0 auto;
   top: -40px;
   height: 80px;
   width: 80px;
-  background: #2C3E50;
+  /*background: #2C3E50 url("favicon.png");*/
   border-radius: 50%;
   box-shadow: 1px 1px 2px rgba(0,0,0,.3);
 }
@@ -810,7 +810,8 @@ div#maincontent {
 }
 .simple-form-field input[type='date'],
 .simple-form-field input[type='number'],
-.simple-form-field input[type='text']{
+.simple-form-field input[type='text'],
+.simple-form-field select{
 	background: white;
 	border-radius: 6px;
 	font-size: 16px;
@@ -819,7 +820,10 @@ div#maincontent {
 	height: 30px;
 	margin-bottom: 15px;
 	padding-left: 10px;
+	padding-right: 5px;
 }
+
+
 .simple-form-legend {
 	display: inline-block;
 	width: 250px;

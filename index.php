@@ -25,6 +25,7 @@ Passerelle::gest_error();
     <meta name="author" content="">
 
     <title>Océanix - Compagnie Maritime</title>
+		<link rel="icon" href="favicon.png">
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
