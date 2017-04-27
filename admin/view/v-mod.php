@@ -34,7 +34,7 @@ switch($obj){
 		<!-- main-liaison-container -->
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<form action="index.php?action=modif_bat" method="POST">
+				<form action="index.php?adm=true&action=mod&obj=liai" method="POST">
 					<input type="hidden" name="id" value="<?= $liaison->getCode() ?>" />
 					<div class="form-area">
 						<div class="simple-form">

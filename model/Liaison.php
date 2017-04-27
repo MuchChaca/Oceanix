@@ -12,19 +12,13 @@ class Liaison{
 	}
 
 	/*** Hydrate if needed *** */
-	public function hydrate($code, $distance, $portDep, $portArr, $traversees){
+	public function fillMe($code, $distance, $portDep, $portArr){
 		$this->_code = $code;
 		$this->_distance = $distance;
 		$this->_lePortDep = $portDep;
 		$this->_lePortArr = $portArr;
-		$this->_lesTraversees = $traversees;
 	}
 
-	public function getCode(){ return $this->_code; }
-	public function getLePortDep(){ return $this->_lePortDep; }
-	public function getLePortArr(){ return $this->_lePortArr; }
-	public function getDistance(){ return $this->_distance; }
-	public function getTraversees(){ return $this->_lesTraversees; }
 
 	public function retrieve(){
 		include "connexionDB.php";   //fournis la base de donnée $db
@@ -46,6 +40,22 @@ class Liaison{
 		$this->_lePortDep= $depPort;
 	}
 
+	public function update(){
+		include "connexionDB.php";
+		$code=$this->getCode();
+		$idPortD=$this->getLePortDep()->getId();
+		$idPortA=$this->getLePortArr()->getId();
+		$distance=$this->getDistance();
+		$req=$db->prepare("UPDATE Liaison
+										SET idPortDep=:idPortD, idPortArr=:idPortA, distance=:distance
+										WHERE code=:code");
+		$req->execute([
+			'code' => $code,
+			'idPortD' => $idPortD,
+			'idPortA' => $idPortA,
+			'distance' => $distance
+		]);
+	}
 	/*public function chargerTraversees(){
 		$req=$db->prepare("SELECT num
 								FROM traversee
@@ -90,4 +100,11 @@ class Liaison{
 		}
 		return $lesTraversees;
 	}
+
+	//////////  - GETTERS & SETTERS -  ////////////////
+	public function getCode(){ return $this->_code; }
+	public function getLePortDep(){ return $this->_lePortDep; }
+	public function getLePortArr(){ return $this->_lePortArr; }
+	public function getDistance(){ return $this->_distance; }
+	public function getTraversees(){ return $this->_lesTraversees; }
 }

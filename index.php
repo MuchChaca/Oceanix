@@ -1,5 +1,5 @@
 <?php
-ob_start();
+ob_start(); //For Header('Location: xx')
 /**
  * @param Class $class -> une le nom d'une classe
  * @category Autoload class - Charge automatiquement les classes nécessaires.

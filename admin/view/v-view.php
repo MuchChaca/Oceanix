@@ -30,7 +30,7 @@ switch($obj){
 								<tbody>
 										<tr>
 											<td><?= $liaison->getCode() ?></td>
-											<td><?= $liaison->getDistance() ?></td>
+											<td><?= $liaison->getDistance() ?> km</td>
 											<td><a href="index.php?adm=true&action=mod&obj=liai&id=<?= $liaison->getCode() ?>">
 												<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
 											</a></td>
