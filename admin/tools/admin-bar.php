@@ -40,7 +40,7 @@
 
 				<div class="third-menu">
 						<ul>
-							<li>ADMINISTRATEUR</li>
+							<li class="god-mod-title"><p>ADMINISTRATEUR</p></li>
 						</ul>
 				</div>
 			<?php endif; ?>

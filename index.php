@@ -69,7 +69,7 @@ Passerelle::gest_error();
 						}
 
 						//Setting the path
-						if(!empty($adminMode) && $adminMode){
+						if(!empty($_GET['adm']) && $_GET['adm']==true){
 							$controlerPath="admin/controller/a-".$action;
 							$viewPath="admin/view/v-";
 						}else{
@@ -82,7 +82,11 @@ Passerelle::gest_error();
 						// }
 						//view
 						// if(!empty($status) && !empty($viewPath)){
+						if(!empty($status)){
 							include $viewPath.$status.".php";
+						}else{
+							$status="404";
+						}
 						// }
 						?>
 					<!-- </div>

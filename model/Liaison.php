@@ -5,22 +5,26 @@ class Liaison{
 	private $_code, $_distance;
 	private $_lePortDep, $_lePortArr;
 	private $_lesTraversees = array();
-	
+
 	//\\=> Require a retrieve or create the SETTERS then use them
 	public function __construct($code){
 		$this->_code=$code;
 	}
 
-	public function getCode(){
-		return $this->_code;
+	/*** Hydrate if needed *** */
+	public function hydrate($code, $distance, $portDep, $portArr, $traversees){
+		$this->_code = $code;
+		$this->_distance = $distance;
+		$this->_lePortDep = $portDep;
+		$this->_lePortArr = $portArr;
+		$this->_lesTraversees = $traversees;
 	}
 
-	public function getLePortDep(){
-		return $this->_lePortDep;
-	}
-	public function getLePortArr(){
-		return $this->_lePortArr;
-	}
+	public function getCode(){ return $this->_code; }
+	public function getLePortDep(){ return $this->_lePortDep; }
+	public function getLePortArr(){ return $this->_lePortArr; }
+	public function getDistance(){ return $this->_distance; }
+	public function getTraversees(){ return $this->_lesTraversees; }
 
 	public function retrieve(){
 		include "connexionDB.php";   //fournis la base de donnée $db
@@ -30,7 +34,7 @@ class Liaison{
 				WHERE code=\"".$this->_code."\";";
 		$result=$db->query($req);
 		$result=$result->fetch();
-		
+
 		$this->_distance=$result['distance'];
 		//Port Arrivé
 		$arrPort= new Port($result['idPortArr']);

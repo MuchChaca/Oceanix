@@ -664,7 +664,7 @@ div#maincontent {
 }
 
 .display-table td:last-child {
-  text-align: right;
+  text-align: left;
   padding-right: 10px;
 }
 
@@ -878,3 +878,59 @@ div#maincontent {
 .text-404{
 	margin-top: 25px;
 }
+
+/***********************************************/
+/****************  - GOD MODE -  ***************/
+.third-menu p{
+        -webkit-animation: color-change 4s infinite;
+        -moz-animation: color-change 4s infinite;
+        -o-animation: color-change 4s infinite;
+        -ms-animation: color-change 4s infinite;
+        animation: color-change 4s infinite;
+    }
+
+    @-webkit-keyframes color-change {
+					15% { color: white; }
+					28% { color: #a0bad6; }
+					42% { color: #7796b5; }
+					56% { color: #4f6e8e; }
+					70% { color: #7796b5; }
+					84% { color: #a0bad6; }
+					100% { color: white; }
+    }
+    @-moz-keyframes color-change {
+					15% { color: white; }
+					28% { color: #a0bad6; }
+					42% { color: #7796b5; }
+					56% { color: #4f6e8e; }
+					70% { color: #7796b5; }
+					84% { color: #a0bad6; }
+					100% { color: white; }
+    }
+    @-ms-keyframes color-change {
+					15% { color: white; }
+					28% { color: #a0bad6; }
+					42% { color: #7796b5; }
+					56% { color: #4f6e8e; }
+					70% { color: #7796b5; }
+					84% { color: #a0bad6; }
+					100% { color: white; }
+    }
+    @-o-keyframes color-change {
+					15% { color: white; }
+					28% { color: #a0bad6; }
+					42% { color: #7796b5; }
+					56% { color: #4f6e8e; }
+					70% { color: #7796b5; }
+					84% { color: #a0bad6; }
+					100% { color: white; }
+    }
+    @keyframes color-change {
+					15% { color: white; }
+					28% { color: #a0bad6; }
+					42% { color: #7796b5; }
+					56% { color: #4f6e8e; }
+					70% { color: #7796b5; }
+					84% { color: #a0bad6; }
+					100% { color: white; }
+    }

@@ -29,18 +29,18 @@
 							<td>".$aLiaison->getLePortDep()->getNom()."</td>
 							<td>".$aLiaison->getLePortArr()->getNom()."</td>
 							<td><a href=\"?action=afftraversees&trav=".$aLiaison->getCode()."\">Afficher les traversées</a></td>";
-							if(Passerelle::logged()):
+							if(Passerelle::logged()){
 								echo
-								"<td><a href=\"index.php?action=\">
+								"<td><a href=\"index.php?adm=true&action=view&obj=liai&id=".$aLiaison->getCode()."\">
 									<i class=\"fa fa-eye\" aria-hidden=\"true\" alt=\"Voir\" title=\"Voir\"></i>
 								</a></td>
-								<td>&ensp;<a href=\"index.php?action=\">
+								<td>&ensp;<a href=\"index.php?adm=true&action=mod&obj=liai&id=".$aLiaison->getCode()."\">
 									<i class=\"fa fa fa-pencil\" aria-hidden=\"true\" alt=\"Modifier\" title=\"Modifier\"></i>
 								</a></td>
-								<td><a href=\"index.php?action=\">
+								<td><a href=\"index.php?adm=true&action=del&obj=liai&id=".$aLiaison->getCode()."\">
 									<i class=\"fa fa-trash\" aria-hidden=\"true\" alt=\"Supprimer\" title=\"Supprimer\"></i>
 								</a></td>";
-							endif;
+							}
 						echo "</tr>";
 					}
 					?>

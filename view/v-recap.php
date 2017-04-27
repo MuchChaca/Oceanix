@@ -31,7 +31,7 @@
 				<th colspan="2"><h6>Réservation enregistrée sous le n°<?= $reservation->num(); ?>:</h6></th>
 			</tr>
 			<tr>
-				<th colspan="2"><?= $reservation->nom().", ".$reservation->adr()." ".$reservation->ville() ?></th>
+				<th colspan="2"><?= $reservation->nom().", ".$reservation->adr()." ".$reservation->cp()." ".$reservation->ville() ?></th>
 			</tr>
 
 		</thead>
