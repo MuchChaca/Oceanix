@@ -1,52 +1,49 @@
-<?php
-if (Passerelle::logged()){
-?>
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Compagnie Maritime Océanix</title>
-		<meta charset="UTF-8" />
-		<link rel="stylesheet" type="text/css" href="styles/style.css" />
-		<script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
-	</head>
-	<body>
-		<div id="main">
-			<header>
-				<?php include "html/header.html" ?>
-				<nav>
-					<?php include "html/menu.html" ?>
-				</nav>
-			</header>
-
-			<section>
-				<div class="content">
 					<?php
-					if(!empty($bat)){
-						if($result = true)
-						echo "<h1> Le bateau: \"".$bat->nomBat()."\" a été supprimé avec succès !</h1>";
-						echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
-						else {
-							echo "<h1>ERREUR: Le Bateau n'a pas put être supprimé. Veuillez réessayer.</h1>";
-						}
-					}else if(!empty($typCateg)){
-						if($result = true)
-						echo "<h1> Le type / catégorie: \"".$typCateg->libelle()."\" a été supprimé avec succès !</h1>"
-						echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
-						else {
-							echo "<h1>ERREUR: Le type / catégorie n'a pas put être supprimé. Veuillez réessayer.</h1>";
-						}
-					}
+					// if(!empty($bat)){
+					// 	if($result = true)
+					// 	echo "<h1> Le bateau: \"".$bat->nomBat()."\" a été supprimé avec succès !</h1>";
+					// 	echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
+					// 	else {
+					// 		echo "<h1>ERREUR: Le Bateau n'a pas put être supprimé. Veuillez réessayer.</h1>";
+					// 	}
+					// }else if(!empty($typCateg)){
+					// 	if($result = true)
+					// 	echo "<h1> Le type / catégorie: \"".$typCateg->libelle()."\" a été supprimé avec succès !</h1>"
+					// 	echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
+					// 	else {
+					// 		echo "<h1>ERREUR: Le type / catégorie n'a pas put être supprimé. Veuillez réessayer.</h1>";
+					// 	}
+					// }
 					?>
+<section id="porfolio">
+<div class="container">
+<div class="col-lg-12 text-center">
 
-				</div>
-			</section>
-
-			<footer>
-				<?php include "html/footer.html" ?>
-			</footer>
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h1>Supression effectuée</h1>
 		</div>
-	</body>
-</html>
+	</div>
 <?php
-}else{ Header('Locate: /index.php?action=404');}
-?>
+if(!empty($liaisonCode)){ ?>
+	<!-- Confirmation -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h3>La Liaison <?= $liaisonCode ?> a bien été supprimé.</h3>
+		</div>
+	</div>
+	<br>
+	<!-- //Msg-Retrou -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<p><a href="index.php?action=liaisons">Retour à la liste des liaisons</a></p>
+		</div>
+	</div>
+
+
+<?php
+} ?>
+
+</div> <!-- //text-center -->
+</div> <!-- //container -->
+</section> <!-- //#portfolio -->

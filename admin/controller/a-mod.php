@@ -53,5 +53,7 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 			$etat="404";
 			break;
 	}
+}else{
+	$status="404";
 }
 ?>

@@ -56,6 +56,14 @@ class Liaison{
 			'distance' => $distance
 		]);
 	}
+
+	public function delete(){
+		include "connexionDB.php";
+		$code=$this->getCode();
+		$req=$db->prepare("DELETE FROM Liaison
+										WHERE code=:code");
+		$req->execute(['code' => $code]);
+	}
 	/*public function chargerTraversees(){
 		$req=$db->prepare("SELECT num
 								FROM traversee

@@ -14,8 +14,8 @@
 												<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 																<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
 												</button>
-												<a class="navbar-brand" href="index.php">
-													<img src="favicon.png" width="40px" style="float: left; margin: -10px 10px;">
+												<a class="navbar-brand" href="index.php" title="Compagnie Maritime Océanix">
+													<img src="favicon.png" width="40px" style="float: left; margin: -10px 10px;" alt="logo-oceanix">
 													Océanix
 												</a>
 								</div>
