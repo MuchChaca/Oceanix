@@ -30,6 +30,10 @@ include "vue/v-".$etat.'.php';
 	* @TODO +Make a way to go back to the regualr website from the admin part (jQuery)
 	* @TODO +Animation de tutoriel comment faire une réservation. (jQuery)
 	* @TODO +Possibilité de choisir parmit les lettre et numéros existant ou d'entrer un nouveau pour les modif de TypeCateg
-	* @TODO
+	* @TODO +Download the reservation in pdf
 */
+/**
+ * @TODO Pagination for the tables
+ *
+ */
 ?>

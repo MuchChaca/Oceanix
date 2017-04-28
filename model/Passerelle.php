@@ -55,6 +55,43 @@ abstract class Passerelle{
 			// On emploie "exit" pour arrêter l'execution
 			exit($msgErrorUser);
 		});
+	}
 
+	/**
+	  * Splits a table by providing a numer of rows per table.
+	  * @param array $table expect the table to split
+	  * @param int The limit rows of the array
+	  * @return array[][] Double dimension array with the split table
+	  */
+	public static function splitTable($table, $limit){
+		$returnTab= array();
+		$rank=0;
+		$j=0;
+		$max = $limit;
+		$rest=sizeof($table)%$limit;
+		if($rest == 0){
+			while($j<sizeof($table)){
+				for($j; $j<$max; $j++){
+					$returnTab[$rank][]=$table[$j];
+				}
+				$rank++;
+				$max += $limit;
+			}
+		}else{
+			while($j<sizeof($table)-$rest){
+				for($j; $j<$max; $j++){
+					$returnTab[$rank][]=$table[$j];
+				}
+				$rank++;
+				$max += $limit;
+			}
+
+			$max = $max - $limit + $rest;
+			
+			for($j; $j<$max; $j++){
+				$returnTab[$rank][]=$table[$j];
+			}
+		}
+		return $returnTab;
 	}
 }

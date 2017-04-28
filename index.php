@@ -12,6 +12,7 @@ spl_autoload_register("loadClass");
 session_start();
 
 Passerelle::gest_error();
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">

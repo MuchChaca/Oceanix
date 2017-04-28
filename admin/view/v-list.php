@@ -47,7 +47,30 @@
 												</tr>
 											<?php endforeach; ?>
 										</tboby>
+										<tfoot>
+											<tr>
+												<td colspan="2" style="text-align: left;">
+													<?php
+													if($prevPage >= 0){
+														echo "<a href=\"index.php?adm=true&action=list&obj=boat&page=".$prevPage."\">&lt; Précédent</a>";
+													}else{
+														echo "&lt; Précédent";
+													}
+													?>
+												</td>
+												<td colspan="2" style="text-align: right;">
+													<?php
+													if($nextPage >= 0){
+														echo "<a href=\"index.php?adm=true&action=list&obj=boat&page=".$nextPage."\">Suivant &gt;</a>";
+													}else{
+														echo "Suivant &gt;";
+													}
+													?>
+												</td>
+											</tr>
+										</tfoot>
 									</table>
+
 								</div>
 							</div>
 						<?php
