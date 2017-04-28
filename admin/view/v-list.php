@@ -1,27 +1,7 @@
-<?php
-if (Passerelle::logged()){
-?>
-
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Compagnie Maritime Océanix</title>
-		<link rel="stylesheet" type="text/css" href="styles/style.css" />
-		<link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
-		<script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
-	</head>
-	<body>
-		<div id="main">
-			<header>
-				<?php include "html/header.html" ?>
-				<nav>
-					<?php include "html/menu.html" ?>
-				</nav>
-			</header>
-
-			<section>
-				<div class="content">
+<?php if(Passerelle::logged()){ ?>
+<section id="porfolio">
+<div class="container">
+<div class="col-lg-12 text-center">
 
 					<?php
 						if(!empty($listTypCateg)){
@@ -43,6 +23,34 @@ if (Passerelle::logged()){
 								</tr>";
 							}
 							echo "</table>";
+						}else if(!empty($listBat)){ ?>
+							<div class="col-md-3 col-md-offset-3">
+								<div class="display-table">
+									<table>
+										<thead>
+												<th>ID</th>
+												<th>Nom</th>
+												<th colspan="2">Action</th>
+											</tr>
+										</thead>
+										<tboby>
+											<?php foreach($listBat as $bat): ?>
+												<tr>
+													<td><?= $bat->idBat() ?></td>
+													<td><?= $bat->nomBat() ?></td>
+													<td><a href="index.php?adm=true&action=mod&obj=boat&id=<?= $bat->idBat() ?>">
+														<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
+													</a></td>
+													<td><a href="index.php?adm=true&action=del&obj=boat&id=<?= $bat->idBat() ?>">
+														<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
+													</a></td>
+												</tr>
+											<?php endforeach; ?>
+										</tboby>
+									</table>
+								</div>
+							</div>
+						<?php
 						}
 					?>
 
@@ -59,3 +67,7 @@ if (Passerelle::logged()){
 <?php
 }else{ Header('Locate: /index.php?action=404');}
 ?>
+
+</div> <!-- //text-center -->
+</div> <!-- //container -->
+</section> <!-- //portfolio -->

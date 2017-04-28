@@ -34,6 +34,15 @@
 								<a href="#">Effacer une Categorie</a>
 							</div>
 						</div></li>
+						<li><div class="dropdown">
+							<button class="dropbtn">Bateaux</button>
+							<div class="dropdown-content">
+								<a href="?adm=true&action=list&obj=boat">Lister les Bateaux</a>
+								<a href="#">Nouveau Bateau</a>
+								<a href="#">Editer des Bateaux</a>
+								<a href="#">Effacer des Bateaux</a>
+							</div>
+						</div></li>
 					</ul>
 
 				</div>
