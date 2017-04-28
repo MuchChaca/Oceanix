@@ -12,7 +12,7 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 			$status="list";
 			break;
 		default:
-			$etat="404";
+			$status="404";
 	}
 
 }else{

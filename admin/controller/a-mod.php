@@ -1,7 +1,8 @@
 <?php
 if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) && Passerelle::logged()){
 	switch ($_GET['obj']){
-		case 'tycat':	// If it's for TypeCateg ('tycat')
+		// If it's for TypeCateg ('tycat')
+		case 'tycat':
 			if(!empty($_POST['lettre']) && !empty($_POST['num']) && !empty($_POST['libelle'])){
 				$typCateg= new TypeCateg($_POST['lettre'], $_POST['num'], $_POST['libelle']);
 				$typCateg->update();
@@ -38,14 +39,15 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 		//=> Modify a Boat
 		case 'boat':
 			if(!empty($_POST['id']) && !empty($_POST['nomBat'])){
-				$bat= new Bateau($_POST['id'], null, null);
-				$bat->setNom($_POST['nomBat']);
-				$bat->update();
-				$etat= "modif_ok";
+				$newBat= new Bateau($_POST['id'], null, null);
+				$newBat->setNom($_POST['nomBat']);
+				$newBat->update();
+				$status= "modif_ok";
 			}else if(!empty($_GET['id'])){
 				$bat= new Bateau($_GET['id'], null, null);
 				$bat->retrieve();
-				$etat= "form_saisie_bat";
+				$status= "mod";
+				$obj='boat';
 			}
 			break;
 		//=> Default action

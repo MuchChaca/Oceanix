@@ -2,22 +2,6 @@
 <div class="container">
 <div class="col-lg-12 text-center">
 
-<?php
-if(!empty($bat)){ ?>
-	<h1> Modification d'un bateau </h1>
-	<form action="index.php?action=modif_bat" method="POST">
-		<table>
-			<tr>
-				<td>Nom bateau </td><td><input type="text" size=30 name="nomBat" required value="<?= $bat->nomBat(); ?>"/>
-				<input type="hidden" name="id" value="<?= $bat->idBat(); ?>" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Valider"></input></td>
-			</tr>
-		</table>
-	</form><?php
-}
-?>
 
 <?php
 if(!empty($obj)){
@@ -38,13 +22,13 @@ switch($obj){
 					<input type="hidden" name="id" value="<?= $liaison->getCode() ?>" />
 					<div class="form-area">
 						<div class="simple-form">
-							<div class="simple-form-legend form-left">Distance Liaison </div>
+							<div class="simple-form-legend form-left"><h5>Distance Liaison </h5></div>
 							<div class="simple-form-field form-left">
 								<input type="number" size=30 name="distance" required value="<?= $liaison->getDistance(); ?>"/>
 							</div>
 						</div>
 						<div class="simple-form">
-							<div class="simple-form-legend form-left">Port de départ </div>
+							<div class="simple-form-legend form-left"><h5>Port de départ </h5></div>
 							<div class="simple-form-field form-left">
 								<select name="portDep">
 									<?php foreach($ports as $port){ ?>
@@ -57,7 +41,7 @@ switch($obj){
 							</div>
 						</div>
 						<div class="simple-form">
-							<div class="simple-form-legend form-left">Port d'arrivé </div>
+							<div class="simple-form-legend form-left"><h5>Port d'arrivé </h5></div>
 							<div class="simple-form-field form-left">
 								<select name="portArr">
 									<?php foreach($ports as $port){ ?>
@@ -78,6 +62,38 @@ switch($obj){
 		</div>
 		<?php
 		break; ?>
+		<?php
+		//--> BATEAU
+		case 'boat': ?>
+			<!-- TITLE-BATEAU -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h1>Le Bateau: <?= $bat->nomBat() ?></h1>
+				</div>
+			</div>
+
+			<!-- main-Bateau-container -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<form action="index.php?adm=true&action=mod&obj=boat" method="POST">
+						<input type="hidden" name="id" value="<?= $bat->idBat() ?>" />
+						<div class="form-area">
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Nom </h5></div>
+								<div class="simple-form-field form-left">
+									<input type="text" size=40 name="nomBat" required value="<?= $bat->nomBat(); ?>"/>
+								</div>
+							</div>
+							<!-- submit -->
+							<div class="simple-form">
+								<div class="simple-form-submit"><input type="submit" value="Valider"></input></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<?php
+			break; ?>
 <?php
 }
 }

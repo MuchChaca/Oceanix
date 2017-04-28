@@ -23,14 +23,14 @@
 								</tr>";
 							}
 							echo "</table>";
-						}else if(!empty($listBat)){ ?>
+						}else if(!empty($listBat)){ //LIST OF THE BOATS ?>
 							<div class="col-md-3 col-md-offset-3">
 								<div class="display-table">
 									<table>
 										<thead>
 												<th>ID</th>
 												<th>Nom</th>
-												<th colspan="2">Action</th>
+												<th class="admin" colspan="2">Action</th>
 											</tr>
 										</thead>
 										<tboby>
@@ -54,15 +54,6 @@
 						}
 					?>
 
-				</div>
-			</section>
-
-			<footer>
-				<?php include "html/footer.html" ?>
-			</footer>
-		</div>
-	</body>
-</html>
 
 <?php
 }else{ Header('Locate: /index.php?action=404');}

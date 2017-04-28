@@ -10,10 +10,8 @@
 						<li><div class="dropdown">
 							<button class="dropbtn">Liaisons</button>
 							<div class="dropdown-content">
-								<a href="#">Lister les Liaisons</a>
+								<a href="?action=liaisons">Lister les Liaisons</a>
 								<a href="#">Nouvelle Liaison</a>
-								<a href="#">Editer des Liaisons</a>
-								<a href="#">Effacer des Liaisons</a>
 							</div>
 						</div></li>
 						<li><div class="dropdown">
@@ -21,8 +19,6 @@
 							<div class="dropdown-content">
 								<a href="#">Lister les Traversées</a>
 								<a href="#">Nouvelle Traversée</a>
-								<a href="#">Editer une Traversée</a>
-								<a href="#">Effacer une Traversée</a>
 							</div>
 						</div></li>
 						<li><div class="dropdown">
@@ -30,8 +26,6 @@
 							<div class="dropdown-content">
 								<a href="#">Lister les  Categories</a>
 								<a href="#">Nouvelle Categorie</a>
-								<a href="#">Editer une Categorie</a>
-								<a href="#">Effacer une Categorie</a>
 							</div>
 						</div></li>
 						<li><div class="dropdown">
@@ -39,8 +33,13 @@
 							<div class="dropdown-content">
 								<a href="?adm=true&action=list&obj=boat">Lister les Bateaux</a>
 								<a href="#">Nouveau Bateau</a>
-								<a href="#">Editer des Bateaux</a>
-								<a href="#">Effacer des Bateaux</a>
+							</div>
+						</div></li>
+						<li><div class="dropdown">
+							<button class="dropbtn">Ports</button>
+							<div class="dropdown-content">
+								<a href="?adm=true&action=list&obj=port">Lister les Ports</a>
+								<a href="#">Nouveau Port</a>
 							</div>
 						</div></li>
 					</ul>

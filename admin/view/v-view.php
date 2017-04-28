@@ -86,7 +86,7 @@ switch($obj){
 									<tr>
 										<th>ID</th>
 										<th>Nom</th>
-										<th colspan="2">Action</th>
+										<th class="admin" colspan="2">Action</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -117,7 +117,10 @@ switch($obj){
 }
 }else{
 	Header('Location: index.php?action=404');
-} ?>
+}
+}else{
+	Header('Location: index.php?action=valid_connexion');
+}?>
 
 
 </div> <!-- //text-center -->
