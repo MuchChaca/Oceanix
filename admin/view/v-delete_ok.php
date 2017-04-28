@@ -29,7 +29,7 @@ if(!empty($liaisonCode)){ ?>
 	<!-- Confirmation -->
 	<div class="row">
 		<div class="col-lg-12 text-center">
-			<h3>La Liaison <?= $liaisonCode ?> a bien été supprimé.</h3>
+			<h3>La Liaison &quot;<?= $liaisonCode ?>&quot; a bien été supprimé.</h3>
 		</div>
 	</div>
 	<br>
@@ -42,7 +42,23 @@ if(!empty($liaisonCode)){ ?>
 
 
 <?php
-} ?>
+}else if(!empty($bat)){ ?>
+	<!-- Confirmation -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h3>Le Bateau &quot;<?= $bat->nomBat() ?>&quot; a bien été supprimé.</h3>
+		</div>
+	</div>
+	<br>
+	<!-- //Msg-Retrou -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<p><a href="index.php?adm=true&action=list&obj=boat">Retour à la liste des bateaux</a></p>
+		</div>
+	</div>
+<?php
+}
+?>
 
 </div> <!-- //text-center -->
 </div> <!-- //container -->

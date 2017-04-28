@@ -9,10 +9,23 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 				$liaison->retrieve();
 				$liaison->delete();
 				$status="delete_ok";
+			}else{
+				$status="404";
+			}
+			break;
+		//=> Delete a Bateau
+		case 'boat':
+			if(!empty($_GET['id'])){
+				$bat= new Bateau($_GET['id'], null, null);
+				$bat->retrieve();
+				$bat->delete();
+				$status="delete_ok";
+			}else{
+				$status="404";
 			}
 			break;
 		default:
-			//
+			$status="404";
 			break;
 	}
 }else{
