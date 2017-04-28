@@ -16,6 +16,7 @@ class Bateau{
 		include "connexionDB.php";
 		$req="INSERT INTO Bateau (nom) VALUES ('". $this->_nomBat ."')";
 		$db->exec($req);
+		$this->_idBat= $db->lastInsertId();
 	}
 
 	/**

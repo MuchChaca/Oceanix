@@ -96,6 +96,8 @@ switch($obj){
 			break; ?>
 <?php
 }
+}else{
+	Header('Locate: /index.php?action=404');
 }
 ?>
 

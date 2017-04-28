@@ -55,10 +55,9 @@
 					?>
 
 
-<?php
-}else{ Header('Locate: /index.php?action=404');}
-?>
-
 </div> <!-- //text-center -->
 </div> <!-- //container -->
 </section> <!-- //portfolio -->
+<?php
+}else{ Header('Locate: /index.php?action=valid_connexion');}
+?>

@@ -32,7 +32,7 @@
 							<button class="dropbtn">Bateaux</button>
 							<div class="dropdown-content">
 								<a href="?adm=true&action=list&obj=boat">Lister les Bateaux</a>
-								<a href="#">Nouveau Bateau</a>
+								<a href="?adm=true&action=new&obj=boat">Nouveau Bateau</a>
 							</div>
 						</div></li>
 						<li><div class="dropdown">
