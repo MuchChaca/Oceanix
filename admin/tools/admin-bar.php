@@ -39,7 +39,7 @@
 							<button class="dropbtn">Ports</button>
 							<div class="dropdown-content">
 								<a href="?adm=true&action=list&obj=port">Lister les Ports</a>
-								<a href="#">Nouveau Port</a>
+								<a href="?adm=true&action=new&obj=port">Nouveau Port</a>
 							</div>
 						</div></li>
 					</ul>

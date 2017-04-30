@@ -5,11 +5,16 @@ class Port{
 	public function __construct($id){
 		$this->_id=$id;
 	}
-	public function getId(){
-		return $this->_id;
-	}
-	public function getNom(){
-		return $this->_nom;
+
+
+	public function create(){
+		include "connexionDB.php";
+		$stmt=$db->prepare("INSERT INTO Port(nom)
+											VALUES(:nom)");
+		$stmt->execute([
+			'nom' => $this->getNom()
+		]);
+		$this->_id= $db->lastInsertId();
 	}
 
 	public function retrieve(){
@@ -36,4 +41,11 @@ class Port{
 		}
 		return $mesPorts;
 	}
+
+	//////////  - GETTERS & SETTERS -  ////////////////
+	public function getId(){ return $this->_id; }
+	public function getNom(){ return $this->_nom; }
+
+	public function setId($id){ $this->_id = $id ; }
+	public function setNom($nom){ $this->_nom = $nom; }
 }

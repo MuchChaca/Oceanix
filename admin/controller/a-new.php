@@ -13,6 +13,18 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 				$obj="boat";
 			}
 			break;
+			//=> New Port
+			case 'port':
+				if(!empty($_POST['nom'])){ //If the form is filled
+					$newPort= new Port(null);
+					$newPort->setNom($_POST['nom']);
+					$newPort->create();
+					$status="new_ok";
+				}else{	// Else we display the form
+					$status="new";
+					$obj="port";
+				}
+				break;
 		//=> New Liaison
 		case 'liai':
 			if(!empty($_POST['code']) && !empty($_POST['distance']) && (!empty($_POST['portDep']) && $_POST['portDep']!="err") && (!empty($_POST['portArr']) && $_POST['portArr']!="err")){

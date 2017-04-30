@@ -36,6 +36,36 @@ if(Passerelle::logged()){ ?>
 			</div>
 			<?php
 			break;
+		//=> NEW PORT
+		case 'port': ?>
+			<!-- TITLE-PORT -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h1>Création d'un port</h1>
+				</div>
+			</div>
+
+			<!-- main-Port-container -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<form action="index.php?adm=true&action=new&obj=port" method="POST">
+						<div class="form-area">
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Nom </h5></div>
+								<div class="simple-form-field form-left">
+									<input type="text" size=40 name="nom" required />
+								</div>
+							</div>
+							<!-- submit -->
+							<div class="simple-form">
+								<div class="simple-form-submit"><input type="submit" value="Valider"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<?php
+			break;
 		//=> NEW LIAISON
 		case 'liai': ?>
 			<!-- TITLE-LIAISON -->
