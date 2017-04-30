@@ -1,12 +1,5 @@
 					<?php
-					// if(!empty($bat)){
-					// 	if($result = true)
-					// 	echo "<h1> Le bateau: \"".$bat->nomBat()."\" a été supprimé avec succès !</h1>";
-					// 	echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
-					// 	else {
-					// 		echo "<h1>ERREUR: Le Bateau n'a pas put être supprimé. Veuillez réessayer.</h1>";
-					// 	}
-					// }else if(!empty($typCateg)){
+					// if(!empty($typCateg)){
 					// 	if($result = true)
 					// 	echo "<h1> Le type / catégorie: \"".$typCateg->libelle()."\" a été supprimé avec succès !</h1>"
 					// 	echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
@@ -54,6 +47,21 @@ if(!empty($liaisonCode)){ ?>
 	<div class="row">
 		<div class="col-lg-12 text-center">
 			<p><a href="index.php?adm=true&action=list&obj=boat">Retour à la liste des bateaux</a></p>
+		</div>
+	</div>
+<?php
+}else if(!empty($port)){ ?>
+	<!-- Confirmation -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h3>Le Port &quot;<?= $port->getNom() ?>&quot; a bien été supprimé.</h3>
+		</div>
+	</div>
+	<br>
+	<!-- //Msg-Retrou -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<p><a href="index.php?adm=true&action=list&obj=port">Retour à la liste des ports</a></p>
 		</div>
 	</div>
 <?php

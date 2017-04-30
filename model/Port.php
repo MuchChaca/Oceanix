@@ -27,6 +27,16 @@ class Port{
 		$this->_nom=$result['nom'];
 	}
 
+
+	public function delete(){
+		include "connexionDB.php";
+		$req=$db->prepare("DELETE FROM Port
+										WHERE id=:id");
+		$req->execute([
+			'id' => $this->getId()
+		]);
+	}
+
 	//correct
 	static public function findAll(){
 		include "connexionDB.php";

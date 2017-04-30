@@ -24,6 +24,17 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 				$status="404";
 			}
 			break;
+			//=> Delete a Port
+			case 'port':
+				if(!empty($_GET['id'])){
+					$port= new Port($_GET['id']);
+					$port->retrieve();
+					$port->delete();
+					$status="delete_ok";
+				}else{
+					$status="404";
+				}
+				break;
 		default:
 			$status="404";
 			break;
