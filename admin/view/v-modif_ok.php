@@ -111,8 +111,48 @@
 				</div>
 					<p><a href="?adm=true&action=list&obj=boat">Retour à la liste des bateaux</a></p>
 				<?php
+			}else if(!empty($newPort)){ ?>
+					<!-- TITLE-Port -->
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h1>Modification effectuée</h1>
+						</div>
+					</div>
+
+					<div class="row">
+						<!-- div-liaison -->
+						<div class="col-lg-12 text-center">
+							<div class="display-table">
+								<table>
+									<thead>
+										<tr><th colspan="6"><h5>Le Port Modifié</h5></th></tr>
+										<tr>
+											<th>ID</th>
+											<th>Nom</th>
+											<th colspan="2">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+											<tr>
+												<td><?= $newPort->getId() ?></td>
+												<td><?= $newPort->getNom() ?></td>
+												<td><a href="index.php?adm=true&action=mod&obj=port&id=<?= $newPort->getId() ?>">
+													<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
+												</a></td>
+												<td><a href="index.php?adm=true&action=del&obj=port&id=<?= $newPort->getId() ?>">
+													<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
+												</a></td>
+											</tr>
+									</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+					<p><a href="?adm=true&action=list&obj=port">Retour à la liste des ports</a></p>
+				<?php
 				}
 				?>
+				
 </div> <!-- //text-center -->
 </div> <!-- //container -->
 </section> <!-- //#portfolio -->

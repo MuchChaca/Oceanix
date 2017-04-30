@@ -93,7 +93,38 @@ switch($obj){
 				</div>
 			</div>
 			<?php
-			break; ?>
+			break;
+			//--> Port
+			case 'port': ?>
+				<!-- TITLE-PORT -->
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h1>Le port: <?= $port->getNom() ?></h1>
+					</div>
+				</div>
+
+				<!-- main-Bateau-container -->
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<form action="index.php?adm=true&action=mod&obj=port" method="POST">
+							<input type="hidden" name="id" value="<?= $port->getId() ?>" />
+							<div class="form-area">
+								<div class="simple-form">
+									<div class="simple-form-legend form-left"><h5>Nom </h5></div>
+									<div class="simple-form-field form-left">
+										<input type="text" size=40 name="nom" required value="<?= $port->getNom(); ?>"/>
+									</div>
+								</div>
+								<!-- submit -->
+								<div class="simple-form">
+									<div class="simple-form-submit"><input type="submit" value="Valider" /></div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<?php
+				break; ?>
 <?php
 }
 }else{

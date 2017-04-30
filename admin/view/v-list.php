@@ -24,6 +24,12 @@
 							}
 							echo "</table>";
 						}else if(!empty($listBat)){ //LIST OF THE BOATS ?>
+							<div class="row">
+								<div class="col-lg-12 text-center">
+									<h1>Liste des Bateaux</h1>
+								</div>
+							</div>
+
 							<div class="col-md-3 col-md-offset-3">
 								<div class="display-table">
 									<table>
@@ -75,6 +81,12 @@
 							</div>
 						<?php
 					}else if(!empty($listPort)){ //LIST OF THE PORTS ?>
+						<div class="row">
+							<div class="col-lg-12 text-center">
+								<h1>Liste des Ports</h1>
+							</div>
+						</div>
+
 						<div class="col-md-3 col-md-offset-3">
 							<div class="display-table">
 								<table>

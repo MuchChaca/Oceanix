@@ -50,6 +50,20 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 				$obj='boat';
 			}
 			break;
+		//=> Modify a Port
+		case 'port':
+			if(!empty($_POST['id']) && !empty($_POST['nom'])){
+				$newPort= new Port($_POST['id']);
+				$newPort->setNom($_POST['nom']);
+				$newPort->update();
+				$status= "modif_ok";
+				}else if(!empty($_GET['id'])){
+				$port= new Port($_GET['id']);
+				$port->retrieve();
+				$status= "mod";
+				$obj='port';
+			}
+			break;
 		//=> Default action
 		default:
 			$etat="404";
