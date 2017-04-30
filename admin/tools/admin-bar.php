@@ -11,7 +11,7 @@
 							<button class="dropbtn">Liaisons</button>
 							<div class="dropdown-content">
 								<a href="?action=liaisons">Lister les Liaisons</a>
-								<a href="#">Nouvelle Liaison</a>
+								<a href="?adm=true&action=new&obj=liai">Nouvelle Liaison</a>
 							</div>
 						</div></li>
 						<li><div class="dropdown">

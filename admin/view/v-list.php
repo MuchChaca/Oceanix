@@ -52,18 +52,18 @@
 												<td colspan="2" style="text-align: left;">
 													<?php
 													if($prevPage >= 0){
-														echo "<a href=\"index.php?adm=true&action=list&obj=boat&page=".$prevPage."\">&lt; Précédent</a>";
+														echo "<a href=\"index.php?adm=true&action=list&obj=boat&page=".$prevPage."\">&lt;&lt; Précédent</a>";
 													}else{
-														echo "&lt; Précédent";
+														echo "&lt;&lt; Précédent";
 													}
 													?>
 												</td>
 												<td colspan="2" style="text-align: right;">
 													<?php
 													if($nextPage >= 0){
-														echo "<a href=\"index.php?adm=true&action=list&obj=boat&page=".$nextPage."\">Suivant &gt;</a>";
+														echo "<a href=\"index.php?adm=true&action=list&obj=boat&page=".$nextPage."\">Suivant &gt;&gt;</a>";
 													}else{
-														echo "Suivant &gt;";
+														echo "Suivant &gt;&gt;";
 													}
 													?>
 												</td>

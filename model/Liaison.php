@@ -12,8 +12,7 @@ class Liaison{
 	}
 
 	/*** Hydrate if needed *** */
-	public function fillMe($code, $distance, $portDep, $portArr){
-		$this->_code = $code;
+	public function fillMe($portDep, $portArr, $distance){
 		$this->_distance = $distance;
 		$this->_lePortDep = $portDep;
 		$this->_lePortArr = $portArr;
@@ -38,6 +37,18 @@ class Liaison{
 		$depPort=new Port($result['idPortDep']);
 		$depPort->retrieve();
 		$this->_lePortDep= $depPort;
+	}
+
+	public function create(){
+		include "connexionDB.php";
+		$stmt=$db->prepare("INSERT INTO Liaison(code, idPortDep, idPortArr, distance)
+											VALUES(:code, :idPortD, :idPortA, :distance)");
+		$stmt->execute([
+			'code' => $this->getCode(),
+			'idPortD' => $this->getLePortDep()->getId(),
+			'idPortA' => $this->getLePortArr()->getId(),
+			'distance' => $this->getDistance()
+		]);
 	}
 
 	public function update(){
@@ -73,10 +84,27 @@ class Liaison{
 			//
 		}
 	}*/
-	//::::::::::::::  - SetLesTraversees -  :::::::::::::://
-	public function setLesTraversees($lesTraversees){
-		$this->_lesTraversees=$lesTraversees;
+
+	/**
+	  * Check if the code already exists in the database
+	  * @param String The code to look up
+	  * @return boolean True if the code exists, else false
+	  */
+	public function codeExists($code){
+		include_once "connexionDB.php";
+		$stmt=$db->prepare("SELECT code
+										FROM Liaison
+										WHERE code=:code;");
+		$stmt->execute([
+			"code" => $code
+		]);
+		if($stmt->rowCount() > 0){
+			return true;
+		}else{
+			return false;
+		}
 	}
+
 
 	public static function findAll(){
 		include "connexionDB.php";   //fournis la base de donnée $db
@@ -115,4 +143,6 @@ class Liaison{
 	public function getLePortArr(){ return $this->_lePortArr; }
 	public function getDistance(){ return $this->_distance; }
 	public function getTraversees(){ return $this->_lesTraversees; }
+
+	public function setLesTraversees($lesTraversees){ $this->_lesTraversees=$lesTraversees; }
 }

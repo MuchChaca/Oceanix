@@ -23,7 +23,6 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 			}
 			if($page-1 >= 0){
 				$prevPage=$page - 1;
-				echo $prevPage;
 			}else{
 				$prevPage=-1;
 			}
