@@ -33,7 +33,7 @@
 				echo "<tr>
 				<td>".$laTraversee->num()."</td>
 				<td>".$laTraversee->heure()."</td>
-				<td >".$laTraversee->bateau()->nom()."</td><td></td>
+				<td >".$laTraversee->bateau()->nomBat()."</td><td></td>
 				<td><a href=?action=choixtraversees&numTrav=".$laTraversee->num().">Réserver</a></td>";
 				if(Passerelle::logged()):
 					echo

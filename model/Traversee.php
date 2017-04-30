@@ -4,7 +4,7 @@ class Traversee{
 	private $_num, $_dateTraversee, $_heure;
 	private $_bateau;
 	private $_liaison;
-	
+
 	//\\=> Require a retrieve or create the SETTERS then use them
 	public function __construct($num){
 		$this->_num=$num;
@@ -25,13 +25,13 @@ class Traversee{
 		$this->_dateTraversee=$result['dateTraversee'];
 		$this->_heure=$result['heure'];
 		//--> Bateau[obj]
-		$this->_bateau=new Bateau($result['idBateau']);
+		$this->_bateau=new Bateau($result['idBateau'], null, null);
 		$this->_bateau->retrieve();
 		//--> Liaison[obj]
 		$this->_liaison=new Liaison($result['codeLiaison']);
 		$this->_liaison->retrieve();
 	}
-	
+
 	##==========  - GETTERS -  ==========##
 	public function num(){	return $this->_num;	}
 	public function dateTraversee(){	return $this->_dateTraversee;	}
