@@ -74,7 +74,36 @@
 								</div>
 							</div>
 						<?php
-						}
+					}else if(!empty($listPort)){ //LIST OF THE PORTS ?>
+						<div class="col-md-3 col-md-offset-3">
+							<div class="display-table">
+								<table>
+									<thead>
+											<th>ID</th>
+											<th>Nom</th>
+											<th class="admin" colspan="2">Action</th>
+										</tr>
+									</thead>
+									<tboby>
+										<?php foreach($listPort as $port): ?>
+											<tr>
+												<td><?= $port->getId() ?></td>
+												<td><?= $port->getNom() ?></td>
+												<td><a href="index.php?adm=true&action=mod&obj=port&id=<?= $port->getId() ?>">
+													<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
+												</a></td>
+												<td><a href="index.php?adm=true&action=del&obj=port&id=<?= $port->getId() ?>">
+													<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
+												</a></td>
+											</tr>
+										<?php endforeach; ?>
+									</tboby>
+								</table>
+
+							</div>
+						</div><!-- //LIST-PORTS -->
+					<?php
+					}
 					?>
 
 

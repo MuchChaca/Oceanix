@@ -55,19 +55,12 @@ switch($obj){
 									<tr>
 										<th>ID</th>
 										<th>Nom</th>
-										<th colspan="2">Action</th>
 									</tr>
 								</thead>
 								<tbody>
 										<tr>
 											<td><?= $liaison->getLePortDep()->getId() ?></td>
 											<td><?= $liaison->getLePortDep()->getNom() ?></td>
-											<td><a href="index.php?adm=true&action=mod&obj=port&id=<?= $liaison->getLePortDep()->getId() ?>">
-												<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
-											</a></td>
-											<td><a href="index.php?adm=true&action=del&obj=port&id=<?= $liaison->getLePortDep()->getId() ?>">
-												<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
-											</a></td>
 										</tr>
 								</tbody>
 							</table>
@@ -86,19 +79,12 @@ switch($obj){
 									<tr>
 										<th>ID</th>
 										<th>Nom</th>
-										<th class="admin" colspan="2">Action</th>
 									</tr>
 								</thead>
 								<tbody>
 										<tr>
 											<td><?= $liaison->getLePortArr()->getId() ?></td>
 											<td><?= $liaison->getLePortArr()->getNom() ?></td>
-											<td><a href="index.php?adm=true&action=mod&obj=port&id=<?= $liaison->getLePortArr()->getId() ?>">
-												<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
-											</a></td>
-											<td><a href="index.php?adm=true&action=del&obj=port&id=<?= $liaison->getLePortArr()->getId() ?>">
-												<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
-											</a></td>
 										</tr>
 								</tbody>
 							</table>

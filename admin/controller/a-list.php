@@ -28,6 +28,11 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 			}
 			$status="list";
 			break;
+		//=> For a Port
+		case 'port':
+			$listPort= Port::findAll();
+			$status= "list";
+			break;
 		default:
 			$status="404";
 	}
