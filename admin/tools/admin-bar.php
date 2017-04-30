@@ -17,8 +17,8 @@
 						<li><div class="dropdown">
 							<button class="dropbtn">Traversées</button>
 							<div class="dropdown-content">
-								<a href="#">Lister les Traversées</a>
-								<a href="#">Nouvelle Traversée</a>
+								<a href="?adm=true&action=list&obj=trav">Lister les Traversées</a>
+								<a href="?adm=true&action=new&obj=trav">Nouvelle Traversée</a>
 							</div>
 						</div></li>
 						<li><div class="dropdown">
@@ -40,6 +40,13 @@
 							<div class="dropdown-content">
 								<a href="?adm=true&action=list&obj=port">Lister les Ports</a>
 								<a href="?adm=true&action=new&obj=port">Nouveau Port</a>
+							</div>
+						</div></li>
+						<li><div class="dropdown">
+							<button class="dropbtn">Plus</button>
+							<div class="dropdown-content">
+								<a href="#">Tarifs</a>
+								<a href="#">Réservations</a>
 							</div>
 						</div></li>
 					</ul>

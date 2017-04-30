@@ -32,6 +32,22 @@ class Traversee{
 		$this->_liaison->retrieve();
 	}
 
+
+	public static function findAll(){
+		include "connexionDB.php";
+		$allTrav=array();
+		$req=$db->prepare("SELECT num
+								FROM Traversee;");
+		$req->execute();
+		while($result=$req->fetch()){
+			$trav=new Traversee($result['num']);
+			$trav->retrieve();
+			array_push($allTrav, $trav);
+		}
+		return $allTrav;
+	}
+
+
 	##==========  - GETTERS -  ==========##
 	public function num(){	return $this->_num;	}
 	public function dateTraversee(){	return $this->_dateTraversee;	}
