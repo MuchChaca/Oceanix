@@ -73,7 +73,7 @@ class TypeCateg{
 		$req=$db->prepare("DELETE FROM TypeCateg
 										WHERE lettreCategorie=:lettre
 											AND numOrdre=:num;");
-		$req->execute([":lettre" => $this->_lettreCateg,
+		$req->execute([":lettre" => $this->_lettreCategorie,
 									":num" => $this->_numOrdre]);
 	}
 

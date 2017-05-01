@@ -80,6 +80,24 @@ if(!empty($liaisonCode)){ ?>
 		</div>
 	</div>
 <?php
+}else if(!empty($typeCateg)){ ?>
+	<!-- Confirmation -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h3>La catégorie [<?= $typeCateg->lettreCateg() ?> - <?= $typeCateg->numOrdre() ?>]
+				&quot;<?= $typeCateg->libelle() ?>&quot; a bien été supprimé.</h3>
+		</div>
+	</div>
+	<br>
+	<!-- //Msg-Retrou -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<p><a href="index.php?adm=true&action=list&obj=tycat">Retour à la liste des catégories</a></p>
+		</div>
+	</div>
+<?php
+}else{
+	Header('Location: index.php?action=404');
 }
 ?>
 
