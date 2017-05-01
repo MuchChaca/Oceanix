@@ -4,7 +4,7 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 		//=> TypeCategory
 		case 'tycat':
 			$listTypCateg= TypeCateg::findAll();
-			$etat= "list";
+			$status= "list";
 			break;
 
 		//=> For a Bateaux

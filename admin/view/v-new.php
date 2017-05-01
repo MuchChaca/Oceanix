@@ -36,6 +36,7 @@ if(Passerelle::logged()){ ?>
 			</div>
 			<?php
 			break;
+
 		//=> NEW PORT
 		case 'port': ?>
 			<!-- TITLE-PORT -->
@@ -66,6 +67,7 @@ if(Passerelle::logged()){ ?>
 			</div>
 			<?php
 			break;
+
 		//=> NEW LIAISON
 		case 'liai': ?>
 			<!-- TITLE-LIAISON -->
@@ -190,7 +192,51 @@ if(Passerelle::logged()){ ?>
 			</div>
 			<?php
 			break;
-			 ?>
+
+		//=> NEW TYPECATEG
+		case 'tycat': ?>
+			<!-- TITLE-TYPECATEG -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h1>Création d'une catégorie</h1>
+					<?php if(!empty($err)){ echo $err; } ?>
+				</div>
+			</div>
+
+			<!-- main-TYPECATEG-container -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<form action="index.php?adm=true&action=new&obj=tycat" method="POST">
+						<div class="form-area">
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Lettre </h5></div>
+								<div class="simple-form-field form-left">
+									<input type="text" maxlength="1" name="lettre" required />
+								</div>
+							</div>
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Numéro </h5></div>
+								<div class="simple-form-field form-left">
+									<input type="number" minimum="1" value="1" maxlength="1" name="num" required />
+								</div>
+							</div>
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Libellé </h5></div>
+								<div class="simple-form-field form-left">
+									<input type="text" name="libelle" required />
+								</div>
+							</div>
+							<!-- submit -->
+							<div class="simple-form">
+								<div class="simple-form-submit"><input type="submit" value="Valider"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<?php
+			break;
+		 ?>
 	<?php
 		default:
 			Header('Locate: /index.php?action=404');

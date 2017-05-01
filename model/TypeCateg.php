@@ -8,6 +8,23 @@ class TypeCateg{
       $this->_libelle=$libelle;
    }
 
+	public static function exists($typeCateg){
+		include "connexionDB.php";
+		$req=$db->prepare("SELECT *
+										FROM TypeCateg
+										WHERE lettreCategorie=:lettre
+											AND numOrdre=:num");
+		$req->execute([
+			"lettre" => $typeCateg->lettreCateg(),
+			"num" => $typeCateg->numOrdre()
+		]);
+		if($req->rowCount() > 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
    ##============  - CRUD -  ============##
 	/**
 		* Create the TypeCateg in the database
@@ -15,10 +32,11 @@ class TypeCateg{
 	function create(){
 		include "connexionDB.php";
 		$req=$db->prepare("INSERT INTO TypeCateg (lettreCategorie, numOrdre, libelle)
-				VALUES (':lettre', ':num', ':libelle')");
-		$db->exec([":lettre" => $this->_lettreCateg,
-							":num" => $this->_numOrdre,
-							":libelle" => $this->_libelle]);
+				VALUES (:lettre, :num, :libelle)");
+		$req->execute(["lettre" => $this->_lettreCategorie,
+							"num" => $this->_numOrdre,
+							"libelle" => $this->_libelle
+						]);
 	}
 
 	##==>  - RETRIEVE

@@ -94,6 +94,24 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 			}
 			break;
 
+		//=> New TypeCateg
+		case 'tycat':
+			if(!empty($_POST['lettre']) && !empty($_POST['num']) && !empty($_POST['libelle'])){ //If the form is filled
+				$newTypeCateg= new TypeCateg(strtoupper($_POST['lettre']), $_POST['num'], $_POST['libelle']);
+				if(!TypeCateg::exists($newTypeCateg)){
+					$newTypeCateg->create();
+					$status="new_ok";
+				}else{
+					$err="<h4>ERREUR: Cette catégorie existe déjà !</h4>";
+					GOTO err;
+				}
+			}else{	// Else we display the form
+				err:
+				$status="new";
+				$obj="tycat";
+			}
+			break;
+
 		default:
 			$status="404";
 			break;

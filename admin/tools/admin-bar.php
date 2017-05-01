@@ -24,8 +24,8 @@
 						<li><div class="dropdown">
 							<button class="dropbtn">Catégories</button>
 							<div class="dropdown-content">
-								<a href="#">Lister les  Categories</a>
-								<a href="#">Nouvelle Categorie</a>
+								<a href="?adm=true&action=list&obj=tycat">Lister les  Categories</a>
+								<a href="?adm=true&action=new&obj=tycat">Nouvelle Categorie</a>
 							</div>
 						</div></li>
 						<li><div class="dropdown">
