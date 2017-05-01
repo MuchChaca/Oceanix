@@ -11,13 +11,24 @@ class Liaison{
 		$this->_code=$code;
 	}
 
-	/*** Hydrate if needed *** */
+	/*** Fill if needed *** */
 	public function fillMe($portDep, $portArr, $distance){
 		$this->_distance = $distance;
 		$this->_lePortDep = $portDep;
 		$this->_lePortArr = $portArr;
 	}
 
+	public function create(){
+		include "connexionDB.php";
+		$stmt=$db->prepare("INSERT INTO Liaison(code, idPortDep, idPortArr, distance)
+		VALUES(:code, :idPortD, :idPortA, :distance)");
+		$stmt->execute([
+			'code' => $this->getCode(),
+			'idPortD' => $this->getLePortDep()->getId(),
+			'idPortA' => $this->getLePortArr()->getId(),
+			'distance' => $this->getDistance()
+		]);
+	}
 
 	public function retrieve(){
 		include "connexionDB.php";   //fournis la base de donnée $db
@@ -39,17 +50,6 @@ class Liaison{
 		$this->_lePortDep= $depPort;
 	}
 
-	public function create(){
-		include "connexionDB.php";
-		$stmt=$db->prepare("INSERT INTO Liaison(code, idPortDep, idPortArr, distance)
-											VALUES(:code, :idPortD, :idPortA, :distance)");
-		$stmt->execute([
-			'code' => $this->getCode(),
-			'idPortD' => $this->getLePortDep()->getId(),
-			'idPortA' => $this->getLePortArr()->getId(),
-			'distance' => $this->getDistance()
-		]);
-	}
 
 	public function update(){
 		include "connexionDB.php";

@@ -126,6 +126,70 @@ if(Passerelle::logged()){ ?>
 			</div>
 			<?php
 			break;
+
+		//=> NEW Traversee
+		case 'trav': ?>
+			<!-- TITLE-TRVERSEE -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h1>Création d'une traversée</h1>
+				</div>
+			</div>
+
+			<!-- main-traversee-container -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<form action="index.php?adm=true&action=new&obj=trav" method="POST">
+						<div class="form-area">
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Date et heure traversée </h5></div>
+								<div class="simple-form-field form-left">
+									<div  class="simple-form-field"><input type="date" name="date" required placeholder="jj/mm/aaa" /></div>
+								</div>
+							</div>
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Heure </h5></div>
+								<div class="simple-form-field form-left" style="width: 94px !important">
+									<input type="number" value="00" min="0" max="24" name="hour" style="width: 98% !important" required />
+								</div>
+								<strong style="font-size: 1.5em; font-weight:800;">: </strong>
+								<div class="simple-form-field form-left" style="width: 94px !important">
+									<input type="number" value="00" min="0" max="60" name="minutes" style="width: 98% !important" rrequired />
+								</div>
+							</div>
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Bateau </h5></div>
+								<div class="simple-form-field form-left">
+									<select name="bateau">
+										<option selected value="err">&lt; Sélectionnez &gt;</option>
+										<?php foreach($allBat as $bat): ?>
+											<option value="<?= $bat->idBat() ?>"><?= $bat->nomBat() ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Liaison </h5></div>
+								<div class="simple-form-field form-left">
+									<select name="liaison">
+										<option selected value="err">&lt; Sélectionnez &gt;</option>
+										<?php foreach($allLiai as $liai): ?>
+											<option value="<?= $liai->getCode() ?>">[<?= $liai->getCode() ?>]
+												<?= $liai->getLePortDep()->getNom() ?> - <?= $liai->getLePortArr()->getNom() ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+							<!-- submit -->
+							<div class="simple-form">
+								<div class="simple-form-submit"><input type="submit" value="Valider"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<?php
+			break;
 			 ?>
 	<?php
 		default:

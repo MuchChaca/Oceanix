@@ -129,7 +129,9 @@
 											<th>Numéro</th>
 											<th>Date traversée</th>
 											<th>Heure</th>
-											<th>Bateau</th>
+											<th colspan="3">Bateau</th>
+											<th></th>
+											<th></th>
 											<th>Code Liaison</th>
 											<th class="admin" colspan="2">Action</th>
 										</tr>
@@ -140,7 +142,9 @@
 												<td><?= $trav->num() ?></td>
 												<td><?= $trav->dateTraversee() ?></td>
 												<td><?= $trav->heure() ?></td>
-												<td><?= $trav->bateau()->nomBat() ?></td>
+												<td colspan="3"><?= $trav->bateau()->nomBat() ?></td>
+												<td></td>
+												<td></td>
 												<td><?= $trav->liaison()->getCode() ?></td>
 												<td><a href="index.php?adm=true&action=mod&obj=trav&id=<?= $trav->num() ?>">
 													<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
@@ -153,7 +157,7 @@
 									</tboby>
 									<tfoot>
 										<tr>
-											<td colspan="3" style="text-align: left;">
+											<td colspan="4" style="text-align: left;">
 												<?php
 												if($prevPage >= 0){
 													echo "<a href=\"index.php?adm=true&action=list&obj=trav&page=".$prevPage."\">&lt;&lt; Précédent</a>";
@@ -163,7 +167,8 @@
 												?>
 											</td>
 											<td></td>
-											<td colspan="3" style="text-align: right;">
+											<td></td>
+											<td colspan="4" style="text-align: right;">
 												<?php
 												if($nextPage >= 0){
 													echo "<a href=\"index.php?adm=true&action=list&obj=trav&page=".$nextPage."\">Suivant &gt;&gt;</a>";
