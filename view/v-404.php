@@ -1,4 +1,4 @@
-<section id="porfolio">
+<section class="portfolio" id="porfolio">
 <div class="row">
 
 

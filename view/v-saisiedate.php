@@ -1,6 +1,6 @@
-<section id="porfolio">
+<section class="portfolio" id="porfolio">
 <div class="container">
-	<div class="col-lg-12 text-center">
+<div class="col-lg-12 text-center">
 		<?php
 		echo "<div class=\"row\">
 			<div class=\"col-lg-12 text-center\">
@@ -27,6 +27,6 @@
 	<!-- </div> -->
 </div>
 
-	</div>
+</div>
 </div>
 </section>

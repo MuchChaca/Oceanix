@@ -1,6 +1,6 @@
 <?php
 if(Passerelle::logged()){ ?>
-<section id="porfolio">
+<section class="portfolio" id="porfolio">
 <div class="container">
 <div class="col-lg-12 text-center">
 

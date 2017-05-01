@@ -49,9 +49,9 @@ class Traversee{
 
 
 	##==========  - GETTERS -  ==========##
-	public function num(){	return $this->_num;	}
-	public function dateTraversee(){	return $this->_dateTraversee;	}
-	public function heure(){	return $this->_heure;	}
+	public function num(){	return htmlspecialchars($this->_num);	}
+	public function dateTraversee(){	return htmlspecialchars($this->_dateTraversee);	}
+	public function heure(){	return htmlspecialchars($this->_heure);	}
 	public function bateau(){	return $this->_bateau;	}
 	public function liaison(){	return $this->_liaison;	}
 }

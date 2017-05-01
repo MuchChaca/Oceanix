@@ -179,12 +179,14 @@ header .intro-text .skills {
 }
 section {
   padding: 20px 0 ;
-	height: 82.2%;
+	/*min-height: 82.2%;*/
+}
+section.success,
+section.main-page,
+section.portfolio{
+	min-height: 82.2% !important;
+}
 
-}
-section.main-page{
-	min-height: 640px;
-}
 section h2 {
   margin: 0;
   font-size: 3em;
@@ -192,6 +194,7 @@ section h2 {
 section.success {
 	background: white;
 	padding-bottom: 50px;
+	margin-top: -150px;
 }
 @media (max-width: 767px) {
   section {
@@ -244,19 +247,15 @@ section.success {
 #portfolio * {
   z-index: 2;
 }
-#portfolio{
-
-}
 
 #portfolio h1, #portfolio h2{
 	color: #2C3E50;
 }
 @media (min-width: 767px) {
   #portfolio .portfolio-item {
-    margin: 0px 0 30px;
+    margin: 0px 0 20px;
   }
 		#portfolio{
-			/*min-height: 300px;*/
 			margin-top: 50px;
 		}
 }
@@ -937,3 +936,12 @@ div#maincontent {
 					84% { color: #a0bad6; }
 					100% { color: white; }
     }
+/*************************************/
+
+p.warning{
+	color: rgb(177, 32, 23);
+	position: absolute;
+	font-size: 1em;
+	margin-top: -30px;
+	text-align: center;
+}

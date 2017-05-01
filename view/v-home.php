@@ -1,4 +1,4 @@
-<section id="porfolio" class="main-page">
+<section class="portfolio" id="porfolio" class="main-page">
 <div class="container">
 	<div class="col-lg-12 text-center">
 

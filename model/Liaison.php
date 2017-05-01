@@ -138,10 +138,10 @@ class Liaison{
 	}
 
 	//////////  - GETTERS & SETTERS -  ////////////////
-	public function getCode(){ return $this->_code; }
+	public function getCode(){ return htmlspecialchars($this->_code); }
 	public function getLePortDep(){ return $this->_lePortDep; }
 	public function getLePortArr(){ return $this->_lePortArr; }
-	public function getDistance(){ return $this->_distance; }
+	public function getDistance(){ return htmlspecialchars($this->_distance); }
 	public function getTraversees(){ return $this->_lesTraversees; }
 
 	public function setLesTraversees($lesTraversees){ $this->_lesTraversees=$lesTraversees; }

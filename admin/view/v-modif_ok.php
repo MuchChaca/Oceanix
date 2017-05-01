@@ -1,4 +1,4 @@
-<section id="porfolio">
+<section class="portfolio" id="porfolio">
 <div class="container">
 <div class="col-lg-12 text-center">
 
@@ -152,7 +152,7 @@
 				<?php
 				}
 				?>
-				
+
 </div> <!-- //text-center -->
 </div> <!-- //container -->
 </section> <!-- //#portfolio -->

@@ -1,5 +1,5 @@
 <?php if(Passerelle::logged()){ ?>
-<section id="porfolio">
+<section class="portfolio" id="porfolio">
 <div class="container">
 <div class="col-lg-12 text-center">
 
@@ -115,7 +115,7 @@
 							</div>
 						</div><!-- //LIST-PORTS -->
 					<?php
-				}else if(!empty($listTrav)){ //LIST OF THE BOATS ?>
+				}else if(!empty($listTrav)){ //LIST OF THE TRAVERSEES ?>
 						<div class="row">
 							<div class="col-lg-12 text-center">
 								<h1>Liste des traversées</h1>
