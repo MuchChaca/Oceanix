@@ -61,7 +61,7 @@ class TypeCateg{
 										WHERE lettreCategorie=:lettre
 											AND numOrdre=:num;");
 		$req->execute([":libelle" => $this->_libelle,
-								":lettre" => $this->_lettreCateg,
+								":lettre" => $this->_lettreCategorie,
 								":num" => $this->_numOrdre]);
 	}
 	/**

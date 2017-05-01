@@ -94,6 +94,7 @@ switch($obj){
 			</div>
 			<?php
 			break;
+
 			//--> Port
 			case 'port': ?>
 				<!-- TITLE-PORT -->
@@ -125,6 +126,7 @@ switch($obj){
 				</div>
 				<?php
 				break;
+
 			//--> TRAVERSEE
 			case 'trav': ?>
 				<!-- TITLE-LIAISON -->
@@ -190,7 +192,45 @@ switch($obj){
 					</div>
 				</div>
 				<?php
-				break; ?>
+				break;
+
+				//--> TYPECATEG
+				case 'tycat': ?>
+					<!-- TITLE-TYPECATEG -->
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h1>La catégorie: <?= $typCateg->lettreCateg() ?> - <?= $typCateg->numOrdre() ?></h1>
+						</div>
+					</div>
+
+					<!-- main-TYPECATEG-container -->
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<form action="index.php?adm=true&action=mod&obj=tycat" method="POST">
+								<input type="hidden" name="lettre" value="<?= $typCateg->lettreCateg() ?>" />
+								<input type="hidden" name="num" value="<?= $typCateg->numOrdre() ?>" />
+								<div class="form-area">
+									<div class="simple-form">
+										<div class="simple-form-legend form-left"><h5>Libelle </h5></div>
+										<div class="simple-form-field form-left">
+											<input type="text" size=40 name="libelle" required value="<?= $typCateg->libelle(); ?>"/>
+										</div>
+									</div>
+									<!-- submit -->
+									<div class="simple-form">
+										<div class="simple-form-submit"><input type="submit" value="Valider" /></div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<?php
+					break;
+
+					default:
+						Header('Locate: /index.php?action=404');
+						break;
+					?>
 <?php
 }
 }else{

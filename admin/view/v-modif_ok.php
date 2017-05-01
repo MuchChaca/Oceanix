@@ -3,33 +3,46 @@
 <div class="col-lg-12 text-center">
 
 					<?php
-					/*if(!empty($bat)){
-						echo "<h1> Modification effectuée </h1>";
-						echo "<table>
-									<tr>
-										<th>Nom : </th>
-										<td>".$bat->nomBat()."</td>
-									</tr>
-								</table>";
-						echo "<p><a href=\"index.php?action=consult_bat\">Retour à la liste des bateaux</a></p>";
-					}else if(!empty($typCateg)){
-						echo "<h1> Modification effectuée </h1>";
-						echo "<table>
-									<tr>
-										<th>Lettre Catégorie : </th>
-										<td>".$typCateg->lettreCateg()."</td>
-									</tr>
-									<tr>
-										<th>Numéro d'ordre : </th>
-										<td>".$typCateg->numOrdre()."</td>
-									</tr>
-									<tr>
-										<th>Libelle : </th>
-										<td>".$typCateg->libelle()."</td>
-									</tr>
-								</table>";
-						echo "<p><a href=\"index.php?action=list&obj=tycat\">Retour à la liste des types / catégoies</a></p>";
-					}else */if(!empty($newLiaison)){ ?>
+					if(!empty($typCateg)){ ?>
+						<!-- TITLE-TYPECATEG -->
+						<div class="row">
+							<div class="col-lg-12 text-center">
+								<h1>Modification effectuée</h1>
+							</div>
+						</div>
+
+						<div class="row">
+							<!-- div-TYPECATEG -->
+							<div class="col-lg-12 text-center">
+								<div class="display-table">
+									<table>
+										<thead>
+												<th>Lettre</th>
+												<th>Numéro</th>
+												<th>Libellé</th>
+												<th class="admin" colspan="2">Action</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr>
+													<td><?= $typCateg->lettreCateg() ?></td>
+													<td><?= $typCateg->numOrdre() ?></td>
+													<td><?= $typCateg->libelle() ?></td>
+													<td><a href="index.php?adm=true&action=mod&obj=tycat&l=<?= $typCateg->lettreCateg() ?>&n=<?= $typCateg->numOrdre() ?>">
+														<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
+													</a></td>
+													<td><a href="index.php?adm=true&action=del&obj=tycat&l=<?= $typCateg->lettreCateg() ?>&n=<?= $typCateg->numOrdre() ?>">
+														<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
+													</a></td>
+												</tr>
+										</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+						<p><a href="?adm=true&action=list&obj=tycat">Retour à la liste des catégories</a></p>
+					<?php
+					}else if(!empty($newLiaison)){ ?>
 						<!-- TITLE-LIAISON -->
 						<div class="row">
 							<div class="col-lg-12 text-center">

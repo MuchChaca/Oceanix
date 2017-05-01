@@ -6,15 +6,13 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 			if(!empty($_POST['lettre']) && !empty($_POST['num']) && !empty($_POST['libelle'])){
 				$typCateg= new TypeCateg($_POST['lettre'], $_POST['num'], $_POST['libelle']);
 				$typCateg->update();
-				$etat= "modif_ok";
+				$status= "modif_ok";
 			}else if(!empty($_GET['l']) && !empty($_GET['n'])){
 				$typCateg= new TypeCateg($_GET['l'], $_GET['n'], null);
 				$typCateg->retrieve();
-				$etat= "form";
-				$obj="typeCateg";
-			}else{
-				$etat="404";
-			}
+				$status= "mod";
+				$obj="tycat";
+			}else{ $status="404"; }
 			break;
 
 		//=> Modify a Liaison
@@ -50,9 +48,7 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 				$bat->retrieve();
 				$status= "mod";
 				$obj='boat';
-			}else{
-				$status="404";
-			}
+			}else{ $status="404"; }
 			break;
 
 		//=> Modify a Port
@@ -67,9 +63,7 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 				$port->retrieve();
 				$status= "mod";
 				$obj='port';
-			}else{
-				$status="404";
-			}
+			}else{ $status="404"; }
 			break;
 
 		//=> Modify a Traversee
@@ -88,7 +82,7 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 					$newTrav->update();
 					$status= "modif_ok";
 				}else{
-					Header('Location: ?adm=true&action=mod&obj=trav&id='.$_POST['num']);
+					Header('Location: index.php?adm=true&action=mod&obj=trav&id='.$_POST['num']);
 				}
 			}else if(!empty($_GET['id'])){
 				$trav= new Traversee($_GET['id'], null, null);
@@ -97,9 +91,7 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 				$allBat= Bateau::findAll();
 				$status= "mod";
 				$obj='trav';
-			}else{
-				$status="404";
-			}
+			}else{ $status="404"; }
 			break;
 
 		//=> Default action
@@ -107,7 +99,5 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 			$etat="404";
 			break;
 	}
-}else{
-	$status="404";
-}
+}else{ $status="404"; }
 ?>
