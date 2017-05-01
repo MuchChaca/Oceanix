@@ -8,7 +8,7 @@ class Periode{
 		$this->_dateDeb=$dateDeb;
 		$this->_dabeFin=$dateFin;
 	}
-	
+
 	#################  - CRUD -  #################
 	//===> RETRIEVE
 	public function retrieve(){
@@ -34,8 +34,8 @@ class Periode{
 		}
 		return $lesPeriodes;
 	}
-	
-	
+
+
 	/* #################  - GETPERIODE -  #################
 	 * @param Traversee $traversee
 	 * @return Periode La Periode à laquelle la date entrée appartient
@@ -45,11 +45,11 @@ class Periode{
 		$req=$db->prepare("SELECT *
 							 FROM Periode
 							 WHERE :date BETWEEN dateDeb AND dateFin");
-		$req->execute(['date' => $traversee->dateTraversee()]);
+		$req->execute(['date' => $traversee->getDate()]);
 		$result=$req->fetch();
 		return $periode = new Periode($result['dateDeb'], $result['dateFin']);
 	}
-	
+
 
 	#################  - GETTERS -  #################
 	public function dateDeb(){ return $this->_dateDeb; }

@@ -150,7 +150,52 @@
 				</div>
 					<p><a href="?adm=true&action=list&obj=port">Retour à la liste des ports</a></p>
 				<?php
-				}
+			}if(!empty($newTrav)){ ?>
+					<!-- TITLE-TRAVERSEE -->
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h1>Modification effectuée</h1>
+						</div>
+					</div>
+
+					<div class="row">
+						<!-- div-traversee -->
+						<div class="col-lg-12 text-center">
+							<div class="display-table">
+								<table>
+									<thead>
+										<tr><th colspan="7"><h5>La traversée modifiée</h5></th></tr>
+										<tr>
+											<th>Numéro</th>
+											<th>Date Traversée</th>
+											<th>Heure</th>
+											<th>Bateau</th>
+											<th>Liaison</th>
+											<th colspan="2">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+											<tr>
+												<td><?= $newTrav->num() ?></td>
+												<td><?= $newTrav->dateTraversee() ?></td>
+												<td><?= $newTrav->heure() ?></td>
+												<td><?= $newTrav->bateau()->nomBat() ?></td>
+												<td><?= $newTrav->liaison()->getCode() ?> km</td>
+												<td><a href="index.php?adm=true&action=mod&obj=trav&id=<?= $newTrav->num() ?>">
+													<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
+												</a></td>
+												<td><a href="index.php?adm=true&action=del&obj=trav&id=<?= $newTrav->num() ?>">
+													<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
+												</a></td>
+											</tr>
+									</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+					<p><a href="index.php?adm=true&action=list&obj=trav">Retour à la liste des traversées</a></p>
+				<?php
+			}
 				?>
 
 </div> <!-- //text-center -->

@@ -13,7 +13,7 @@ class Reservation{
 		$this->_cp=$cp;
 		$this->_ville=$ville;
 	}
-	
+
 	#################  - CRUD -  #################
 	//===> RETRIEVE
 	public function retrieve(){
@@ -40,7 +40,7 @@ class Reservation{
 		$this->_num = $db->lastInsertId();
 		$req->closeCursor();
 	}
-	
+
 	#################  - FINDALL() -  #################
 	public static function findAll(){
 		include "connexionDB.php";
@@ -55,8 +55,8 @@ class Reservation{
 		}
 		return $lesReservations;
 	}
-	
-	
+
+
 	/* #################  - GETPERIODE -  #################
 	 * @param Traversee $traversee
 	 * @return Periode La Periode à laquelle la date entrée appartient
@@ -66,7 +66,7 @@ class Reservation{
 		$req=$db->prepare("SELECT *
 							 FROM Periode
 							 WHERE :date BETWEEN dateDeb AND dateFin");
-		$req->execute(['date' => $traversee->dateTraversee()]);
+		$req->execute(['date' => $traversee->getDate()]);
 		$result=$req->fetch();
 		return $periode = new Periode($result['dateDeb'], $result['dateFin']);
 	}

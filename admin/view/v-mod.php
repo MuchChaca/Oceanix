@@ -124,6 +124,72 @@ switch($obj){
 					</div>
 				</div>
 				<?php
+				break;
+			//--> TRAVERSEE
+			case 'trav': ?>
+				<!-- TITLE-LIAISON -->
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h1>La traversée n° <?= $trav->num() ?></h1>
+					</div>
+				</div>
+
+				<!-- main-liaison-container -->
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<form action="index.php?adm=true&action=mod&obj=trav" method="POST">
+							<input type="hidden" name="num" value="<?= $trav->num() ?>" />
+							<div class="form-area">
+								<div class="simple-form">
+									<div class="simple-form-legend form-left"><h5>Date traversée </h5></div>
+									<div class="simple-form-field form-left">
+										<input type="text" size=30 name="date" required value="<?= $trav->dateTraversee() ?>" placeholder="jj/mm/aaaa" />
+									</div>
+								</div>
+								<div class="simple-form">
+									<div class="simple-form-legend form-left"><h5>Heure </h5></div>
+									<div class="simple-form-field form-left" style="width: 94px !important">
+										<input type="number" min="0" max="24" name="hour" style="width: 98% !important" required value="<?= substr($trav->heure(), -5, 2) ?>" />
+									</div>
+									<strong style="font-size: 1.5em; font-weight:800;">: </strong>
+									<div class="simple-form-field form-left" style="width: 94px !important">
+										<input type="number" min="0" max="60" name="minutes" style="width: 98% !important" rrequired value="<?= substr($trav->heure(), -2, 2) ?>" />
+									</div>
+								</div>
+								<div class="simple-form">
+									<div class="simple-form-legend form-left"><h5>Bateau </h5></div>
+									<div class="simple-form-field form-left">
+										<select name="bateau">
+											<?php foreach($allBat as $bat){ ?>
+												<option value="<?= $bat->idBat() ?>"
+													<?php if($bat->idBat()==$trav->bateau()->idBat()){ echo " selected"; } ?> >
+													<?= $bat->nomBat() ?>
+												</option>
+											<?php } ?>
+										</select>
+									</div>
+								</div>
+								<div class="simple-form">
+									<div class="simple-form-legend form-left"><h5>Liaison </h5></div>
+									<div class="simple-form-field form-left">
+										<select name="liaison">
+											<?php foreach($allLiai as $liai){ ?>
+												<option value="<?= $liai->getCode() ?>"
+													<?php if($liai->getCode()==$trav->liaison()->getCode()){ echo " selected"; } ?> >
+													[<?= $liai->getCode() ?>] <?= $liai->getLePortDep()->getNom() ?> - <?= $liai->getLePortArr()->getNom() ?>
+												</option>
+											<?php } ?>
+										</select>
+									</div>
+								</div>
+								<div class="simple-form">
+									<div class="simple-form-submit"><input type="submit" value="Valider"></input></div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<?php
 				break; ?>
 <?php
 }

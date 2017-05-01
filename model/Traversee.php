@@ -15,7 +15,7 @@ class Traversee{
 		$stmt=$db->prepare("INSERT INTO Traversee (dateTraversee, heure, idBateau, codeLiaison)
 										VALUES (:dateTraversee, :heure, :idBateau, :codeLiaison)");
 		$stmt->execute([
-			'dateTraversee' => $this->dateTraversee(),
+			'dateTraversee' => $this->getDate(),
 			'heure' => $this->heure(),
 			'idBateau' => $this->bateau()->idBat(),
 			'codeLiaison' => $this->liaison()->getCode()
@@ -45,6 +45,19 @@ class Traversee{
 		$this->_liaison->retrieve();
 	}
 
+	public function update(){
+		include "connexionDB.php";
+		$req=$db->prepare("UPDATE Traversee
+										SET dateTraversee=:dateTrav, heure=:heure, idBateau=:idBat, codeLiaison=:codeLiai
+										WHERE num=:num");
+		$req->execute([
+			'num' => $this->num(),
+			'dateTrav' => $this->getDate(),
+			'heure' => $this->heure(),
+			'idBat' => $this->bateau()->idBat(),
+			'codeLiai' => $this->liaison()->getCode()
+		]);
+	}
 
 
 	public function fillMe($date, $hour, $boat, $liaison){
@@ -71,10 +84,12 @@ class Traversee{
 
 	##==========  - GETTERS -  ==========##
 	public function num(){	return htmlspecialchars($this->_num);	}
-	public function dateTraversee(){	return htmlspecialchars($this->_dateTraversee);	}
-	public function heure(){
-		return htmlspecialchars($this->_heure);
+	public function dateTraversee(){
+		$date=substr($this->_dateTraversee, -2)."/".substr($this->_dateTraversee, -5, 2)."/".substr($this->_dateTraversee, -10, 4);
+		return htmlspecialchars($date);
 	}
+	public function getDate(){ return $this->_dateTraversee; }
+	public function heure(){ return htmlspecialchars($this->_heure); }
 	public function bateau(){	return $this->_bateau;	}
 	public function liaison(){	return $this->_liaison;	}
 }
