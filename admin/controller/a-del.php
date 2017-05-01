@@ -13,6 +13,7 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 				$status="404";
 			}
 			break;
+
 		//=> Delete a Bateau
 		case 'boat':
 			if(!empty($_GET['id'])){
@@ -24,6 +25,7 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 				$status="404";
 			}
 			break;
+
 			//=> Delete a Port
 			case 'port':
 				if(!empty($_GET['id'])){
@@ -35,6 +37,19 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 					$status="404";
 				}
 				break;
+
+			//=> Delete a Traversee
+			case 'trav':
+				if(!empty($_GET['id'])){
+					$trav = new Traversee($_GET['id']);
+					$trav->retrieve();
+					$trav->delete();
+					$status="delete_ok";
+				}else{
+					$status="404";
+				}
+				break;
+
 		default:
 			$status="404";
 			break;

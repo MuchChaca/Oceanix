@@ -59,6 +59,12 @@ class Traversee{
 		]);
 	}
 
+	public function delete(){
+		include "connexionDB.php";
+		$req=$db->prepare("DELETE FROM Traversee
+										WHERE num=:num");
+		$req->execute(['num' => $this->num()]);
+	}
 
 	public function fillMe($date, $hour, $boat, $liaison){
 		$this->_dateTraversee= $date;

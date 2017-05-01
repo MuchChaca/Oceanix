@@ -65,6 +65,21 @@ if(!empty($liaisonCode)){ ?>
 		</div>
 	</div>
 <?php
+}else if(!empty($trav)){ ?>
+	<!-- Confirmation -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h3>La traversée n°<?= $trav->num() ?> a bien été supprimé.</h3>
+		</div>
+	</div>
+	<br>
+	<!-- //Msg-Retrou -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<p><a href="index.php?adm=true&action=list&obj=trav">Retour à la liste des traversées</a></p>
+		</div>
+	</div>
+<?php
 }
 ?>
 
