@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 16, 2017 at 12:39 PM
+-- Generation Time: May 02, 2017 at 12:07 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -63,13 +63,14 @@ INSERT INTO `Bateau` (`id`, `nom`) VALUES
 (7, 'Ar Solen'),
 (8, 'Tropico'),
 (10, 'Riviera'),
-(11, 'Maëllys'),
+(11, 'MaÃ«llys'),
 (12, 'Petit mousse'),
 (13, 'Beautoo'),
-(14, 'Genteau'),
-(15, 'DernierBateauDeLaMortQuiAEteTu'),
 (16, 'Un petit bateau'),
-(17, 'Patout');
+(18, 'MonPetitBateauTropGrand'),
+(19, 'Pourquoi Pas'),
+(20, 'Ca marche ?'),
+(21, 'ou pas');
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,58 @@ INSERT INTO `Enregistrer` (`numReserv`, `lettreCateg`, `numType`, `quantite`) VA
 (21, 'A', 2, 1),
 (21, 'A', 3, 2),
 (21, 'B', 1, 1),
-(21, 'C', 1, 4);
+(21, 'C', 1, 4),
+(22, 'A', 1, 1),
+(22, 'A', 2, 2),
+(22, 'A', 3, 3),
+(22, 'B', 1, 2),
+(22, 'B', 2, 1),
+(22, 'C', 2, 2),
+(22, 'C', 3, 2),
+(23, 'G', 0, 8),
+(24, 'A', 1, 2),
+(24, 'A', 2, 1),
+(24, 'C', 1, 1),
+(25, 'A', 2, 2),
+(25, 'A', 3, 2),
+(26, 'A', 1, 2),
+(26, 'A', 2, 2),
+(26, 'A', 3, 1),
+(27, 'A', 1, 2),
+(27, 'A', 2, 2),
+(27, 'A', 3, 2),
+(27, 'B', 1, 1),
+(28, 'A', 1, 2),
+(28, 'A', 2, 2),
+(28, 'A', 3, 2),
+(29, 'A', 1, 1),
+(29, 'A', 2, 2),
+(29, 'A', 3, 2),
+(29, 'B', 1, 2),
+(29, 'B', 2, 2),
+(30, 'A', 1, 1),
+(30, 'A', 2, 2),
+(30, 'A', 3, 2),
+(30, 'B', 1, 2),
+(30, 'B', 2, 2),
+(30, 'C', 1, 2),
+(30, 'C', 2, 2),
+(30, 'C', 3, 2),
+(31, 'A', 1, 1),
+(31, 'A', 2, 2),
+(31, 'A', 3, 2),
+(31, 'B', 1, 2),
+(31, 'B', 2, 2),
+(31, 'C', 1, 2),
+(31, 'C', 2, 2),
+(31, 'C', 3, 2),
+(32, 'A', 1, 1),
+(32, 'B', 1, 1),
+(32, 'B', 2, 1),
+(32, 'C', 3, 1),
+(21, 'A', 1, 1),
+(21, 'A', 2, 1),
+(21, 'C', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -128,10 +180,11 @@ CREATE TABLE `Liaison` (
 --
 
 INSERT INTO `Liaison` (`code`, `idPortDep`, `idPortArr`, `distance`) VALUES
-('LOC-QUI', 2, 1, 0),
+('LOC-QUI', 2, 1, 300),
 ('LP-QUI', 3, 1, 0),
 ('QUI-LOC', 1, 2, 0),
 ('QUI-LP', 1, 3, 100),
+('QUI-QUI', 1, 1, 999),
 ('QUI-SAU', 1, 4, 0),
 ('SAU-QUI', 4, 1, 0);
 
@@ -198,7 +251,7 @@ INSERT INTO `Reservation` (`num`, `nom`, `adr`, `cp`, `ville`) VALUES
 (18, 'Jean Mouloud', '52 AllÃ© de la libertÃ©e contrainte', '10510', 'CorÃ©eDuNord'),
 (19, 'TIPREZ', '15 chemin des oliviers', '56 10', 'Lorient'),
 (20, 'Monsieur Testeur', '123 rue des tests', '1234', 'SinTest'),
-(21, 'Moi', 'Terlamm', '12345', 'Partout');
+(21, 'Say My Name', 'heisenberoug', '12345', 'Cianow');
 
 -- --------------------------------------------------------
 
@@ -309,7 +362,9 @@ INSERT INTO `Traversee` (`num`, `dateTraversee`, `heure`, `idBateau`, `codeLiais
 (20, '2016-07-11', '10:50:00', 1, 'QUI-LP'),
 (21, '2016-07-11', '14:30:00', 5, 'QUI-LP'),
 (22, '2016-07-11', '18:15:00', 1, 'QUI-LP'),
-(23, '2016-07-20', '09:30:00', 3, 'LOC-QUI');
+(23, '2016-07-20', '09:30:00', 3, 'LOC-QUI'),
+(31, '2012-01-12', '08:30:00', 13, 'QUI-SAU'),
+(32, '2012-01-12', '02:48:00', 13, 'QUI-LP');
 
 -- --------------------------------------------------------
 
@@ -329,10 +384,10 @@ CREATE TABLE `TypeCateg` (
 
 INSERT INTO `TypeCateg` (`lettreCategorie`, `numOrdre`, `libelle`) VALUES
 ('A', 1, 'Adulte'),
-('A', 2, 'Junior 8 à 12 ans'),
-('A', 3, 'Enfant 0 à 7 ans'),
-('B', 1, 'Voiture longueur inf à 4m'),
-('B', 2, 'Voiture longueur inf 5m '),
+('A', 2, 'Junior 8 Ã  12 ans'),
+('A', 3, 'Enfant 0 Ã  7 ans'),
+('B', 1, 'Voiture longueur inf Ã  4m'),
+('B', 2, 'Voiture longueur inf Ã  5m '),
 ('C', 1, 'Fourgon'),
 ('C', 2, 'Camping Car'),
 ('C', 3, 'Camion');
@@ -397,7 +452,7 @@ ALTER TABLE `TypeCateg`
 -- AUTO_INCREMENT for table `Bateau`
 --
 ALTER TABLE `Bateau`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `Port`
 --
@@ -412,7 +467,7 @@ ALTER TABLE `Reservation`
 -- AUTO_INCREMENT for table `Traversee`
 --
 ALTER TABLE `Traversee`
-  MODIFY `num` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `num` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
