@@ -1,4 +1,5 @@
 <?php
+if(!empty($_POST["login"]) && !empty($_POST["mdp"])){
 	$resultat=Passerelle::verif($_POST["login"], $_POST["mdp"]);
 	//$resultat = $pass->verif($_POST["login"], $_POST["mdp"]); //old
 	if ($resultat == 1) {
@@ -11,4 +12,7 @@
 		$status = "erreur_connexion";
 		$adminMode = false;
 	}
+}else{
+	$status = "form_connexion";
+}
 ?>

@@ -58,9 +58,6 @@ Passerelle::gest_error();
 
 				<?php include "admin/tools/admin-bar.php" ?>
 
-		<!-- <section id="portfolio"> -->
-			<!-- <div class="container">
-					<div class="col-lg-12 text-center"> -->
 						<?php
 						//the action
 						if(!empty($_GET['action'])){
@@ -72,30 +69,33 @@ Passerelle::gest_error();
 
 						//Setting the path
 						if(!empty($_GET['adm']) && $_GET['adm']==true){
-							$controlerPath="admin/controller/a-".$action;
-							$viewPath="admin/view/v-";
+							if(Passerelle::logged()){
+								$controlerPath="admin/controller/a-".$action;
+								$viewPath="admin/view/v-";
+							}else{
+								$controlerPath="controller/a-valid_connexion";
+								$viewPath="view/v-";
+							}
 						}else{
 							$controlerPath="controller/a-".$action;
 							$viewPath="view/v-";
 						}
+
 						//controler
-						// if(!empty($viewPath)){
+						if(file_exists($controlerPath.".php")){
 							include $controlerPath.".php";
-						// }
+						}else{
+							include "controller/a-404.php";
+						}
 						//view
-						// if(!empty($status) && !empty($viewPath)){
 						if(!empty($status)){
 							include $viewPath.$status.".php";
 						}else{
 							$status="404";
 						}
-						// }
 						?>
-					<!-- </div>
-				</div> -->
-
-		<!-- </section> -->
 		</div>
+
 				<?php include "view/parts/footer.html" ?>
 
 

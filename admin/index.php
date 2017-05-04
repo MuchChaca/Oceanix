@@ -1,3 +1,3 @@
 <?php
-Header:('Location: /index.php?action=404');
+Header:('Location: ../index.php?action=404');
 ?>

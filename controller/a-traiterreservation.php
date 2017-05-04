@@ -23,7 +23,7 @@ if(!empty($_GET['info'])){
 	$reservation = new Reservation(NULL, $_POST['name'], $_POST['adress'], $_POST['cp'], $_POST['city']);
 	$reservation->create();
 	$reservation->retrieve();
-	
+
 	## Declare les collections d'objets des enregistrement et de reservations
 	$aReserver= array();
 	$aEnregistrer = array();
@@ -34,9 +34,9 @@ if(!empty($_GET['info'])){
 		}else{
 			$aEnregistrer[$key]=$value;
 		}
-		
+
 	}
-	
+
 	//==> le tableau final
 	$finalTab=array();
 	//==> le cout total final
@@ -47,7 +47,8 @@ if(!empty($_GET['info'])){
 	//echo "<pre>";
 	//print_r($aEnregistrer);
 	//echo "</pre>";
-	
+
+
 	//==> Création des enregistrements dans la bdd
 	foreach($aEnregistrer as $key => $value){
 		//Si la valeur a été renseignée ou qu'elle n'est pas nulle
@@ -56,20 +57,22 @@ if(!empty($_GET['info'])){
 			$idTypeCateg = explode("-", $key);
 			$typeCateg = new TypeCateg($idTypeCateg[0], $idTypeCateg[1], NULL);
 			$typeCateg->retrieve();
-			
 			//on crée l'enregistrement
 			$enregistrement = new Enregistrer($reservation, $typeCateg, $value);
 			$enregistrement->create();
-			
-			$finalTab[$typeCateg->libelle()] = $value;
-			
+
+			$finalTab[$typeCateg->libelle()][0] = $value;
+			$finalTab[$typeCateg->libelle()][1]=$idTypeCateg;
+
 			//Calcul du cout final
 			//(Liaison $liaison, $dateDeb,TypeCateg  $categorie, Traversee $traversee)
 			$tarif = Tarif::getPrix($_SESSION['laLiaison'], $typeCateg, $traversee);
+			$finalTab[$typeCateg->libelle()][2]=$tarif;
 			$finalCost = $finalCost+($value*$tarif);
+			$finalTab[$typeCateg->libelle()][3]=$tarif;
 		}
 	}
-	
+
 
 //}catch(Exception $e){
 //	$action = "error";

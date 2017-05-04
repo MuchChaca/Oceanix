@@ -40,7 +40,7 @@
 		foreach($finalTab as $key => $value){
 			echo "<tr>
 				<td>".$key."</td>
-				<td>".$value."</td>
+				<td>".$value[0]."</td>
 			</tr>";
 		}
 		?>
