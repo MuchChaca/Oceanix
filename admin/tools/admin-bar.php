@@ -43,10 +43,18 @@
 							</div>
 						</div></li>
 						<li><div class="dropdown">
-							<button class="dropbtn">Plus</button>
+							<button class="dropbtn">Tarifs</button>
 							<div class="dropdown-content">
-								<a href="#">Tarifs</a>
-								<a href="#">Réservations</a>
+								<a href="?adm=true&action=list&obj=tari">Lister les Tarifs</a>
+								<a href="?adm=true&action=new&obj=tari">Nouveau Tarif</a>
+							</div>
+						</div></li>
+
+						<li><div class="dropdown">
+							<button class="dropbtn">Réservations</button>
+							<div class="dropdown-content">
+								<a href="?adm=true&action=list&obj=rese">Lister les Réservations</a>
+								<a href="?adm=true&action=new&obj=rese">Nouvelle Réservation</a>
 							</div>
 						</div></li>
 					</ul>

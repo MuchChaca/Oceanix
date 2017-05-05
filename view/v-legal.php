@@ -9,8 +9,10 @@
 </div>
 
 <div class="row">
-	<div class="col-lg-12 text-center">
+	<div class="col-lg-12 text-left">
     Merci de lire avec attention les différentes modalités d’utilisation du présent site avant d’y parcourir ses pages. En vous connectant sur ce site, vous acceptez sans réserves les présentes modalités. Aussi, conformément à l’article n°6 de la Loi n°2004-575 du 21 Juin 2004 pour la confiance dans l’économie numérique, les responsables du présent site internet <a href="[http://oceanix.rf.gd">oceanix.rf.gd</a> sont :
+</br>
+
 
 <p style="color: #b51a00;"><span style="color: rgb(0, 0, 0);"><b>Editeur du Site : </b></span></p>
 Océanix
@@ -24,16 +26,16 @@ Site Web : <a href="[http://oceanix.rf.gd">oceanix.rf.gd</a>
 <p style="color: #b51a00;"><b><span style="color: rgb(0, 0, 0);">Hébergement :</span> </b></p>
 Hébergeur : infinityfree
 83, Place de la Madeleine 75009 PARIS
-Site Web :  <a href="[http://infinityfree.net">infinityfree.net</a]http://infinityfree.net">infinityfree.net</a>
+Site Web :  <a href="http://infinityfree.net">infinityfree.net</a>
 </br>
 <p style="color: #b51a00;"><span style="color: rgb(0, 0, 0);"><b>Développement</b><b> : </b></span></p>
 Felicien Goddu
 Adresse : 69, rue Descartes 67000 STRASBOURG
-Site Web : <a href="[http://bastidesebastien.wordpress.com">bastidesebastien.wordpress.com</a]http://bastidesebastien.wordpress.com">bastidesebastien.wordpress.com</a>
+Site Web : <a href="http://bastidesebastien.wordpress.com">bastidesebastien.wordpress.com</a>
 </br>
 <p style="color: #b51a00;"><span style="color: rgb(0, 0, 0);"><b>Conditions d’utilisation : </b></span></p>
-Ce site (<a href="[http://oceanix.rf.gd">oceanix.rf.gd</a>) est proposé en différents langages web (HTML, HTML5, Javascript, CSS, etc…) pour un meilleur confort d'utilisation et un graphisme plus agréable, nous vous recommandons de recourir à des navigateurs modernes comme Internet explorer, Safari, Firefox, Google Chrome, etc…
-Les mentions légales ont été générées sur le site <a title="générateur de mentions légales pour site internet gratuit" href="http://www.generateur-de-mentions-legales.com">Générateur de mentions légales</a>, offert par <a title="imprimerie paris, imprimeur paris" href="[http://welye.com">Welye</a]http://welye.com">Welye</a>.
+Ce site (<a href="http://oceanix.rf.gd">oceanix.rf.gd</a>) est proposé en différents langages web (HTML, HTML5, Javascript, CSS, etc…) pour un meilleur confort d'utilisation et un graphisme plus agréable, nous vous recommandons de recourir à des navigateurs modernes comme Internet explorer, Safari, Firefox, Google Chrome, etc…
+Les mentions légales ont été générées sur le site <a title="générateur de mentions légales pour site internet gratuit" href="http://www.generateur-de-mentions-legales.com">Générateur de mentions légales</a>, offert par <a title="imprimerie paris, imprimeur paris" href="http://welye.com">Welye</a>.
 
 <span style="color: #323333;">Océanix<b> </b></span>met en œuvre tous les moyens dont elle dispose, pour assurer une information fiable et une mise à jour fiable de ses sites internet. Toutefois, des erreurs ou omissions peuvent survenir. L'internaute devra donc s'assurer de l'exactitude des informations auprès de , et signaler toutes modifications du site qu'il jugerait utile. n'est en aucun cas responsable de l'utilisation faite de ces informations, et de tout préjudice direct ou indirect pouvant en découler.
 
@@ -46,7 +48,7 @@ Les utilisateurs, les abonnés et les visiteurs des sites internet de ne peuvent
 Dans l'hypothèse où un utilisateur ou visiteur souhaiterait mettre en place un hyperlien en direction d’un des sites internet de Océanix, il lui appartiendra d'adresser un email accessible sur le site afin de formuler sa demande de mise en place d'un hyperlien. Océanix se réserve le droit d’accepter ou de refuser un hyperlien sans avoir à en justifier sa décision.
 </br>
 <p style="color: #b51a00;"><span style="color: rgb(0, 0, 0);"><b>Services fournis : </b></span></p>
-<p style="color: #323333;">L'ensemble des activités de la société ainsi que ses informations sont présentés sur notre site <a href="[http://oceanix.rf.gd">oceanix.rf.gd</a>.</p></p>
+<p style="color: #323333;">L'ensemble des activités de la société ainsi que ses informations sont présentés sur notre site <a href="http://oceanix.rf.gd">oceanix.rf.gd</a>.</p></p>
 <p style="color: #323333;">Océanix s’efforce de fournir sur le site oceanix.rf.gd des informations aussi précises que possible. les renseignements figurant sur le site <a href="[http://oceanix.rf.gd">oceanix.rf.gd</a> ne sont pas exhaustifs et les photos non contractuelles. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne. Par ailleurs, tous les informations indiquées sur le site oceanix.rf.gd<span style="color: #000000;"><b> </b></span>sont données à titre indicatif, et sont susceptibles de changer ou d’évoluer sans préavis.  </p>
 </br>
 <p style="color: #b51a00;"><span style="color: rgb(0, 0, 0);"><b>Limitation contractuelles sur les données : </b></span></p>
@@ -75,6 +77,9 @@ Cependant, ce principe comporte certaines exceptions. En effet, pour certains se
 Enfin, nous pouvons collecter de manière automatique certaines informations vous concernant lors d’une simple navigation sur notre site Internet, notamment : des informations concernant l’utilisation de notre site, comme les zones que vous visitez et les services auxquels vous accédez, votre adresse IP, le type de votre navigateur, vos temps d'accès. De telles informations sont utilisées exclusivement à des fins de statistiques internes, de manière à améliorer la qualité des services qui vous sont proposés. Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.
     </div>
 </div>
+</br>
+	<em>Ce site web possède un contexte fait de toute pièces, l'entreprise concernée n'existe pas, les personnes et noms sont générés sur des sites dédiés.
+	Toute ressemblence à une compagnie existente ou toute autres entités n'est pas intentionnelle.</em>
 
 </div>
 </div>

@@ -30,10 +30,10 @@
 																				<a href="index.php?action=liaisons">Nos liaisons</a>
 																</li>
 																<li class="page-scroll">
-																				<a href="index.php?action=tarifs">Tarifs</a>
+																	<a href="index.php?action=liaisons">Réserver</a>
 																</li>
 																<li class="page-scroll">
-																				<a href="index.php?action=liaisons">Réserver</a>
+																	<a href="index.php?action=about">A Propos</a>
 																</li>
 																<li class="page-scroll">
 																	<?php echo (Passerelle::logged()) ?
