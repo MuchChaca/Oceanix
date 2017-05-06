@@ -16,6 +16,22 @@ class Reservation{
 
 
 	#################  - CRUD -  #################
+	//===> CREATE
+	public function create(){
+		include "connexionDB.php";
+		$req=$db->prepare("INSERT INTO Reservation(nom, adr, cp, ville, traversee_id)
+						 VALUES (:nom, :adr, :cp, :ville, :trav);");
+		$req->execute([
+			//":num" => $this->_num,
+			"nom" => $this->_nom,
+			"adr" => $this->_adr,
+			"cp" => $this->_cp,
+			"ville" => $this->_ville,
+			"trav" => $this->_laTraversee->num()
+		]);
+		$this->_num = $db->lastInsertId();
+		$req->closeCursor();
+	}
 	//===> RETRIEVE
 	public function retrieve(){
 		include "connexionDB.php";   //fournis la base de donnée $db
@@ -35,22 +51,18 @@ class Reservation{
 
 		$this->_lesTypeCateg= Enregistrer::getLesEnr($this);
 	}
-	//===> CREATE
-	public function create(){
+
+	//===> DELETE
+	public function delete(){
 		include "connexionDB.php";
-		$req=$db->prepare("INSERT INTO Reservation(nom, adr, cp, ville, traversee_id)
-						 VALUES (:nom, :adr, :cp, :ville, :trav);");
-		$req->execute([
-			//":num" => $this->_num,
-			"nom" => $this->_nom,
-			"adr" => $this->_adr,
-			"cp" => $this->_cp,
-			"ville" => $this->_ville,
-			"trav" => $this->_laTraversee->num()
-		]);
-		$this->_num = $db->lastInsertId();
-		$req->closeCursor();
+		$req=$db->prepare("DELETE FROM Reservation
+										WHERE num=:num");
+		$req->execute([ "num" => $this->_num ]);
+		$secReq=$db->prepare("DELETE FROM Enregistrer
+											WHERE numReserv=:numReserv");
+		$secReq->execute([ "numReserv" => $this->_num ]);
 	}
+
 
 	#################  - FINDALL() -  #################
 	public static function findAll(){

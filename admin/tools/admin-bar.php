@@ -54,7 +54,6 @@
 							<button class="dropbtn">Réservations</button>
 							<div class="dropdown-content">
 								<a href="?adm=true&action=list&obj=rese">Lister les Réservations</a>
-								<a href="?adm=true&action=new&obj=rese">Nouvelle Réservation</a>
 							</div>
 						</div></li>
 					</ul>

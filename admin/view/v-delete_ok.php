@@ -96,6 +96,21 @@ if(!empty($liaisonCode)){ ?>
 		</div>
 	</div>
 <?php
+}else if(!empty($reserv)){ ?>
+	<!-- Confirmation -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h3>La réservation n° <?= $reserv->num() ?> a bien été supprimé.</h3>
+		</div>
+	</div>
+	<br>
+	<!-- //Msg-Retrou -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<p><a href="index.php?adm=true&action=list&obj=rese">Retour à la liste des réservations</a></p>
+		</div>
+	</div>
+<?php
 }else{
 	Header('Location: index.php?action=404');
 }

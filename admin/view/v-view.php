@@ -152,7 +152,7 @@ switch($obj){
 												<td><?= $reserv->laTraversee()->liaison()->getCode() ?></td>
 												<td><?= $reserv->laTraversee()->liaison()->getLePortDep()->getNom() ?></td>
 												<td><?= $reserv->laTraversee()->liaison()->getLePortArr()->getNom() ?></td>
-												<td><a href="index.php?adm=true&action=mod&obj=liai&id=<?= $reserv->laTraversee()->liaison()->getCode() ?>">
+												<td><a href="index.php?adm=true&action=view&obj=liai&id=<?= $reserv->laTraversee()->liaison()->getCode() ?>">
 													<i class="fa fa-eye" aria-hidden="true" alt="Voir" title="Voir"></i>
 												</a></td>
 											</tr>
