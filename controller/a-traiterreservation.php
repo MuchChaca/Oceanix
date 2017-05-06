@@ -3,26 +3,20 @@
 $allTypeCateg = array();
 $allTypeCateg = TypeCateg::findAll();
 
-//if(!empty($_POST['\''..'\'']))
-//$recap = array();
-//foreach($allTypeCateg as $aTypeCateg){
-//	$field = $aTypeCateg->lettreCateg().$aTypeCateg->numOrdre();
-//	if(!empty($_POST['\''.$field.'\'']) || $_POST['\''.$field.'\'']!=0){
-//		$recap[$field]=$_POST['\''.$field.'\''];
-//	}
-//}
 
 //--> On recup la traversee
 if(!empty($_GET['info'])){
 	$traversee  = new Traversee($_GET['info']);
 	$traversee->retrieve();
 }
-
+// print_r($traversee);
 //try{
 	//===> On fait la réservation
 	$reservation = new Reservation(NULL, $_POST['name'], $_POST['adress'], $_POST['cp'], $_POST['city']);
+	$reservation->setLaTraversee($traversee);
 	$reservation->create();
-	$reservation->retrieve();
+	// $reservation->retrieve();
+
 
 	## Declare les collections d'objets des enregistrement et de reservations
 	$aReserver= array();
@@ -41,13 +35,9 @@ if(!empty($_GET['info'])){
 	$finalTab=array();
 	//==> le cout total final
 	$finalCost = 0;
-	//echo "<pre>";
-	//print_r($aReserver);
-	//echo "</pre>";
-	//echo "<pre>";
-	//print_r($aEnregistrer);
-	//echo "</pre>";
 
+	//lesTypeCateg
+	$lesTypeCateg= array();
 
 	//==> Création des enregistrements dans la bdd
 	foreach($aEnregistrer as $key => $value){
@@ -57,6 +47,7 @@ if(!empty($_GET['info'])){
 			$idTypeCateg = explode("-", $key);
 			$typeCateg = new TypeCateg($idTypeCateg[0], $idTypeCateg[1], NULL);
 			$typeCateg->retrieve();
+			array_push($lesTypeCateg, $typeCateg);
 			//on crée l'enregistrement
 			$enregistrement = new Enregistrer($reservation, $typeCateg, $value);
 			$enregistrement->create();
@@ -72,6 +63,7 @@ if(!empty($_GET['info'])){
 			$finalTab[$typeCateg->libelle()][3]=$tarif;
 		}
 	}
+	$reservation->setLesTypeCateg($lesTypeCateg);
 
 
 //}catch(Exception $e){

@@ -26,7 +26,7 @@ class Port{
 		$result=$result->fetch();
 		$this->_nom=$result['nom'];
 	}
-	
+
 	public function update(){
 		include "connexionDB.php";
 		$req=$db->prepare("UPDATE Port

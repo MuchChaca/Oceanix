@@ -59,6 +59,12 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 			$status="list";
 			break;
 
+		//=> For a Reservation
+		case 'rese':
+			$listReserv= Reservation::findAll();
+			$status= "list";
+			break;
+
 		default:
 			$status="404";
 	}

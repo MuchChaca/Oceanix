@@ -51,6 +51,11 @@
 	</table>
 
 </div>
+
+<div class="col-lg-12 text-center">
+	<a href="?action=recap-pdf&id=<?= $reservation->num() ?>">Accéder à la version PDF</a>
+</div>
+
 </div>
 
 <!-- </div> -->

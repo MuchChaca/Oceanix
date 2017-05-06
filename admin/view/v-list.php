@@ -202,7 +202,51 @@
 							</div>
 						</div>
 					<?php
-					}
+				}else if(!empty($listReserv)){ //LIST OF THE RESERVATIONS ?>
+						<div class="row">
+							<div class="col-lg-12 text-center">
+								<h1>Liste des Réservations</h1>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-md-offset-3">
+							<div class="display-table">
+								<table>
+									<thead>
+										<tr>
+											<th>Numéro</th>
+											<th>Nom</th>
+											<th>Adresse</th>
+											<th>Date Début</th>
+											<th>Date Fin</th>
+											<th class="admin" colspan="2">Action</th>
+										</tr>
+									</thead>
+									<tboby>
+										<?php foreach($listReserv as $reserv): ?>
+											<tr>
+												<td><?= $reserv->num() ?></td>
+												<td><?= $reserv->nom() ?></td>
+												<td><?= $reserv->adr() ?><br><?= $reserv->cp() ?> <?= $reserv->ville() ?></td>
+												<td><?= $reserv->dateDeb() ?></td>
+												<td><?= $reserv->dateFin() ?></td>
+												<td><a href="index.php?adm=true&action=mod&obj=rese&id=<?= $reserv->num() ?>">
+													<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
+												</a></td>
+												<td><a href="index.php?adm=true&action=del&obj=rese&id=<?= $reserv->num() ?>">
+													<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
+												</a></td>
+											</tr>
+										<?php endforeach; ?>
+									</tboby>
+								</table>
+
+							</div>
+						</div><!-- //LIST-PORTS -->
+					<?php
+				}else{
+					Header('Location: /index.php?action=valid_connexion');
+				}
 					?>
 
 
@@ -210,5 +254,5 @@
 </div> <!-- //container -->
 </section> <!-- //portfolio -->
 <?php
-}else{ Header('Locate: /index.php?action=valid_connexion');}
+}else{ Header('Location: /index.php?action=valid_connexion');}
 ?>

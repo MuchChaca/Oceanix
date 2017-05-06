@@ -1,7 +1,7 @@
 <?php
 class Enregistrer
 {
-	
+
 	#################  - VARS -  #################
 	private  $_quantite;
 	//--> les objets faisant liaison
@@ -14,12 +14,12 @@ class Enregistrer
 		$this->_leTypeCateg=$leTypeCateg;
 		$this->_laReservation=$laReservation;
 	}
-	
+
 	#################  - CRUD -  #################
 	//===> RETRIEVE
 	public function retrieve(){
 		include "connexionDB.php";   //fournis la base de donnée $db
-		$req="SELECT nom
+		$req="SELECT *
 				FROM Enregistrer
 				WHERE numReserv=".$this->_laReservation->num()."
 					AND lettreCateg='".$this->_leTypeCateg->lettreCateg()."'
@@ -42,13 +42,18 @@ class Enregistrer
 			":quantite" => $this->_quantite
 		]);
 	}
-	
-	
+
+
 	/*
 	 * @param Reservation $reservation
 	 * @return list $enregistrements
 	 */
 	public static function getLesEnr(Reservation $reservation){
+		try{
+			$db= new PDO('mysql:host=localhost;dbname=SIO2_SLAM5_Oceanix', 'sio', 'Btssio2016@', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		}catch(Exception $e){
+			die("Erreur de connexion à la bdd de type: ".$e);
+		}
 		$enregistrements = array();
 		$req=$db->query("SELECT *
 							 FROM Enregistrer
@@ -56,13 +61,13 @@ class Enregistrer
 		while($line = $req->fetch()){
 			$typeCateg = new TypeCateg($line['lettreCateg'], $line['numType'], NULL);
 			$typeCateg->retrieve();
-			$unEnr = new Enregistrement($line['num'], $typeCateg, NULL);
+			$unEnr = new Enregistrer($reservation, $typeCateg, NULL);
 			$unEnr->retrieve();
 			array_push($enregistrements, $unEnr);
 		}
 		return $enregistrements;
 	}
-	
+
 	#################  - FINDALL() -  #################
 	//public static function findAll(){
 	//	include "connexionDB.php";
@@ -78,8 +83,8 @@ class Enregistrer
 	//	}
 	//	return $lesEnregistrements;
 	//}
-	
-	
+
+
 
 	#################  - GETTERS -  #################
 	public function quantite(){ return $this->_quantite; }

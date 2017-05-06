@@ -14,28 +14,39 @@ class Reservation{
 		$this->_ville=$ville;
 	}
 
+
 	#################  - CRUD -  #################
 	//===> RETRIEVE
 	public function retrieve(){
 		include "connexionDB.php";   //fournis la base de donnée $db
-		$req="SELECT nom
+		$req="SELECT *
 				FROM Reservation
 				WHERE num=".$this->_num.";";
 		$result=$db->query($req);	/** @TODO compléter pour toute les variables */
 		$result=$result->fetch();
 		$this->_nom=$result['nom'];
+		$this->_adr=$result['adr'];
+		$this->_cp=$result['cp'];
+		$this->_ville=$result['ville'];
+
+		$trav= new Traversee($result['traversee_id']);
+		$trav->retrieve();
+		$this->_laTraversee=$trav;
+
+		$this->_lesTypeCateg= Enregistrer::getLesEnr($this);
 	}
 	//===> CREATE
 	public function create(){
 		include "connexionDB.php";
-		$req=$db->prepare("INSERT INTO Reservation(nom, adr, cp, ville)
-						 VALUES (:nom, :adr, :cp, :ville);");
+		$req=$db->prepare("INSERT INTO Reservation(nom, adr, cp, ville, traversee_id)
+						 VALUES (:nom, :adr, :cp, :ville, :trav);");
 		$req->execute([
 			//":num" => $this->_num,
-			":nom" => $this->_nom,
-			":adr" => $this->_adr,
-			":cp" => $this->_cp,
-			":ville" => $this->_ville
+			"nom" => $this->_nom,
+			"adr" => $this->_adr,
+			"cp" => $this->_cp,
+			"ville" => $this->_ville,
+			"trav" => $this->_laTraversee->num()
 		]);
 		$this->_num = $db->lastInsertId();
 		$req->closeCursor();
@@ -48,7 +59,7 @@ class Reservation{
 		$req="SELECT *
 				FROM Reservation;";
 		$req=$db->query($req);
-		while($line=$result->fetch()){
+		while($line=$req->fetch()){
 			$reservation=new Reservation($line['num'], $line['nom'],
 											 $line['adr'], $line['cp'], $line['ville']);
 			array_push($lesReservations, $reservation);
@@ -61,7 +72,7 @@ class Reservation{
 	 * @param Traversee $traversee
 	 * @return Periode La Periode à laquelle la date entrée appartient
 	 */
-	public static function getPeriode(Traversee $traversee){
+	public static function getPeriode($traversee){
 		include "connexionDB.php";
 		$req=$db->prepare("SELECT *
 							 FROM Periode
@@ -79,6 +90,8 @@ class Reservation{
 	public function adr(){ return $this->_adr; }
 	public function cp(){ return $this->_cp; }
 	public function ville(){ return $this->_ville; }
+	public function laTraversee(){ return $this->_laTraversee; }
+	public function lesTypeCateg(){ return $this->_lesTypeCateg; }
 	#################  - SETTERS -  #################
 	//$_num, $_nom, $_adr, $_cp, $_ville;
 	public function setNum($num){ $this->_num = $num; }
@@ -86,6 +99,6 @@ class Reservation{
 	public function setAdr($adr){ $this->_adr= $adr; }
 	public function setCp($cp){ $this->_cp= $cp; }
 	public function setVille($ville){ $this->_ville= $ville; }
-	public function setLaTraversee(Traversee $traversee){ $this->_laTraversee= $traversee; }
+	public function setLaTraversee($traversee){ $this->_laTraversee= $traversee; }
 	public function setLesTypeCateg($typeCateg){ $this->_lesTypeCateg = $typeCateg; }
 }
