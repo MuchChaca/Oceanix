@@ -53,7 +53,7 @@
 </div>
 
 <div class="col-lg-12 text-center">
-	<a href="?action=recap-pdf&id=<?= $reservation->num() ?>">Accéder à la version PDF</a>
+	<a href="pdf/index.php?&id=<?= $reservation->num() ?>" target="_blank">Accéder à la version PDF</a>
 </div>
 
 </div>
