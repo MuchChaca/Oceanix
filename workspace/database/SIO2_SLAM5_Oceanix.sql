@@ -3,12 +3,12 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 02, 2017 at 12:07 PM
+-- Generation Time: May 06, 2017 at 09:53 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+03:30";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -70,7 +70,7 @@ INSERT INTO `Bateau` (`id`, `nom`) VALUES
 (18, 'MonPetitBateauTropGrand'),
 (19, 'Pourquoi Pas'),
 (20, 'Ca marche ?'),
-(21, 'ou pas');
+(21, 'Ou pas');
 
 -- --------------------------------------------------------
 
@@ -160,7 +160,28 @@ INSERT INTO `Enregistrer` (`numReserv`, `lettreCateg`, `numType`, `quantite`) VA
 (32, 'C', 3, 1),
 (21, 'A', 1, 1),
 (21, 'A', 2, 1),
-(21, 'C', 1, 1);
+(21, 'C', 1, 1),
+(22, 'A', 1, 2),
+(22, 'A', 2, 1),
+(22, 'A', 3, 1),
+(22, 'C', 1, 1),
+(23, 'A', 1, 1),
+(23, 'A', 3, 2),
+(23, 'B', 2, 1),
+(24, 'A', 3, 2),
+(24, 'B', 1, 2),
+(25, 'A', 1, 2),
+(25, 'A', 3, 2),
+(26, 'A', 1, 1),
+(26, 'A', 2, 2),
+(26, 'A', 3, 2),
+(27, 'A', 1, 1),
+(27, 'B', 2, 1),
+(32, 'A', 1, 2),
+(32, 'A', 2, 1),
+(33, 'A', 1, 1),
+(34, 'A', 1, 1),
+(34, 'A', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -240,18 +261,23 @@ CREATE TABLE `Reservation` (
   `nom` varchar(50) NOT NULL,
   `adr` varchar(50) NOT NULL,
   `cp` varchar(5) NOT NULL,
-  `ville` varchar(30) NOT NULL
+  `ville` varchar(30) NOT NULL,
+  `traversee_id` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `Reservation`
 --
 
-INSERT INTO `Reservation` (`num`, `nom`, `adr`, `cp`, `ville`) VALUES
-(18, 'Jean Mouloud', '52 AllÃ© de la libertÃ©e contrainte', '10510', 'CorÃ©eDuNord'),
-(19, 'TIPREZ', '15 chemin des oliviers', '56 10', 'Lorient'),
-(20, 'Monsieur Testeur', '123 rue des tests', '1234', 'SinTest'),
-(21, 'Say My Name', 'heisenberoug', '12345', 'Cianow');
+INSERT INTO `Reservation` (`num`, `nom`, `adr`, `cp`, `ville`, `traversee_id`) VALUES
+(18, 'Jean Mouloud', '52 AllÃ© de la libertÃ©e contrainte', '10510', 'CorÃ©eDuNord', 3),
+(19, 'TIPREZ', '15 chemin des oliviers', '56 10', 'Lorient', 3),
+(20, 'Monsieur Testeur', '123 rue des tests', '1234', 'SinTest', 3),
+(21, 'Say My Name', 'heisenberoug', '12345', 'Cianow', 3),
+(31, 'Jean Master', '123 rue de La Serf', '87500', 'Mapalourd', 0),
+(32, 'Jean Master', '123 rue de La Serf', '87500', 'Mapalourd', 23),
+(33, 'Jean Master', '123 rue de La Serf', '87500', 'Mapalourd', 23),
+(34, 'Jean Master', '123 rue de La Serf', '87500', 'Mapalourd', 23);
 
 -- --------------------------------------------------------
 
@@ -462,7 +488,7 @@ ALTER TABLE `Port`
 -- AUTO_INCREMENT for table `Reservation`
 --
 ALTER TABLE `Reservation`
-  MODIFY `num` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `num` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `Traversee`
 --
