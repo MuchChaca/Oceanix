@@ -224,7 +224,7 @@
 											<tr>
 												<td><?= $reserv->num() ?></td>
 												<td><?= $reserv->nom() ?></td>
-												<td><a href="index.php?adm=true&action=mod&obj=rese&id=<?= $reserv->num() ?>">
+												<td><a href="index.php?adm=true&action=view&obj=rese&id=<?= $reserv->num() ?>">
 													<i class="fa fa-eye" aria-hidden="true" alt="Voir" title="Voir"></i>
 												</a></td>
 												<td><a href="index.php?adm=true&action=mod&obj=rese&id=<?= $reserv->num() ?>">
