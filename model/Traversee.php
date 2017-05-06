@@ -36,7 +36,8 @@ class Traversee{
 		$req->execute([":num" => $this->_num]);
 		$result=$req->fetch();
 		$this->_dateTraversee=$result['dateTraversee'];
-		$this->_heure=substr($result['heure'], -8, 5);
+		$this->_heure=$result['heure'];
+		// $this->_heure=substr($result['heure'], -8, 5);
 		//--> Bateau[obj]
 		$this->_bateau=new Bateau($result['idBateau'], null, null);
 		$this->_bateau->retrieve();
@@ -95,7 +96,7 @@ class Traversee{
 		return htmlspecialchars($date);
 	}
 	public function getDate(){ return $this->_dateTraversee; }
-	public function heure(){ return htmlspecialchars($this->_heure); }
+	public function heure(){ return htmlspecialchars(substr($this->_heure, -8, 5)); }
 	public function bateau(){	return $this->_bateau;	}
 	public function liaison(){	return $this->_liaison;	}
 }

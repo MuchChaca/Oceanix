@@ -57,11 +57,15 @@ class Reservation{
 		include "connexionDB.php";
 		$lesReservations=array();
 		$req="SELECT *
-				FROM Reservation;";
+				FROM Reservation";
 		$req=$db->query($req);
 		while($line=$req->fetch()){
 			$reservation=new Reservation($line['num'], $line['nom'],
-											 $line['adr'], $line['cp'], $line['ville']);
+											 			  $line['adr'], $line['cp'], $line['ville']);
+			$trav= new Traversee($line['traversee_id']);
+			// $trav->retrieve();
+			$reservation->setLaTraversee($trav);
+			$reservation->setLesTypeCateg(Enregistrer::getLesEnr($reservation));
 			array_push($lesReservations, $reservation);
 		}
 		return $lesReservations;
@@ -76,8 +80,8 @@ class Reservation{
 		include "connexionDB.php";
 		$req=$db->prepare("SELECT *
 							 FROM Periode
-							 WHERE :date BETWEEN dateDeb AND dateFin");
-		$req->execute(['date' => $traversee->getDate()]);
+							 WHERE :dateDonnee BETWEEN dateDeb AND dateFin");
+		$req->execute(['dateDonnee' => $traversee->getDate()]);
 		$result=$req->fetch();
 		return $periode = new Periode($result['dateDeb'], $result['dateFin']);
 	}

@@ -216,20 +216,17 @@
 										<tr>
 											<th>Numéro</th>
 											<th>Nom</th>
-											<th>Adresse</th>
-											<th>Date Début</th>
-											<th>Date Fin</th>
-											<th class="admin" colspan="2">Action</th>
+											<th class="admin" colspan="3">Action</th>
 										</tr>
 									</thead>
 									<tboby>
-										<?php foreach($listReserv as $reserv): ?>
+										<?php foreach($listReserv as $reserv):?>
 											<tr>
 												<td><?= $reserv->num() ?></td>
 												<td><?= $reserv->nom() ?></td>
-												<td><?= $reserv->adr() ?><br><?= $reserv->cp() ?> <?= $reserv->ville() ?></td>
-												<td><?= $reserv->dateDeb() ?></td>
-												<td><?= $reserv->dateFin() ?></td>
+												<td><a href="index.php?adm=true&action=mod&obj=rese&id=<?= $reserv->num() ?>">
+													<i class="fa fa-eye" aria-hidden="true" alt="Voir" title="Voir"></i>
+												</a></td>
 												<td><a href="index.php?adm=true&action=mod&obj=rese&id=<?= $reserv->num() ?>">
 													<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
 												</a></td>
@@ -239,6 +236,29 @@
 											</tr>
 										<?php endforeach; ?>
 									</tboby>
+									<tfoot>
+										<tr>
+											<td colspan="3" style="text-align: left;">
+												<?php
+												if($prevPage >= 0){
+													echo "<a href=\"index.php?adm=true&action=list&obj=rese&page=".$prevPage."\">&lt;&lt; Précédent</a>";
+												}else{
+													echo "&lt;&lt; Précédent";
+												}
+												?>
+											</td>
+											<td></td>
+											<td colspan="2" style="text-align: right;">
+												<?php
+												if($nextPage >= 0){
+													echo "<a href=\"index.php?adm=true&action=list&obj=rese&page=".$nextPage."\">Suivant &gt;&gt;</a>";
+												}else{
+													echo "Suivant &gt;&gt;";
+												}
+												?>
+											</td>
+										</tr>
+									</tfoot>
 								</table>
 
 							</div>

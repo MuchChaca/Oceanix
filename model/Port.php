@@ -19,7 +19,7 @@ class Port{
 
 	public function retrieve(){
 		include "connexionDB.php";   //fournis la base de donnée $db
-		$req="SELECT nom
+		$req="SELECT *
 				FROM Port
 				WHERE id=".$this->_id.";";
 		$result=$db->query($req);
