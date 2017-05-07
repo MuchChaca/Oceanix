@@ -1,6 +1,30 @@
 <?php
 if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) && Passerelle::logged()){
 	switch ($_GET['obj']){
+		// If it's for Tarif ('tari')
+		case 'tari':
+			if(!empty($_POST['lettre']) && isset($_POST['numOrdre']) && !empty($_POST['date']) && !empty($_POST['liai']) &&!empty($_POST['tarif'])){
+				$liai= new Liaison($_POST['liai']);
+				$liai->retrieve();
+				$typeCateg= new TypeCateg($_POST['lettre'], $_POST['numOrdre'], null);
+				$typeCateg->retrieve();
+				echo "<p>".$_POST['lettre']."</p>";
+				echo "<p>".$_POST['numOrdre']."</p>";
+				$newTarif= new Tarif($liai, $_POST['date'], $typeCateg, $_POST['tarif']);
+				$newTarif->update();
+				$status= "modif_ok";
+			}else if(!empty($_GET['liai']) && !empty($_GET['l']) && isset($_GET['n']) && !empty($_GET['date'])){
+				$liai= new Liaison($_GET['liai']);
+				$liai->retrieve();
+				$typeCateg=new TypeCateg($_GET['l'], $_GET['n'], null);
+				$typeCateg->retrieve();
+				$tarif= new Tarif($liai, $_GET['date'], $typeCateg, null);
+				$tarif->retrieve();
+				$status= "mod";
+				$obj="tari";
+			}else{ $status="404"; }
+			break;
+
 		// If it's for Reservation ('rese')
 		case 'rese':
 			if(!empty($_POST['num']) && !empty($_POST['nom']) && !empty($_POST['adr']) && !empty($_POST['cp']) && !empty($_POST['ville'])){

@@ -17,7 +17,7 @@ if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) &&
 				$liai= new Liaison($_POST['liai']);
 				$liai->retrieve();
 				$tycat=explode("-", $_POST['tycat']);
-				$typeCateg= new TypeCateg($tycat[0], $tycat[0], null);
+				$typeCateg= new TypeCateg($tycat[0], $tycat[1], null);
 				$typeCateg->retrieve();
 				$newTarif= new Tarif($liai, $dateSql, $typeCateg, $_POST['tarif']);
 				$newTarif->create();

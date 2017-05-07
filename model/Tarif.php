@@ -26,16 +26,41 @@ class Tarif{
 	##==>  - RETRIEVE
 	public function retrieve(){
 		include "connexionDB.php";
-		$req=$db->prepare("SELECT *
+		$req=$db->prepare("SELECT tarif
 										FROM Tarifer
-										WHERE codeLiaison = :codeLiaison;");
-		$result=$req->execute([":codeLiaison" => $this->_codeLiaison]);
-		$result= $result->fetch();
-		$this->_dateDeb=$result['dateDeb'];
-		$this->_lettreCateg=$result['lettreCateg'];
-		$this->_numType=$result['numType'];
+										WHERE codeLiaison =:codeLiaison
+											AND dateDeb=:dateD
+											AND lettreCateg=:lettre
+											AND numType=:numOrdre");
+		$req->execute([
+			"codeLiaison" => $this->_liaison->getCode(),
+			"dateD" => $this->_dateDeb,
+			"lettre" => $this->_typeCateg->lettreCateg(),
+			"numOrdre" => $this->_typeCateg->numOrdre()
+		]);
+
+		$result= $req->fetch();
 		$this->_tarif=$result['tarif'];
 	}
+	##==>  - UPDATE
+	public function update(){
+		include "connexionDB.php";
+		$req=$db->prepare("UPDATE Tarifer
+										SET tarif=:tarif
+										WHERE codeLiaison=:liai
+											AND dateDeb=:dateD
+											AND lettreCateg=:lettre
+											AND numType=:numOrdre");
+		$req->execute([
+			"tarif" => $this->_tarif,
+			"liai" => $this->_liaison->getCode(),
+			"dateD" => $this->_dateDeb,
+			"lettre" => $this->_typeCateg->lettreCateg(),
+			"numOrdre" => $this->_typeCateg->numOrdre(),
+			"dateD" => $this->_dateDeb
+		]);
+	}
+
 	##============  - FINDALL -  ============##
 	public static function findAll(){
 		include "connexionDB.php";

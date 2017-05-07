@@ -6,6 +6,41 @@
 <?php
 if(!empty($obj)){
 switch($obj){
+	case 'tari': ?>
+		<!-- TITLE-BATEAU -->
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h1>Modification du tarif pour la liaison &quot;<?= $tarif->liaison()->getCode() ?>&quot; de
+					la catégorie &quot;<?= $tarif->typeCateg()->libelle() ?>&quot;</h1>
+			</div>
+		</div>
+
+		<!-- main-TARIF-container -->
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<form action="index.php?adm=true&action=mod&obj=tari" method="POST">
+					<div class="form-area">
+						<input type="hidden" value="<?= $tarif->liaison()->getCode() ?>" name="liai" >
+						<input type="hidden" value="<?= $tarif->typeCateg()->lettreCateg() ?>" name="lettre" >
+						<input type="hidden" value="<?= $tarif->typeCateg()->numOrdre() ?>" name="numOrdre" >
+						<input type="hidden" value="<?= $tarif->dateDeb() ?>" name="date" >
+						<div class="simple-form">
+							<div class="simple-form-legend form-left"><h5>Tarif (en €)</h5></div>
+							<div class="simple-form-field form-left">
+								<input type="number" minvalue="0" name="tarif" value="<?= $tarif->tarif() ?>" required />
+							</div>
+						</div>
+						<!-- submit -->
+						<div class="simple-form">
+							<div class="simple-form-submit"><input type="submit" value="Valider"></div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<?php
+		break;
+
 	//--> RESERVATION
 	case 'rese': ?>
 		<!-- TITLE-RESERVATION -->

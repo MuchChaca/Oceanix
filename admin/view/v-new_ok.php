@@ -332,11 +332,11 @@ if(Passerelle::logged()){
 								<td><?= $newTarif->typeCateg()->libelle() ?></td>
 								<td><?= $newTarif->tarif() ?> €</td>
 								<td><a href="index.php?adm=true&action=mod&obj=tari&liai=<?= $newTarif->liaison()->getCode() ?>&l=
-									<?= $newTarif->typeCateg()->lettreCateg() ?>&n=<?= $newTarif->typeCateg()->lettreCateg() ?>&date=<?= $newTarif->dateDeb() ?>">
+									<?= $newTarif->typeCateg()->lettreCateg() ?>&n=<?= $newTarif->typeCateg()->numOrdre() ?>&date=<?= $newTarif->dateDeb() ?>">
 									<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
 								</a></td>
 								<td><a href="index.php?adm=true&action=del&obj=tari&liai=<?= $newTarif->liaison()->getCode() ?>&l=
-									<?= $newTarif->typeCateg()->lettreCateg() ?>&n=<?= $newTarif->typeCateg()->lettreCateg() ?>&date=<?= $newTarif->dateDeb() ?>">
+									<?= $newTarif->typeCateg()->lettreCateg() ?>&n=<?= $newTarif->typeCateg()->numOrdre() ?>&date=<?= $newTarif->dateDeb() ?>">
 									<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
 								</a></td>
 							</tr>
@@ -345,7 +345,7 @@ if(Passerelle::logged()){
 		</div>
 	</div>
 </div>
-	<p><a href="index.php?adm=true&action=list&obj=tari">Retour à la liste des tarif</a></p>
+	<p><a href="index.php?adm=true&action=list&obj=tari">Retour à la liste des tarifs</a></p>
 <?php
 }else{
 	Header('Location: index.php?action=404');

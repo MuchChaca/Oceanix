@@ -290,11 +290,11 @@
 											<td><?= $tarif->typeCateg()->libelle() ?></td>
 											<td><?= $tarif->tarif() ?> €</td>
 											<td><a href="index.php?adm=true&action=mod&obj=tari&liai=<?= $tarif->liaison()->getCode() ?>&l=
-												<?= $tarif->typeCateg()->lettreCateg() ?>&n=<?= $tarif->typeCateg()->lettreCateg() ?>&date=<?= $tarif->dateDeb() ?>">
+												<?= $tarif->typeCateg()->lettreCateg() ?>&n=<?= $tarif->typeCateg()->numOrdre() ?>&date=<?= $tarif->dateDeb() ?>">
 												<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
 											</a></td>
 											<td><a href="index.php?adm=true&action=del&obj=tari&liai=<?= $tarif->liaison()->getCode() ?>&l=
-												<?= $tarif->typeCateg()->lettreCateg() ?>&n=<?= $tarif->typeCateg()->lettreCateg() ?>&date=<?= $tarif->dateDeb() ?>">
+												<?= $tarif->typeCateg()->lettreCateg() ?>&n=<?= $tarif->typeCateg()->numOrdre() ?>&date=<?= $tarif->dateDeb() ?>">
 												<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
 											</a></td>
 										</tr>
