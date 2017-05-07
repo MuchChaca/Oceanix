@@ -10,6 +10,19 @@ class Tarif{
 	}
 
 	##============  - CRUD -  ============##
+	##==>  - CREATE
+	public function create(){
+		include "connexionDB.php";
+		$req=$db->prepare("INSERT INTO Tarifer (codeLiaison, dateDeb, lettreCateg, numType, tarif)
+										VALUES (:liai, :dateD, :lettre, :numOrdre, :tarif)");
+		$req->execute([
+			"liai" => $this->_liaison->getCode(),
+			"dateD" => $this->_dateDeb,
+			"lettre" => $this->_typeCateg->lettreCateg(),
+			"numOrdre" => $this->_typeCateg->numOrdre(),
+			"tarif" => $this->_tarif
+		]);
+	}
 	##==>  - RETRIEVE
 	public function retrieve(){
 		include "connexionDB.php";

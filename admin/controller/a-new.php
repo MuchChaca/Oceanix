@@ -1,6 +1,35 @@
 <?php
 if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) && Passerelle::logged()){
 	switch($_GET['obj']){
+		//=> New Tarifs
+		case 'tari':
+			if((!empty($_POST['liai']) && $_POST['liai']!= 'none') && !empty($_POST['date']) && (!empty($_POST['tycat'])&& $_POST['tycat']!= 'none') && isset($_POST['tarif'])){ //If the form is filled
+				if(preg_match("#^[0-9]{2}/[0-9]{2}/[0-9]{4}$#", $_POST['date'])){  //--> Bon format?
+					##-- formate la date au format SQL
+					$dateSql=preg_replace("#([0-9]{2})/([0-9]{2})/([0-9]{4})#", '$3-$2-$1', $_POST['date']);
+				}else{
+					$allLiai= Liaison::findAll();
+					$allTypeCateg= TypeCateg::findAll();
+					$status="new";
+					$obj="tari";
+					return;
+				}
+				$liai= new Liaison($_POST['liai']);
+				$liai->retrieve();
+				$tycat=explode("-", $_POST['tycat']);
+				$typeCateg= new TypeCateg($tycat[0], $tycat[0], null);
+				$typeCateg->retrieve();
+				$newTarif= new Tarif($liai, $dateSql, $typeCateg, $_POST['tarif']);
+				$newTarif->create();
+				$status="new_ok";
+			}else{	// Else we display the form
+				$allLiai= Liaison::findAll();
+				$allTypeCateg= TypeCateg::findAll();
+				$status="new";
+				$obj="tari";
+			}
+			break;
+
 		//=> New Bateau
 		case 'boat':
 			if(!empty($_POST['nomBat'])){ //If the form is filled

@@ -267,7 +267,7 @@
 				}else if(!empty($allTarifs)){ //LIST OF THE TARIFS ?>
 					<div class="row">
 						<div class="col-lg-12 text-center">
-							<h1>Liste des Ports</h1>
+							<h1>Liste des Tarifs</h1>
 						</div>
 					</div>
 

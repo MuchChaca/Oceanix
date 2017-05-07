@@ -6,6 +6,67 @@ if(Passerelle::logged()){ ?>
 
 	<?php
 	switch($obj){
+		//=> NEW TARIF
+		case 'tari': ?>
+			<!-- TITLE-BATEAU -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h1>Création d'un tarif</h1>
+				</div>
+			</div>
+
+			<!-- main-TARIF-container -->
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<form action="index.php?adm=true&action=new&obj=tari" method="POST">
+						<div class="form-area">
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Liaison </h5></div>
+								<div class="simple-form-field form-left">
+									<select name="liai">
+										<option selected value="none">&lt; Sélectionnez &gt;</option>
+										<?php foreach($allLiai as $liai): ?>
+											<option value="<?= $liai->getCode() ?>">[<?= $liai->getCode() ?>]
+												<?= $liai->getLePortDep()->getNom() ?> - <?= $liai->getLePortArr()->getNom() ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Date début </h5></div>
+								<div class="simple-form-field form-left">
+									<input type="text" maxlength="10" name="date" required placeholder="JJ/MM/AAAA" />
+								</div>
+							</div>
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Catégorie </h5></div>
+								<div class="simple-form-field form-left">
+									<select name="tycat">
+										<option selected value="none">&lt; Sélectionnez &gt;</option>
+										<?php foreach($allTypeCateg as $typeCateg): ?>
+											<option value="<?= $typeCateg->lettreCateg() ?>-<?= $typeCateg->numOrdre() ?>">
+												<?= $typeCateg->libelle() ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+							<div class="simple-form">
+								<div class="simple-form-legend form-left"><h5>Tarif (en €)</h5></div>
+								<div class="simple-form-field form-left">
+									<input type="number" minvalue="0" name="tarif" value="0" required />
+								</div>
+							</div>
+							<!-- submit -->
+							<div class="simple-form">
+								<div class="simple-form-submit"><input type="submit" value="Valider"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<?php
+			break;
+
 		//=> NEW BATEAU
 		case 'boat': ?>
 			<!-- TITLE-BATEAU -->
@@ -239,7 +300,7 @@ if(Passerelle::logged()){ ?>
 		 ?>
 	<?php
 		default:
-			Header('Locate: /index.php?action=404');
+			Header('Locate: index.php?action=404');
 	}
 	?>
 
@@ -248,6 +309,6 @@ if(Passerelle::logged()){ ?>
 </section> <!-- //portfolio -->
 <?php
 }else{
-	Header('Locate: /index.php?action=valid_connexion');
+	Header('Locate: index.php?action=valid_connexion');
 }
 ?>

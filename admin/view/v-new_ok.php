@@ -302,6 +302,51 @@ if(Passerelle::logged()){
 </div>
 	<p><a href="index.php?adm=true&action=list&obj=tycat">Retour à la liste des catégories</a></p>
 <?php
+}else if(!empty($newTarif)){  // For a created 'Tarif'?>
+	<!-- TITLE-Tarif -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h1>Création effectuée</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<!-- div-Tarif -->
+		<div class="col-lg-12 text-center">
+			<div class="display-table">
+				<table>
+					<thead>
+						<tr><th colspan="6"><h5>Le tarif créé</h5></th></tr>
+						<tr>
+							<th>Liaison</th>
+							<th>Date Début</th>
+							<th>Catégorie</th>
+							<th>Tarif / U</th>
+							<th colspan="2">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+							<tr>
+								<td><?= $newTarif->liaison()->getCode() ?></td>
+								<td><?= $newTarif->affiDate() ?></td>
+								<td><?= $newTarif->typeCateg()->libelle() ?></td>
+								<td><?= $newTarif->tarif() ?> €</td>
+								<td><a href="index.php?adm=true&action=mod&obj=tari&liai=<?= $newTarif->liaison()->getCode() ?>&l=
+									<?= $newTarif->typeCateg()->lettreCateg() ?>&n=<?= $newTarif->typeCateg()->lettreCateg() ?>&date=<?= $newTarif->dateDeb() ?>">
+									<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
+								</a></td>
+								<td><a href="index.php?adm=true&action=del&obj=tari&liai=<?= $newTarif->liaison()->getCode() ?>&l=
+									<?= $newTarif->typeCateg()->lettreCateg() ?>&n=<?= $newTarif->typeCateg()->lettreCateg() ?>&date=<?= $newTarif->dateDeb() ?>">
+									<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
+								</a></td>
+							</tr>
+					</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+	<p><a href="index.php?adm=true&action=list&obj=tari">Retour à la liste des tarif</a></p>
+<?php
 }else{
 	Header('Location: index.php?action=404');
 }
