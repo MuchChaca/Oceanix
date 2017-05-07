@@ -60,6 +60,22 @@ class Tarif{
 			"dateD" => $this->_dateDeb
 		]);
 	}
+	##==>  - DELETE
+	public function delete(){
+		include "connexionDB.php";
+		$req=$db->prepare("DELETE FROM Tarifer
+										WHERE codeLiaison=:liai
+											AND dateDeb=:dateD
+											AND lettreCateg=:lettre
+											AND numType=:numOrdre");
+		$req->execute([
+			"liai" => $this->_liaison->getCode(),
+			"dateD" => $this->_dateDeb,
+			"lettre" => $this->_typeCateg->lettreCateg(),
+			"numOrdre" => $this->_typeCateg->numOrdre(),
+			"dateD" => $this->_dateDeb
+		]);
+	}
 
 	##============  - FINDALL -  ============##
 	public static function findAll(){

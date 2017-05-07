@@ -111,6 +111,23 @@ if(!empty($liaisonCode)){ ?>
 		</div>
 	</div>
 <?php
+}else if(!empty($tarif)){ ?>
+	<!-- Confirmation -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h3>Le tarif pour la liaison &quot;<?= $tarif->liaison()->getCode() ?>&quot; de
+				la catégorie &quot;<?= $tarif->typeCateg()->libelle() ?>&quot; pour
+				le <?= $tarif->affiDate() ?> a bien été supprimé.</h3>
+		</div>
+	</div>
+	<br>
+	<!-- //Msg-Retrou -->
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<p><a href="index.php?adm=true&action=list&obj=tari">Retour à la liste des tarifs</a></p>
+		</div>
+	</div>
+<?php
 }else{
 	Header('Location: index.php?action=404');
 }

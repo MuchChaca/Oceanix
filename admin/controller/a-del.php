@@ -1,6 +1,22 @@
 <?php
 if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) && Passerelle::logged()){
 	switch($_GET['obj']){
+		//=> Delete a Tarif
+		case 'tari':
+			if(!empty($_GET['liai']) && !empty($_GET['l']) && !empty($_GET['n']) && !empty($_GET['date'])){
+				$liai= new Liaison($_GET['liai']);
+				$liai->retrieve();
+				$aTypeCateg= new TypeCateg($_GET['l'], $_GET['n'], null);
+				$aTypeCateg->retrieve();
+				$tarif = new Tarif($liai, $_GET['date'], $aTypeCateg, null);
+				$tarif->retrieve();
+				$tarif->delete();
+				$status="delete_ok";
+			}else{
+				$status="404";
+			}
+			break;
+
 		//=> Delete a Reservation
 		case 'rese':
 			if(!empty($_GET['id'])){
