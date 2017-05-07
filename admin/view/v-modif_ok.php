@@ -163,7 +163,7 @@
 				</div>
 					<p><a href="?adm=true&action=list&obj=port">Retour à la liste des ports</a></p>
 				<?php
-			}if(!empty($newTrav)){ ?>
+			}else if(!empty($newTrav)){ ?>
 					<!-- TITLE-TRAVERSEE -->
 					<div class="row">
 						<div class="col-lg-12 text-center">
@@ -208,7 +208,112 @@
 				</div>
 					<p><a href="index.php?adm=true&action=list&obj=trav">Retour à la liste des traversées</a></p>
 				<?php
-			}
+			}else if(!empty($reserv)){ ?>
+				<!-- TITLE-RESERVATION -->
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h1>Modification effectuée</h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<!-- div-reserv -->
+					<div class="col-lg-12 text-center">
+								<div class="display-table">
+									<table>
+										<thead>
+											<tr><th colspan="4"><h5>La réservation n°<?=$reserv->num() ?> modifiée</h5></th></tr>
+										</thead>
+										<tbody>
+												<tr>
+													<td><b>Nom</b></td>
+													<td><?= $reserv->nom() ?></td>
+												</tr>
+												<tr>
+													<td><b>Adresse</b></td>
+													<td><?= $reserv->adr() ?></td>
+												</tr>
+												<tr>
+													<td><b>Code Postal</b></td>
+													<td><?= $reserv->cp() ?></td>
+												</tr>
+												<tr>
+													<td><b>Ville</b></td>
+													<td><?= $reserv->ville() ?></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+							</div> <!-- //div-reserv -->
+
+					<!-- div-liaison -->
+					<div class="col-md-3 col-md-offset-1">
+								<div class="display-table">
+									<table>
+										<thead>
+											<tr>
+												<th colspan="4"><h5>La Liaison</h5></th>
+											</tr>
+											<tr>
+												<th>Code</th>
+												<th>Port Départ</th>
+												<th>Port Arrivé</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr>
+													<td><?= $reserv->laTraversee()->liaison()->getCode() ?></td>
+													<td><?= $reserv->laTraversee()->liaison()->getLePortDep()->getNom() ?></td>
+													<td><?= $reserv->laTraversee()->liaison()->getLePortArr()->getNom() ?></td>
+													<td><a href="index.php?adm=true&action=view&obj=liai&id=<?= $reserv->laTraversee()->liaison()->getCode() ?>">
+														<i class="fa fa-eye" aria-hidden="true" alt="Voir" title="Voir"></i>
+													</a></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+					<!-- //div-liaison -->
+
+					<!-- div-enregistrement -->
+					<div class="col-md-3 col-md-offset-3">
+								<div class="display-table">
+									<table>
+										<thead>
+											<tr>
+												<th colspan="4"><h5>Enregistrements</h5></th>
+											</tr>
+											<tr>
+												<th>Catégorie</th>
+												<th>Quantité</th>
+												<th>Tarif Unitaire</th>
+											</tr>
+										</thead>
+										<tbody>
+												<?php foreach($lesEnr as $enr):
+													$tarif = Tarif::getPrix($reserv->laTraversee()->liaison(), $enr->leTypeCateg(), $reserv->laTraversee()); ?>
+													<tr>
+														<td><?= $enr->leTypeCateg()->libelle() ?></td>
+														<td><?= $enr->quantite() ?></td>
+														<td><?= $tarif ?> €</td>
+													</tr>
+												<?php endforeach; ?>
+										</tbody>
+									</table>
+								</div>
+							</div>
+					<!-- //div-enregistrement -->
+
+					<!-- div-version-pdf -->
+					<div class="col-lg-12 text-center">
+						<a href="pdf/index.php?&id=<?= $reserv->num() ?>" target="_blank">Accéder à la version PDF</a>
+					</div>
+					<!-- //div-version-pdf -->
+				</div> <!-- //row-reserv -->
+				<p><a href="index.php?adm=true&action=list&obj=rese">Retour à la liste des réservations</a></p>
+			<?php
+		}
 				?>
 
 </div> <!-- //text-center -->

@@ -28,7 +28,6 @@ if(!empty($_GET['info'])){
 		}else{
 			$aEnregistrer[$key]=$value;
 		}
-
 	}
 
 	//==> le tableau final

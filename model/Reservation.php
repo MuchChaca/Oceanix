@@ -51,7 +51,23 @@ class Reservation{
 
 		$this->_lesTypeCateg= Enregistrer::getLesEnr($this);
 	}
-
+	//===>UPDATE
+	public function update(){
+		include"connexionDB.php";
+		$req=$db->prepare("UPDATE Reservation
+										SET nom=:nom, adr=:adr, cp=:cp, ville=:ville, traversee_id=:trav
+										WHERE num=:num");
+		$req->execute([
+			"nom" => $this->_nom,
+			"adr" => $this->_adr,
+			"cp" => $this->_cp,
+			"ville" => $this->_ville,
+			"trav" => $this->_laTraversee->num(),
+			"num" => $this->_num
+		]);
+		$req->closeCursor();
+		unset($db); //close connection
+	}
 	//===> DELETE
 	public function delete(){
 		include "connexionDB.php";

@@ -6,6 +6,104 @@
 <?php
 if(!empty($obj)){
 switch($obj){
+	//--> RESERVATION
+	case 'rese': ?>
+		<!-- TITLE-RESERVATION -->
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h1>La réservation n° <?= $reserv->num() ?></h1>
+			</div>
+		</div>
+
+		<!-- main-RESERVATION-container -->
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<form action="index.php?adm=true&action=mod&obj=rese" method="POST">
+					<input type="hidden" name="num" value="<?= $reserv->num() ?>" />
+					<div class="form-area">
+						<div class="simple-form">
+							<div class="simple-form-legend form-left"><h5>Nom </h5></div>
+							<div class="simple-form-field form-left">
+								<input type="text" size=40 name="nom" required value="<?= $reserv->nom(); ?>"/>
+							</div>
+						</div>
+						<div class="simple-form">
+							<div class="simple-form-legend form-left"><h5>Adresse </h5></div>
+							<div class="simple-form-field form-left">
+								<input type="text" size=40 name="adr" required value="<?= $reserv->adr(); ?>"/>
+							</div>
+						</div>
+						<div class="simple-form">
+							<div class="simple-form-legend form-left"><h5>Code Postal </h5></div>
+							<div class="simple-form-field form-left">
+								<input type="text" size=40 name="cp" required value="<?= $reserv->cp(); ?>"/>
+							</div>
+						</div>
+						<div class="simple-form">
+							<div class="simple-form-legend form-left"><h5>Ville </h5></div>
+							<div class="simple-form-field form-left">
+								<input type="text" size=40 name="ville" required value="<?= $reserv->ville(); ?>"/>
+							</div>
+						</div>
+						<div class="simple-form">
+							<div class="simple-form-legend form-left"><h5>Traversée </h5></div>
+							<div class="simple-form-field form-left">
+								<select name="traversee_id">
+									<?php foreach($allTrav as $trav){ ?>
+										<option value="<?= $trav->num() ?>"
+											<?php if($trav->num()==$reserv->laTraversee()->num()){ echo " selected"; } ?> >
+											[<?= $trav->dateTraversee() ?> - <?= $trav->heure() ?>] <?= $trav->liaison()->getCode() ?>
+										</option>
+									<?php } ?>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+					<section class="success" id="about">
+						<div class="container">
+							<div class="row">
+					<div class="display-table">
+						<table>
+							<thead>
+								<tr>
+									<th>Description</th>
+									<th>Tarif/u en €</th>
+									<th>Quantité</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+									foreach($typeCategs as $typeCateg){
+										echo "<tr>";
+									////--> LIBELLE
+											echo "<td>".$typeCateg->libelle()."</td>";
+									////--> TARIF  (((On peut a la place créer un tab assoc ds le controlleur et ensuite utiliser celui-ci ici)))
+											echo "<td>".Tarif::getPrix($reserv->laTraversee()->liaison(), $typeCateg, $reserv->laTraversee())." €</td>";
+									////--> QUANTITE
+											$quantite=Enregistrer::hasValue($reserv, $typeCateg);
+											echo "<td><input style=\"width:65px;\" type=\"number\" name=\"".$typeCateg->lettreCateg()."-".$typeCateg->numOrdre()."\" maxlength=\"5\" min=\"0\"
+											value=\"".$quantite."\" /></td>";
+									}
+								?>
+								<tr>
+									<td colspan="3"><input type="submit" value="Modifier la réservation" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				</form>
+				</div>
+				</section>
+		<?php
+		break;
+
 	//--> LIAISON
 	case 'liai': ?>
 		<!-- TITLE-LIAISON -->

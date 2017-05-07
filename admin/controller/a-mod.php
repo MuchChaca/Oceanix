@@ -1,6 +1,66 @@
 <?php
 if(!empty($_GET['adm']) && !empty($_GET['adm'])==true && !empty($_GET['obj']) && Passerelle::logged()){
 	switch ($_GET['obj']){
+		// If it's for Reservation ('rese')
+		case 'rese':
+			if(!empty($_POST['num']) && !empty($_POST['nom']) && !empty($_POST['adr']) && !empty($_POST['cp']) && !empty($_POST['ville'])){
+				$reserv= new Reservation($_POST['num'], $_POST['nom'], $_POST['adr'], $_POST['ville'], $_POST['ville']);
+				$trav= new Traversee($_POST['traversee_id']);
+				$trav->retrieve();
+				$reserv->setLaTraversee($trav);
+
+				## Declare les collections d'objets des enregistrement et de reservations
+				$aReserver= array();
+				$aEnregistrer = array();
+				## On assigne des valeurs aux collections du dessus selon leur nature
+
+				foreach($_POST as $key => $value){
+					if($key == "num" || $key == "nom" || $key == "adr" || $key == "cp" || $key == "ville" || $key=="traversee_id"){
+						$aReserver[$key] = $value;
+					}else{
+						$aEnregistrer[$key]=$value;
+					}
+				}
+
+				//lesTypeCateg
+				$lesTypeCateg= array();
+
+				//==> Création des enregistrements dans la bdd
+				foreach($aEnregistrer as $key => $value){
+					//recup la categorie
+					$idTypeCateg = explode("-", $key);
+					$typeCateg = new TypeCateg($idTypeCateg[0], $idTypeCateg[1], NULL);
+					$typeCateg->retrieve();
+					$enregistrement = new Enregistrer($reserv, $typeCateg, $value);
+					//Si elle est dans la table Enregistrer
+					$oldQuantite=Enregistrer::hasValue($reserv, $typeCateg);
+					if($value>0){
+						if($oldQuantite >0){
+							$enregistrement->update();
+						}else if($oldQuantite==0){
+							$enregistrement->create();
+						}
+					}else if($value==0){
+						if($oldQuantite >0){
+							$enregistrement->delete();
+						}
+					}
+				}
+				$lesEnr= Enregistrer::getLesEnr($reserv);
+				$reserv->setLesTypeCateg($lesTypeCateg);
+				$reserv->update();
+
+				$status= "modif_ok";
+			}else if(!empty($_GET['id'])){
+				$reserv= new Reservation($_GET['id'], null, null, null, null);
+				$reserv->retrieve();
+				$typeCategs= TypeCateg::findAll();
+				$allTrav= Traversee::findAll();
+				$status= "mod";
+				$obj="rese";
+			}else{ $status="404"; }
+			break;
+
 		// If it's for TypeCateg ('tycat')
 		case 'tycat':
 			if(!empty($_POST['lettre']) && !empty($_POST['num']) && !empty($_POST['libelle'])){

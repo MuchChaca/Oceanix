@@ -194,6 +194,7 @@ switch($obj){
 				<!-- div-version-pdf -->
 				<div class="col-lg-12 text-center">
 					<a href="pdf/index.php?&id=<?= $reserv->num() ?>" target="_blank">Accéder à la version PDF</a>
+					<p><a href="index.php?adm=true&action=list&obj=rese">Retour à la liste des réservations</a></p>
 				</div>
 				<!-- //div-version-pdf -->
 			</div> <!-- //row-reserv -->
