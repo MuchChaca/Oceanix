@@ -1,12 +1,11 @@
 <?php
 class Tarif{
-	private $_codeLiaison, $_dateDeb, $_lettreCateg, $_numType, $_tarif;
+	private $_liaison, $_dateDeb, $_typeCateg, $_tarif;
 
-	public function __construct($codeLiaison, $dateDeb, $lettreCateg, $numType, $tarif){
-		$this->_codeLiaison = $codeLiaison;
+	public function __construct($liaison, $dateDeb, $typeCateg, $tarif){
+		$this->_liaison = $liaison;
 		$this->_dateDeb = $dateDeb;
-		$this->_lettreCateg = $lettreCateg;
-		$this->_numType = $numType;
+		$this->_typeCateg = $typeCateg;
 		$this->_tarif = $tarif;
 	}
 
@@ -29,9 +28,14 @@ class Tarif{
 		include "connexionDB.php";
 		$typeCategs=array();
 		$req=$db->query("SELECT *
-									FROM Tarifer;");
+									FROM Tarifer
+									ORDER BY codeLiaison");
 		while($result = $req->fetch()){
-			$typeCateg= new Tarif($result['codeLiaison'], $result['dateDeb'], $result['lettreCateg'], $result['numType'], $result['tarif']);
+			$typeCateg= new TypeCateg($result['lettreCateg'], $result['numType'], null);
+			$typeCateg->retrieve();
+			$liai= new Liaison($result['codeLiaison']);
+			$liai->retrieve();
+			$typeCateg= new Tarif($liai, $result['dateDeb'], $typeCateg, $result['tarif']);
 			//$typeCateg->retrieve();
 			array_push($typeCategs, $typeCateg);
 		}
@@ -59,7 +63,13 @@ class Tarif{
 }
 
 	##============  - GETTERS -  ============##
-	public function lettreCategorie(){ return $this->_lettreCategorie; }
-	public function numOrdre(){ return $this->_numOrdre; }
-	public function libelle(){ return $this->_libelle; }
+	public function liaison(){ return $this->_liaison; }
+	public function dateDeb(){ return $this->_dateDeb; }
+	public function typeCateg(){ return $this->_typeCateg; }
+	public function tarif(){ return htmlspecialchars($this->_tarif); }
+
+	public function affiDate(){
+		$date=substr($this->_dateDeb, -2)."/".substr($this->_dateDeb, -5, 2)."/".substr($this->_dateDeb, -10, 4);
+		return htmlspecialchars($date);
+	}
 }

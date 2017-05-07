@@ -264,7 +264,71 @@
 							</div>
 						</div><!-- //LIST-PORTS -->
 					<?php
-				}else{
+				}else if(!empty($allTarifs)){ //LIST OF THE TARIFS ?>
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<h1>Liste des Ports</h1>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-md-offset-3">
+						<div class="display-table">
+							<table>
+								<thead>
+										<th>Liaison</th>
+										<th>Date Début</th>
+										<th>Catégorie</th>
+										<th>Tarif / U</th>
+										<th class="admin" colspan="2">Action</th>
+									</tr>
+								</thead>
+								<tboby>
+									<?php foreach($allTarifs as $tarif): ?>
+										<tr>
+											<td><?= $tarif->liaison()->getCode() ?></td>
+											<td><?= $tarif->affiDate() ?></td>
+											<td><?= $tarif->typeCateg()->libelle() ?></td>
+											<td><?= $tarif->tarif() ?> €</td>
+											<td><a href="index.php?adm=true&action=mod&obj=tari&liai=<?= $tarif->liaison()->getCode() ?>&l=
+												<?= $tarif->typeCateg()->lettreCateg() ?>&n=<?= $tarif->typeCateg()->lettreCateg() ?>&date=<?= $tarif->dateDeb() ?>">
+												<i class="fa fa fa-pencil" aria-hidden="true" alt="Modifier" title="Modifier"></i>
+											</a></td>
+											<td><a href="index.php?adm=true&action=del&obj=tari&liai=<?= $tarif->liaison()->getCode() ?>&l=
+												<?= $tarif->typeCateg()->lettreCateg() ?>&n=<?= $tarif->typeCateg()->lettreCateg() ?>&date=<?= $tarif->dateDeb() ?>">
+												<i class="fa fa-trash" aria-hidden="true" alt="Supprimer" title="Supprimer"></i>
+											</a></td>
+										</tr>
+									<?php endforeach; ?>
+								</tboby>
+								<tfoot>
+									<tr>
+										<td colspan="3" style="text-align: left;">
+											<?php
+											if($prevPage >= 0){
+												echo "<a href=\"index.php?adm=true&action=list&obj=tari&page=".$prevPage."\">&lt;&lt; Précédent</a>";
+											}else{
+												echo "&lt;&lt; Précédent";
+											}
+											?>
+										</td>
+										<td></td>
+										<td colspan="3" style="text-align: right;">
+											<?php
+											if($nextPage >= 0){
+												echo "<a href=\"index.php?adm=true&action=list&obj=tari&page=".$nextPage."\">Suivant &gt;&gt;</a>";
+											}else{
+												echo "Suivant &gt;&gt;";
+											}
+											?>
+										</td>
+									</tr>
+								</tfoot>
+							</table>
+
+						</div>
+					</div><!-- //LIST-TARIFS -->
+				<?php
+			}else{
 					Header('Location: /index.php?action=valid_connexion');
 				}
 					?>
