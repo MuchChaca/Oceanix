@@ -95,7 +95,7 @@ switch($obj){
 		<?php break;
 		//--> RESERVATION
 		case 'rese': ?>
-			<!-- TITLE-LIAISON -->
+			<!-- TITLE-RESERVATION -->
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<h1>La réservation n° <?= $reserv->num() ?></h1>
@@ -103,7 +103,7 @@ switch($obj){
 			</div>
 
 			<div class="row">
-				<!-- div-liaison -->
+				<!-- div-reserv -->
 				<div class="col-lg-12 text-center">
 							<div class="display-table">
 								<table>
@@ -130,9 +130,9 @@ switch($obj){
 									</tbody>
 								</table>
 							</div>
-						</div> <!-- //div-liaison -->
+						</div> <!-- //div-reserv -->
 
-				<!-- div-port-dep -->
+				<!-- div-liaison -->
 				<div class="col-md-3 col-md-offset-1">
 							<div class="display-table">
 								<table>
@@ -160,9 +160,9 @@ switch($obj){
 								</table>
 							</div>
 						</div>
-				<!-- //div-port-dep -->
+				<!-- //div-liaison -->
 
-				<!-- div-port-arr -->
+				<!-- div-enregistrement -->
 				<div class="col-md-3 col-md-offset-3">
 							<div class="display-table">
 								<table>
@@ -173,23 +173,32 @@ switch($obj){
 										<tr>
 											<th>Catégorie</th>
 											<th>Quantité</th>
-											<th>Tarif</th>
+											<th>Tarif Unitaire</th>
 										</tr>
 									</thead>
 									<tbody>
-											<?php foreach($reserv->lesTypeCateg() as $enr): ?>
+											<?php foreach($reserv->lesTypeCateg() as $enr):
+												$tarif = Tarif::getPrix($reserv->laTraversee()->liaison(), $enr->leTypeCateg(), $reserv->laTraversee()); ?>
 												<tr>
 													<td><?= $enr->leTypeCateg()->libelle() ?></td>
 													<td><?= $enr->quantite() ?></td>
-													<td><?= Tarif::getPrix($reserv->laTraversee()->liaison(), $enr->leTypeCateg(), $reserv->laTraversee()) ?> €</td>
+													<td><?= $tarif ?> €</td>
 												</tr>
 											<?php endforeach; ?>
 									</tbody>
 								</table>
 							</div>
 						</div>
-				<!-- //div-port-arr -->
-			</div> <!-- //row-laison -->
+				<!-- //div-enregistrement -->
+
+				<!-- div-version-pdf -->
+				<div class="col-lg-12 text-center">
+					<a href="pdf/index.php?&id=<?= $reserv->num() ?>" target="_blank">Accéder à la version PDF</a>
+				</div>
+				<!-- //div-version-pdf -->
+			</div> <!-- //row-reserv -->
+
+
 			<?php break;?>
 	<?php case 'autre': ?>
 		<!-- // -->
@@ -201,9 +210,11 @@ switch($obj){
 }
 }else{
 	Header('Location: index.php?action=404');
+	ob_end_clean();
 }
 }else{
 	Header('Location: index.php?action=valid_connexion');
+	ob_end_clean();
 }?>
 
 

@@ -38,7 +38,7 @@ class Reservation{
 		$req="SELECT *
 				FROM Reservation
 				WHERE num=".$this->_num.";";
-		$result=$db->query($req);	/** @TODO compléter pour toute les variables */
+		$result=$db->query($req);
 		$result=$result->fetch();
 		$this->_nom=$result['nom'];
 		$this->_adr=$result['adr'];
@@ -82,7 +82,6 @@ class Reservation{
 		}
 		return $lesReservations;
 	}
-
 
 	/* #################  - GETPERIODE -  #################
 	 * @param Traversee $traversee

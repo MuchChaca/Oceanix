@@ -89,9 +89,9 @@ $my_html="<html lang=\"fr\">
         <div class=\"col-xs-2 col-xs-offset-8\">
           <p>
             <strong>
-            Sous-Total : <br>
-            TAXE : <br>
-            Total : <br>
+            Sous-Total:<br>
+            TAXE: <br>
+            Total: <br>
             </strong>
           </p>
         </div>
