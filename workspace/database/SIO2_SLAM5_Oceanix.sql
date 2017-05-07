@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 06, 2017 at 09:53 PM
+-- Generation Time: May 07, 2017 at 09:31 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -70,7 +70,8 @@ INSERT INTO `Bateau` (`id`, `nom`) VALUES
 (18, 'MonPetitBateauTropGrand'),
 (19, 'Pourquoi Pas'),
 (20, 'Ca marche ?'),
-(21, 'Ou pas');
+(21, 'Ou pas'),
+(22, 'Petit Roreau');
 
 -- --------------------------------------------------------
 
@@ -90,98 +91,13 @@ CREATE TABLE `Enregistrer` (
 --
 
 INSERT INTO `Enregistrer` (`numReserv`, `lettreCateg`, `numType`, `quantite`) VALUES
-(18, 'A', 1, 2),
-(18, 'A', 2, 1),
-(18, 'A', 3, 2),
-(18, 'B', 1, 1),
-(18, 'C', 2, 1),
-(19, 'A', 1, 2),
-(19, 'A', 2, 1),
-(19, 'A', 3, 2),
-(19, 'B', 2, 1),
-(20, 'A', 1, 1),
-(20, 'A', 2, 2),
-(20, 'A', 3, 3),
-(20, 'B', 1, 4),
-(20, 'C', 1, 3),
-(20, 'C', 2, 2),
-(20, 'C', 3, 1),
-(21, 'A', 2, 1),
-(21, 'A', 3, 2),
-(21, 'B', 1, 1),
-(21, 'C', 1, 4),
-(22, 'A', 1, 1),
-(22, 'A', 2, 2),
-(22, 'A', 3, 3),
-(22, 'B', 1, 2),
-(22, 'B', 2, 1),
-(22, 'C', 2, 2),
-(22, 'C', 3, 2),
-(23, 'G', 0, 8),
-(24, 'A', 1, 2),
-(24, 'A', 2, 1),
-(24, 'C', 1, 1),
-(25, 'A', 2, 2),
-(25, 'A', 3, 2),
-(26, 'A', 1, 2),
-(26, 'A', 2, 2),
-(26, 'A', 3, 1),
-(27, 'A', 1, 2),
-(27, 'A', 2, 2),
-(27, 'A', 3, 2),
-(27, 'B', 1, 1),
-(28, 'A', 1, 2),
-(28, 'A', 2, 2),
-(28, 'A', 3, 2),
-(29, 'A', 1, 1),
-(29, 'A', 2, 2),
-(29, 'A', 3, 2),
-(29, 'B', 1, 2),
-(29, 'B', 2, 2),
-(30, 'A', 1, 1),
-(30, 'A', 2, 2),
-(30, 'A', 3, 2),
-(30, 'B', 1, 2),
-(30, 'B', 2, 2),
-(30, 'C', 1, 2),
-(30, 'C', 2, 2),
-(30, 'C', 3, 2),
-(31, 'A', 1, 1),
-(31, 'A', 2, 2),
-(31, 'A', 3, 2),
-(31, 'B', 1, 2),
-(31, 'B', 2, 2),
-(31, 'C', 1, 2),
-(31, 'C', 2, 2),
-(31, 'C', 3, 2),
-(32, 'A', 1, 1),
-(32, 'B', 1, 1),
-(32, 'B', 2, 1),
-(32, 'C', 3, 1),
-(21, 'A', 1, 1),
-(21, 'A', 2, 1),
-(21, 'C', 1, 1),
-(22, 'A', 1, 2),
-(22, 'A', 2, 1),
-(22, 'A', 3, 1),
-(22, 'C', 1, 1),
-(23, 'A', 1, 1),
-(23, 'A', 3, 2),
-(23, 'B', 2, 1),
-(24, 'A', 3, 2),
-(24, 'B', 1, 2),
 (25, 'A', 1, 2),
-(25, 'A', 3, 2),
+(25, 'A', 2, 1),
+(25, 'C', 2, 1),
 (26, 'A', 1, 1),
-(26, 'A', 2, 2),
-(26, 'A', 3, 2),
-(27, 'A', 1, 1),
-(27, 'B', 2, 1),
-(32, 'A', 1, 2),
-(32, 'A', 2, 1),
-(33, 'A', 1, 1),
-(34, 'A', 1, 1),
-(34, 'A', 2, 1);
+(26, 'A', 2, 4),
+(26, 'B', 2, 1),
+(26, 'C', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -270,14 +186,8 @@ CREATE TABLE `Reservation` (
 --
 
 INSERT INTO `Reservation` (`num`, `nom`, `adr`, `cp`, `ville`, `traversee_id`) VALUES
-(18, 'Jean Mouloud', '52 AllÃ© de la libertÃ©e contrainte', '10510', 'CorÃ©eDuNord', 3),
-(19, 'TIPREZ', '15 chemin des oliviers', '56 10', 'Lorient', 3),
-(20, 'Monsieur Testeur', '123 rue des tests', '1234', 'SinTest', 3),
-(21, 'Say My Name', 'heisenberoug', '12345', 'Cianow', 3),
-(31, 'Jean Master', '123 rue de La Serf', '87500', 'Mapalourd', 0),
-(32, 'Jean Master', '123 rue de La Serf', '87500', 'Mapalourd', 23),
-(33, 'Jean Master', '123 rue de La Serf', '87500', 'Mapalourd', 23),
-(34, 'Jean Master', '123 rue de La Serf', '87500', 'Mapalourd', 23);
+(25, 'Jean Master', '123 rue de La Serf', 'Mapal', 'Mapalourd', 23),
+(26, 'Poo Ping', '999 Dojo Du Grand Maitre', 'Konoa', 'Konoa', 23);
 
 -- --------------------------------------------------------
 
@@ -478,7 +388,7 @@ ALTER TABLE `TypeCateg`
 -- AUTO_INCREMENT for table `Bateau`
 --
 ALTER TABLE `Bateau`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `Port`
 --
@@ -488,7 +398,7 @@ ALTER TABLE `Port`
 -- AUTO_INCREMENT for table `Reservation`
 --
 ALTER TABLE `Reservation`
-  MODIFY `num` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `num` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `Traversee`
 --
