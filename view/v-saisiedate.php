@@ -17,7 +17,7 @@
 			<div class="form-area">
 				<div class="simple-form">
 					<div class="simple-form-legend"><h5>Date souhaitée : </h5></div>
-					<div  class="simple-form-field"><input type="date" name="dateVoulue" required placeholder="jj/mm/aaa" /></div>
+					<div  class="simple-form-field"><input type="text" maxlength="10" name="dateVoulue" required placeholder="JJ/MM/AAAA" /></div>
 				</div>
 				<div class="simple-form">
 					<div class="simple-form-submit"><input type="submit" name="validerTraversees" value="Liste des traversées" colspan="3"/></div>
