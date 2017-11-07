@@ -14,7 +14,7 @@ If you want to try out the website, there are already some data in the database 
 ## Screenshots
 <img src="https://image.ibb.co/iq1Lhb/homepage_oceanix.png" alt="homepage-oceanix"> 
 <img src="https://image.ibb.co/cmHFFw/liaisons_oceanix.png" alt="liaisons-oceanix"> 
-<img src="https://image.ibb.co/cmHFFw/liaisons_oceanix.png" alt="date-select-oceanix"> 
+<img src="https://image.ibb.co/kQ2FFw/date_select_oceanix.png" alt="date-select-oceanix"> 
 <img src="https://image.ibb.co/n0xCTG/reserv_recap_oceanix.png" alt="recap-reserv-oceanix"> 
 <img src="https://image.ibb.co/cRo82b/pdf_oceanix.png" alt="pdf-recap-reserv-oceanix"> 
  
