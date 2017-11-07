@@ -11,6 +11,12 @@ It currently uses an API to generate the PDF: **[phpToPDF](http://phptopdf.com/)
 ## Use
 If you want to try out the website, there are already some data in the database set up for the date **20/07/2016**. 
 
+## Screenshots
+<img src="https://ibb.co/nxw9aw" alt="homepage-oceanix"> 
+<img src="https://ibb.co/mu8cTG" alt="liaisons-oceanix"> 
+<img src="https://ibb.co/iaH48G" alt="date-select-oceanix"> 
+<img src="https://ibb.co/myDVFw" alt="recap-reserv-oceanix"> 
+<img src="https://ibb.co/jNT82b" alt="pdf-recap-reserv-oceanix"> 
  
 -----------------------
 
